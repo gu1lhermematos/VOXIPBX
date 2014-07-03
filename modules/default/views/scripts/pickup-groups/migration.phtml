@@ -1,0 +1,22 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Migration of Group Members"),  $this->translate("Pickup Groups"), $this->baseUrl()."/index.php/default/pickup-groups");
+
+
+echo $this->form;
+
+?>
+<div class="description_form"><p>Esta opção tem como objetivo realizar a migração dos ramais associados ao grupo para um novo grupo ja cadastrado.</p></div>
+<?php 
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/pickup-groups/');
+echo $buttons->getHtml();
+?>
+<script type="text/javascript">
+	$(".snep_form").prepend("<div class='error_box'><?php echo $this->message ?></div>");
+</script>
+

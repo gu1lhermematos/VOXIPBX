@@ -1,0 +1,84 @@
+<?php
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Edit Sound Files"),  "Sound Files", $this->baseUrl()."/index.php/default/sound-files");
+	
+
+if( $this->error['error'] ) : ?>
+	<div class="error_box"> <?php echo $this->error['message']  ?> </div>
+<?php endif ?>
+        
+<?php
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Arquivos de Sons - Alterar</h2>
+
+    <p>Esta rotina permite que:</p>
+
+    <li><strong>Um arquivo de Som existente seja Cadastrado no Sistema:</strong></li>
+    <ul>
+        <li>Na op&ccedil;&atilde;o INCLUIR, o sistema apresenta sempre uma lista de todos 
+            os arquivos existente no diret&oacute;rio padr&atilde;o de sons do Asterisk (/var/
+            lib/asterisk/sounds/br) e que ainda n&atilde;o foram Cadastrados.</li>
+    </ul>
+    <span style="display:none;" id="text_description">
+        <ul><li><p>Cadastre o arquivo de som clicando sobre ele e preenchendo o campo
+                    "Descri&ccedil;&atilde;o" e definindo se &eacute; um arquivo do Asterisk ou de uma
+                    URA (Unidade de resposta Aud&iacute;vel).</p></li>
+        </ul>
+        </li>
+
+        <li><strong>Um Arquivo de Som novo seja colocado no diret&oacute;rio padr&atilde;o do Asterisk
+                e consequentemente cadastrado no Sistema:</strong>
+            <ul>
+                <li> Se for um novo arquivo a ser inserido, selecione o arquivo a partir
+                    do bot&atilde;o [Arquivo/Browse], preencha o campo "Descri&ccedil;&atilde;o" e defina 
+                    se &eacute; um arquivo do Asterisk ou de uma URA (Unidade de resposta Aud&iacute;vel).
+                    Informe se o arquivo deve ou n&atilde;o ser convertido para o formato GSM.</li>
+                <br>
+            </ul>
+        </li>
+        <li><strong>Um arquivo de som cadastrado seja substitu&iacute;do por outro:</strong>
+            <ul>
+                <li>Neste caso, selecione o arquivo a partir do bot&atilde;o [Arquivo/Browse],
+                    preencha o campo "Descri&ccedil;&atilde;o" e defina se o arquivo deve 
+                    ou n&atilde;o ser convertido para o formato GSM.</li>
+            </ul>
+        </li>
+
+        </p>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/sound-files/');
+    echo $buttons->getHtml();
+    
+?>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

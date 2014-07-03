@@ -1,0 +1,14 @@
+<?php
+
+$title = new Snep_Title("Dashboard");
+echo $title->getHtml();
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/dashboard.css');
+echo $this->form;
+ 
+$buttons = new Snep_Buttons("Dashboard");
+$buttons->addOption('save', 'addDashboard', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/index/');
+echo $buttons->getHtml();
+ 
+?>

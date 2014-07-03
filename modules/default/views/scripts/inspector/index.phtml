@@ -1,0 +1,53 @@
+<?php
+$title = new Snep_Title("Settings");
+$title->addOption('reload', $this->baseUrl() . '/index.php/inspector/');
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Errors of system"), NULL, NULL, "config");
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css");
+?>
+
+<div class="snep_form">
+
+    <div class="inspect">
+        <?php
+        echo "<ul>";
+        
+        //verifica se existe módulo cc
+        if($this->inspect["Ler_queues"] ){
+                if (class_exists("Cc_AgentsInfo") || class_exists("Cc_Statistical")) {
+                    
+                }else{
+                    
+                    unset($this->inspect["Ler_queues"]);
+                }
+            }
+            
+            //retirado verificação do instalador
+            unset($this->inspect["Instalador"]);
+            
+        foreach ($this->inspect as $key => $value) {
+
+            $style = ( $value['error'] ? 'list_error' : 'list_no_error' );
+            
+            echo " <li class='$style' > {$value['name']}";
+
+            if ($value['error'] && $value["name"] == "Script ler_queues") {
+
+                echo "<ul><li class='inspectorError'> <pre> {$value['message']} </pre> </li></ul>";
+                ?>
+
+                <form enctype="multipart/form-data" action="<?php echo $this->formAction; ?>" method="post">
+                    <input type="submit" name="submit" id="submit" title="<?php echo $this->translate("Start"); ?>" value=<?php echo $this->translate("Start"); ?>>
+                </form>
+                <?php
+            }
+            if ($value['error'] && $value["name"] != "Script ler_queues") {
+
+                echo "<ul><li class='inspectorError'> <pre> {$value['message']} </pre> </li></ul>";
+            }
+        }
+        echo "</li> </ul>";
+        ?>
+    </div>
+</div>

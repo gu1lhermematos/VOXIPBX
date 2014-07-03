@@ -1,0 +1,81 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl() . "/index.php/default/contacts/import");
+$title->addOption('export', $this->baseUrl() . "/index.php/default/contacts/export");
+$title->addOption('multiremove', $this->baseUrl() . "/index.php/default/contacts/multi-remove/");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("edit contact"), $this->translate("contacts"), $this->baseUrl() . "/index.php/default/contacts");
+
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Agenda de Contatos - Alterar Contato</h2>
+
+    <p>
+        Preencha o formul&aacute;rio corretamente com as informa&ccedil;&otilde;es de contato. Os campos <strong>Nome</strong>,
+        <strong>Telefone</strong> e <strong>Celular</strong> s&atilde;o de preenchimento obrigat&oacute;rio.
+    </p>
+
+    <span style="display:none;" id="text_description">
+
+        <p>
+            <strong>Código:</strong>Identificará o cadastro do Contato. O Sistema sempre irá sugerir um código baseado
+            no código de valor mais alto já cadastrado.
+        </p>
+
+        <p>
+            <strong>Nome:</strong>Nome do que identifica o Contato.
+        </p>
+
+        <p>
+            <strong>Endereço, Cidade, Estado CEP: Dados de endereço do Contato.</strong>
+        </p>
+
+        <p>
+            <strong>Telefone:</strong>
+            Identifica o telefone Fixo do Contato. Atente para o formato de entrada: SOMENTE Números.
+        </p>
+
+        <p>
+            <strong>Celular:</strong>
+            Identifica   o   telefone   Celular   do   Contato.   Atente   para   o   formato   de   entrada:  SOMENTE
+            Números.
+        </p>
+
+        <p>
+            <strong>Apagar Múltiplos:</strong>
+            Remete a uma tela onde é possível remover varios contatos de uma vez.
+        </p>
+        </p></span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+</div>
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/contacts/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

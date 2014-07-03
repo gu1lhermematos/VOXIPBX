@@ -1,0 +1,52 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/javascript/scriptaculous/src/scriptaculous.js');
+
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+
+if( $this->error['error'] ) : ?>
+    <div class="error_box"> <?php echo $this->error['message']  ?> </div>
+<?php endif ?>
+
+<table>
+   <thead>
+      <tr>
+         <th> <?php echo $this->translate('Name') ?> </th>
+         <th> <?php echo $this->translate('Path') ?> </th>
+         <th> <?php echo $this->translate('Type') ?> </th>
+         <th colspan="4" class="action"> <?php echo $this->translate('Actions') ?> </th>
+      </tr>
+   </thead>   
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->sections):
+        foreach($this->sections as $class ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td class="action">
+                    <b> <?php echo $class['name'] ?> </b>
+                </td>
+                <td> 
+                    <?php echo $class['directory'] ?>
+                </td>
+                <td> 
+                    <?php echo $this->modes[$class['mode']] ?>
+                </td>
+                <td class="action">
+                    <a class="listar" href="<?php echo $this->url ?>/file/class/<?php echo $class['name'] ?>"></a>
+                </td>
+                <td class="action">
+                    <a class="alterar" href="<?php echo $this->url ?>/edit/file/<?php echo $class['name'] ?>"></a>
+                </td>
+                <td class="action">
+                    <?php $this->remove_msg = $this->translate("Are you sure you want to remove this record?");?>
+                    <a class="excluir" href="<?php echo $this->url ?>/remove/file/<?php echo $class['name'] ?>"></a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+</table>

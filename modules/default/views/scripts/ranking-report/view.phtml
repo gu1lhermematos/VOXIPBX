@@ -1,0 +1,122 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$title = new Snep_Title("Reports");
+$title->addOption('graphic', $this->baseUrl()."/index.php/ranking-report/graphic");
+$title->addOption('exportcsv', $this->baseUrl()."/index.php/ranking-report/csv");
+$title->addOption('exportpdf', $this->baseUrl()."/index.php/ranking-report/pdf");
+$title->addOption('dashboardform', $this->baseUrl()."/index.php/ranking-report/add-dashboard");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title, null, null, 'reports', $this->form_filter);
+
+?>
+<style>
+.cen{
+	background-color: #EAEAEA;
+}
+th[colspan='3']{
+	background-color: #CCC;
+	border-radius:5px 5px 0px 0px;
+	text-align: center !important;
+	border:solid 1px #BBB !important;	
+}
+th[rowspan='2']{
+	border:solid 1px #DDD !important;
+	border-radius:5px 5px 5px 5px;	
+	text-align: center !important;	
+	background-color: #E5E5E5;	
+}
+.subCols th{
+	background-color: #DDD;	
+	border-radius:0px 0px 5px 5px;
+	text-align: center !important;
+	border:solid 1px #CCC !important;
+}
+.cen{
+	text-align: center !important;
+}
+</style>
+<table>
+    <thead>
+    	<tr>
+            <th rowspan="2"> <?php echo $this->translate('Order') ?> </th>
+            <th rowspan="2"> <?php echo $this->translate('Destination') ?> 
+            <?php
+            if ($this->type == 'num') {
+                ?>
+                <th colspan="3"> <?php echo $this->translate('Quantity') ?> </th>
+                <th colspan="3"> <?php echo $this->translate('Total Time') ?> </th>
+                <?php
+            } else {
+                ?>
+                <th colspan="3"> <?php echo $this->translate('Total Time') ?> </th>
+                <th colspan="3"> <?php echo $this->translate('Quantity') ?> </th>
+
+                <?php
+            }
+            ?>
+        </tr>
+        <tr class="subCols">
+            <th> <?php echo $this->translate('Answered') ?> </th>
+            <th> <?php echo $this->translate('Unanswered') ?> </th>
+            <th> <?php echo $this->translate('Total') ?> </th>
+            <th> <?php echo $this->translate('Answered') ?> </th>
+            <th> <?php echo $this->translate('Unanswered') ?> </th>
+            <th> <?php echo $this->translate('Total') ?> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $count = $this->pages->firstItemNumber;
+        foreach ($this->rank as $source => $numCal) {
+            ?>
+            <tr>
+                <td colspan="13">
+                    <strong>
+                        <h3>
+                    <div>
+                        <?php
+                        echo $count . $this->translate(". Source: ") . $source;
+                        if ($this->type == 'num')
+                            echo '&nbsp;&nbsp;&nbsp;&nbsp;Total: <span class="textocampos">[' . $this->countData[$source] . ']</span>';
+                        else
+                            echo '&nbsp;&nbsp;&nbsp;&nbsp;Total: <span class="textocampos">[' . $this->timeData[$source] . ']</span>';
+                        ?>
+                    </div>    
+                            </h3>
+                    </strong>
+                </td>
+            </tr>
+            <?php
+            $count2 = 1;
+                foreach ($numCal as $caller => $dest) {
+                    foreach ($dest as $destiny => $valueDest) {
+                        echo '<tr>';
+                        echo '<td class="cen">'.$count2.'</td>';
+                        echo '<td class="cen">'.$destiny.'</td>';
+                        if ($this->type == 'num'){
+                            echo '<td class="cen">'.(isset($valueDest['QA'])?$valueDest['QA'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['QN'])?$valueDest['QN'] : 0).'</td>';
+                            echo '<td class="cen"><strong>'.(isset($valueDest['QT'])?$valueDest['QT'] : 0).'<strong></td>';
+                            echo '<td class="cen">'.(isset($valueDest['TA'])?$valueDest['TA'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['TN'])?$valueDest['TN'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['TT'])?$valueDest['TT'] : 0).'</td>';
+                        }else{
+                            echo '<td class="cen">'.(isset($valueDest['TA'])?$valueDest['TA'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['TN'])?$valueDest['TN'] : 0).'</td>';
+                            echo '<td class="cen"><strong>'.(isset($valueDest['TT'])?$valueDest['TT'] : 0).'</strong></td>';
+                            echo '<td class="cen">'.(isset($valueDest['QA'])?$valueDest['QA'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['QN'])?$valueDest['QN'] : 0).'</td>';
+                            echo '<td class="cen">'.(isset($valueDest['QT'])?$valueDest['QT'] : 0).'</td>';
+                        }
+                           $count2++;
+                           echo '</tr>';
+                    }
+                }
+            $count++;
+        }
+        ?>
+    </tbody>
+</table>
+<?php echo $this->render('pagination.phtml') ?>

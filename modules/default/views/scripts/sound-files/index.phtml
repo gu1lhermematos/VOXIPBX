@@ -1,0 +1,83 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/index.css");
+$this->headScript()->prependFile($this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/javascript/removeItem.js');
+
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+
+if ($this->error['error']) :
+    ?>
+    <div class="error_box"> <?php echo $this->error['message'] ?> </div>
+<?php endif ?>
+
+<table>
+    <thead>
+        <tr>
+           <!-- <th> <?php echo Snep_Order::getLink($this, $this->translate('Audio'), 'fullpatch') ?> </th> -->
+            <th> <?php echo Snep_Order::getLink($this, $this->translate('Filename'), 'arquivo') ?> </th>
+            <th> <?php echo Snep_Order::getLink($this, $this->translate('Description'), 'descricao') ?> </th>
+            <th> <?php echo Snep_Order::getLink($this, $this->translate('Type'), 'type') ?> </th>
+            <th> <?php echo Snep_Order::getLink($this, $this->translate('Update Date'), 'date') ?> </th>
+            <th class="numeric"> <?php echo $this->translate('File') ?> </th>
+            <th class="numeric"> <?php echo $this->translate('Backup') ?> </th>
+            <th colspan="3" class="action"> <?php echo $this->translate('Actions') ?> </th>
+        </tr>
+    </thead>   
+    <tbody>
+        <?php
+        $c = 0;
+        if ($this->files):
+            foreach ($this->files as $file):
+                ?>
+                <?php ($c ? $c = 0 : $c = 1 ); ?>
+
+                <tr class="c<?php echo $c ?>">
+                    <td> 
+                        <b> <?php echo $file['arquivo'] ?> </b>
+                    </td>
+                    <td> 
+                        <?php echo $file['descricao'] ?>
+                    </td>
+                    <td> 
+                        <?php echo $file['tipo'] ?>
+                    </td>
+                    <td> 
+                        <?php echo $file['data'] ?>
+                    </td>
+                    <td >
+                        <?php if (file_exists('/var/www' . $this->path_sound . $file['arquivo'])): ?>
+                            <audio  controls="controls">
+                                <source src='<?php echo $this->path_sound . $file['arquivo'] ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+                    </td>
+                    <td><?php if (file_exists('/var/www' . $this->path_sound . 'backup/' . $file['arquivo'])): ?>
+                            <audio controls="controls">
+                                <source src='<?php echo $this->path_sound . 'backup/' . $file['arquivo'] ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+
+                    </td>
+                    <td class="action">
+                        <?php if (isset($file['backuppath'])) : ?>
+                            <a class="restaurar" href="<?php echo $this->url ?>/restore/file/<?php echo $file['arquivo'] ?>">
+
+                            </a>
+                        <?php endif ?>
+                    </td>
+                    <td class="action">
+                        <a class="alterar" href="<?php echo $this->url ?>/edit/file/<?php echo $file['arquivo'] ?>"></a>
+                    </td>
+                    <td class="action">
+                        <?php $this->remove_msg = $this->translate("Are you sure you want to delete this item?"); ?>
+                        <span class="excluir" onclick="remove_item('<?php echo $this->url ?>','<?php echo $file['arquivo'] ?>','<?php echo $this->remove_msg ?>')"></span>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php endif ?>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

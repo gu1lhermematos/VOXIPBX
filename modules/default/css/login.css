@@ -1,0 +1,114 @@
+/* 
+    Document   : login
+    Created on : Apr 10, 2012, 1:27:39 PM
+    Author     : rodrigoack
+    Description:
+        Purpose of the stylesheet follows.
+*/
+root{
+    display: block;
+    height: 100%;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "segoe ui", tahoma, geneva, kalimati, sans-serif;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: url(../img/login_backgrounds/1.jpg) no-repeat;
+    background-position: center center;
+}
+
+a{
+    color: #fff;
+}
+
+a:hover{
+    color: #ccc;
+}
+
+#loginLayout{
+    height: 100%;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    width: 450px;
+    float: left;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6);
+    -moz-box-shadow:    5px 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow:         5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+div#wrapper{
+    margin: 0 0 0 50px;
+    width: 300px;
+}
+
+div.logo{
+    width: 265px;
+    height: 91px;
+    background: url(../img/logo_login.png) transparent no-repeat;
+    margin: 100px 0;
+}
+
+div.form_element{
+    margin-top: 20px;
+}
+
+.form_element dt{
+    font-size: 20px;
+}
+
+.form_element dd{
+    margin: 5px 0;
+}
+
+.form_element input[type="submit"]{
+    width: 110px;
+    height: 36px;
+    background-color: #8ba923;
+    background-image: url(../img/login_enter_button_icon.png);
+    background-repeat: no-repeat;
+    background-position: 15px;
+    text-indent: 20px;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+.form_element input[type="text"], .form_element input[type="password"]{
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #666;
+    height: 25px;
+    padding: 5px;
+    font-size: 16px;
+    width: 250px;
+    color: #666;
+    -moz-box-shadow:    inset 1px 1px 5px #666;
+    -webkit-box-shadow: inset 1px 1px 5px #666;
+    box-shadow:         inset 1px 1px 5px #666;
+}
+
+#help{
+    font-size: 13px;
+    display: table;
+    margin-top: 150px;
+}
+
+#help ul li{
+    margin: 10px 0;
+}
+
+#help ul li div.helpIcon{
+    width: 20px;
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+}

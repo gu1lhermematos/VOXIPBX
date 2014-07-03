@@ -1,0 +1,189 @@
+<?php
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Information of System"),  NULL, NULL, "reports");
+?>
+
+<div class="statusTable">
+    <div class="column">
+        <div class="title">
+            <h2><?php echo $this->translate("IP Extensions") ?></h2>
+        </div>
+        <table>
+           <thead>
+              <tr>
+                 <td class="esq"><?php echo $this->translate("Extension") ?></td>
+                 <td class="cen"><?php echo $this->translate("Type") ?></td>
+                 <td class="esq"><?php echo $this->translate("IP Address") ?></td>
+                 <td class="esq"><?php echo $this->translate("Latency") ?></td>
+                 <td class="esq"><?php echo $this->translate("Codecs") ?></td>
+              </tr>
+           </thead>
+           <?php
+           if ($this->ramais) {
+                foreach ($this->ramais as $key => $value) {
+            ?>
+              <tr bgcolor=''>
+                 <td class="esq"><?php echo $value['ramal'] ?></td>
+                 <td class="cen"><?php echo $value['tipo'] ?></td>
+                 <td class="esq"><?php echo $value['ip'] ?></td>
+                 <td class="esq"><?php echo $value['delay'] ?></td>
+                 <td class="esq"><?php echo $value['codec'] ?></td>
+              </tr>
+           <?php
+                }
+           } else {
+           ?>
+              <tr bgcolor=''>
+                 <td class="esq" colspan="5"><?php echo $this->translate("no extension available") ?></td>
+              </tr>
+           <?php
+           }
+           ?>
+        </table>
+    </div>
+    <div class="column">
+        <div class="title">
+            <h2><?php echo $this->translate("Queues") ?></h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td class="esq"><?php echo $this->translate("Queue") ?></td>
+                    <td class="esq"><?php echo $this->translate("Members") ?></td>
+                    <td class="esq"><?php echo $this->translate("Status") ?></td>
+                </tr>
+            </thead>
+        <?php
+
+        if ($this->filas) {
+            unset($this->filas['']);
+                foreach ($this->filas as $key => $value) {
+            ?>
+            <tr bgcolor=''>
+                <td class="esq" style="vertical-align: top;"><?php echo $value['fila'] ?></td>
+                <td class="esq"><?php echo $value['agent'] ?></td>
+                <td class="esq"><?php echo $value['status'] ?></td>
+            </tr>
+        <?php
+                }
+        } else {
+        ?>
+            <tr bgcolor=''>
+                <td class="esq" colspan="3"><?php echo $this->translate("no queue available") ?></td>
+            </tr>
+        <?php
+        }
+        ?>
+        </table>
+        <table>
+           <thead>
+              <tr>
+                 <td class="esq"><?php echo $this->translate("Licenses (g729)") ?></td>
+                 <td class="esq"><?php echo $this->translate("Code") ?></td>
+                 <td class="esq"><?php echo $this->translate("Decode") ?></td>
+              </tr>
+           </thead>
+           <?php
+                if ($this->codecs) {
+            ?>
+              <tr bgcolor=''>
+                 <td class="esq" style="vertical-align: top;"><?php echo $this->codecs[0] ?></td>
+                 <td class="esq"><?php echo $this->codecs[1] ?></td>
+                 <td class="esq"><?php echo $this->codecs[2] ?></td>
+              </tr>
+           <?php
+                }else{
+            ?>
+              <tr bgcolor=''>
+                 <td class="esq" colspan="3"><?php echo $this->translate("no data available") ?></td>
+              </tr>
+           <?php
+                }
+           ?>
+        </table>
+    </div>
+    <div class="column">
+        <div class="title">
+            <h2><?php echo $this->translate("SIP Trunks") ?></h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td><?php echo $this->translate("Name") ?></td>
+                    <td><?php echo $this->translate("User") ?></td>
+                    <td><?php echo $this->translate("IP Address") ?></td>
+                    <td><?php echo $this->translate("Status") ?></td>
+                    <td><?php echo $this->translate("Latency") ?></td>
+                </tr>
+            </thead>
+            <?php
+            if ($this->troncos) {
+                    foreach ($this->troncos as $key => $value) {
+                ?>
+            <tr>
+                <?php
+                        foreach ($value as $peerskey => $peersvalue) {
+                    ?>
+                        <td class="esq" style="vertical-align: top;"><?php echo $peersvalue ?><br/></td>
+                    <?php } ?>
+            </tr>
+            <?php
+                    }
+            } else {
+            ?>
+                <tr bgcolor=''>
+                    <td class="esq" colspan="4"><?php echo $this->translate("no trunk available") ?></td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
+    <div class="column">
+        <div class="title">
+            <h2><?php echo $this->translate("IAX2 Trunks") ?></h2>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td><?php echo $this->translate("Name") ?></td>
+                    <td><?php echo $this->translate("IP") ?></td>
+                    <td><?php echo $this->translate("Status") ?></td>
+                    <td><?php echo $this->translate("Latency") ?></td>
+                </tr>
+            </thead>
+            <?php
+            if ($this->iax2 != NULL) {
+                    foreach ($this->iax2 as $key => $value) {
+                ?>
+            <tr>
+                <?php
+                        foreach ($value as $peerskey => $peersvalue) {
+                    ?>
+                        <td class="esq" style="vertical-align: top;"><?php echo $peersvalue ?><br/></td>
+                    <?php } ?>
+            </tr>
+            <?php
+                    }
+            } else {
+            ?>
+                <tr bgcolor=''>
+                    <td class="esq" colspan="4"><?php echo $this->translate("no trunk available") ?></td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
+</div>
+<script>
+    function ipstatusRefresh(){
+        var get = $.get($(location).attr('href'), function(data){
+            $('.statusTable').html($('.statusTable', $(data)).html());
+        });
+        get.complete(function(){setTimeout(ipstatusRefresh, 5000)});
+    }
+
+    $(document).ready(ipstatusRefresh);
+</script>

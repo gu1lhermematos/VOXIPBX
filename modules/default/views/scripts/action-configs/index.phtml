@@ -1,0 +1,33 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$title = new Snep_Title("Routing");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Default Configs",  NULL, $this->baseUrl()."/index.php/default/action-configs", 'config');
+
+?>
+<table>
+    <thead>
+        <tr>
+            <th><?php echo $this->translate('Name') ?></th>
+            <th><?php echo $this->translate('Description') ?></th>
+            <th><?php echo $this->translate('Actions') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $c = 0;
+        foreach ($this->infoAcoes as $value) {
+        ($c ? $c = 0 : $c = 1 );
+        ?>
+        <tr class="c<?php echo $c ?>">
+            <td><?php echo $this->translate($value['name']) ?></td>
+            <td><?php echo $this->translate($value['description']) ?></td>
+            <td class="action"> 
+            	<a class="configurar" href='<?php echo $this->baseUrl(); ?>/index.php/action-configs/edit/id/<?php echo $value['id'] ?>'></a>
+            </td>
+        </tr>
+       <?php } ?>
+    </tbody>
+</table>

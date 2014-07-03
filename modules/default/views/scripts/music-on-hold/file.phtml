@@ -1,0 +1,94 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/index.css");
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Settings");
+$title->addOption('musicsessions', $this->baseUrl() . '/index.php/music-on-hold');
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+
+if ($this->error['error']) :
+    ?>
+    <div class="error_box"> <?php echo $this->error['message'] ?> </div>
+<?php endif ?>
+
+<table>
+    <thead>
+        <tr>
+            <th> <?php echo $this->translate('Name') ?> </th>
+            <th> <?php echo $this->translate('Description') ?> </th>
+            <th> <?php echo $this->translate('Date') ?> </th>
+            <th> <?php echo $this->translate('Class') ?> </th>
+            <th class="numeric"> <?php echo $this->translate('File') ?> </th>
+            <th class="numeric"> <?php echo $this->translate('Backup') ?> </th>
+            <th colspan="3" class="action"> <?php echo $this->translate('Actions') ?> </th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $c = 0;
+        if ($this->files):
+            foreach ($this->files as $file):
+                ?>
+                <?php ($c ? $c = 0 : $c = 1 ); ?>
+                <tr class="c<?php echo $c ?>">
+                    <td>
+                        <b> <?php echo $file['arquivo'] ?> </b>
+                    </td>
+
+                    <td>
+                        <?php echo $file['descricao'] ?>
+                    </td>
+                    <td>
+                        <?php echo ( $file['data'] ? new Zend_Date($file['data']) : '-' ); ?>
+                    </td>
+                    <td>
+                        <?php echo $file['secao'] ?>
+                    </td>
+                    <td ><?php if ($file['pasta'] != "moh") ; if (file_exists('/var/www' . $this->path_sound . $file['pasta'] . "/" . $file['arquivo'])): ?>
+                            <audio  controls="controls">
+                                <source src='<?php echo $this->path_sound . $file['pasta'] . "/" . $file['arquivo']; ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+                        <?php if ($file['pasta'] == "moh") ; if (file_exists('/var/www' . $this->path_sound . "/" . $file['arquivo'])): ?>
+                            <audio  controls="controls">
+                                <source src='<?php echo $this->path_sound . "/" . $file['arquivo']; ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+                    </td>
+                    <td>
+                        <?php if ($file['pasta'] != "moh") ; if (file_exists('/var/www' . $this->path_sound . $file['pasta'] . '/backup/' . $file['arquivo'])): ?>
+                            <audio controls="controls">
+                                <source src='<?php echo $this->path_sound . $file['pasta'] . '/backup/' . $file['arquivo'] ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+                        <?php if ($file['pasta'] == "moh") ; if (file_exists('/var/www' . $this->path_sound . '/backup/' . $file['arquivo'])): ?>
+                            <audio  controls="controls">
+                                <source src='<?php echo $this->path_sound . '/backup/' . $file['arquivo']; ?>' type="audio/mpeg" />
+                            </audio>
+                        <?php endif ?>
+                    </td>
+                    <td class="action">
+                        <?php if ($file['pasta'] != "moh") ; if (file_exists('/var/www' . $this->path_sound . $file['pasta'] . '/backup/' . $file['arquivo'])) : ?>
+                            <a class="restaurar" title="Restaurar" href="<?php echo $this->url ?>/restore/file/<?php echo $file['arquivo'] ?>/class/<?php echo $file['secao'] ?>">
+
+                            </a>
+                        <?php endif ?>
+                        <?php if ($file['pasta'] == "moh") ; if (file_exists('/var/www' . $this->path_sound . '/backup/' . $file['arquivo'])) : ?>
+                            <a class="restaurar" title="Restaurar" href="<?php echo $this->url ?>/restore/file/<?php echo $file['arquivo'] ?>/class/<?php echo $file['secao'] ?>">
+
+                            </a>
+                        <?php endif ?>
+                    </td>
+                    <td class="action">
+                        <a class="alterar" href="<?php echo $this->url ?>/editfile/file/<?php echo $file['arquivo'] ?>/class/<?php echo $file['secao'] ?>"></a>
+                    </td>
+                    <td class="action">
+                        <?php $this->remove_msg = $this->translate("Are you sure you want to remove this record?"); ?>
+                        <a class="excluir" href="<?php echo $this->url ?>/removefile/file/<?php echo $file['arquivo'] ?>/class/<?php echo $file['secao'] ?>"></a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        <?php endif ?>
+</table>

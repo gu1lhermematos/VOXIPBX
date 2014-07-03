@@ -1,0 +1,63 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl()."/index.php/default/contacts/import");
+$title->addOption('export', $this->baseUrl()."/index.php/default/contacts/export");
+$title->addOption('multiremove', $this->baseUrl()."/index.php/default/contacts/multi-remove/");
+echo $title->getHtml();
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/removeItem.js');
+echo $this->render('filter.phtml');
+?>
+<table>
+   <thead>
+      <tr>
+         <th class="numeric"><?php echo Snep_Order::getLink($this, 'Code', 'ide') ?> </th>
+         <th><?php echo Snep_Order::getLink($this, 'Name', 'nome') ?> </th>
+         <th><?php echo Snep_Order::getLink($this, 'Group', 'name') ?> </th>
+         <th><?php echo Snep_Order::getLink($this, 'City', 'city') ?> </th>
+         <th><?php echo Snep_Order::getLink($this, 'State', 'state') ?> </th>
+         <th><?php echo Snep_Order::getLink($this, 'Zip Code', 'cep') ?> </th>
+         <th class="numeric"><?php echo Snep_Order::getLink($this, 'Phone', 'phone_1') ?> </th>
+         <th class="numeric"><?php echo Snep_Order::getLink($this, 'Cellphone', 'cell_1') ?> </th>
+         <th colspan="2" class="action"> <?php echo $this->translate('Actions') ?> </th>
+      </tr>
+   </thead>
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->contacts):
+        foreach($this->contacts as $contact ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td class="numeric"> <b> <?php echo $contact['ide'] ?> </b> </td>
+                <td> <?php echo $contact['nome'] ?> </td>
+                <td> <?php echo $contact['name'] ?> </td>
+                <td> <?php echo $contact['city'] ?> </td>
+                <td> <?php echo $contact['state'] ?> </td>
+                <td> <?php echo $contact['cep'] ?> </td>
+                <td class="numeric"> 
+                    <?php echo $contact['phone_1'] ?>
+                </td>
+                <td class="numeric"> 
+                    <?php echo $contact['cell_1'] ?>
+                </td>
+                <td class="action">
+                    <a class="alterar" href="<?php echo $this->url ?>/edit/id/<?php echo $contact['ide'] ?>">
+                        
+                    </a>
+                </td>
+                <td class="action">
+                    <?php $this->remove_msg = $this->translate("Do you really wish to remove this item?");?>
+                    <span class="excluir" onclick="remove_item('<?php echo $this->url ?>','<?php echo $contact['ide'] ?>','<?php echo $this->remove_msg ?>')">
+                        
+                    </span>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

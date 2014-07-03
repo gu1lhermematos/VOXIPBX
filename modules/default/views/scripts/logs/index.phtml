@@ -1,0 +1,65 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css" );
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/ui/jquery-ui-timepicker-addon.js');
+
+$locale = str_replace("_", "-", Snep_Locale::getInstance()->getLocale());
+if( $locale == "en-US") { $locale = 'en_US'; }
+
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("System logs"),  NULL, NULL, "reports");
+?>
+
+<style>
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 11px; }
+.ui-datepicker{ border: solid 1px #CCC; }
+</style>
+
+<?php
+echo $this->form;
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('gerar', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/');
+echo $buttons->getHtml();
+?>
+<script type="text/javascript"> 
+  $('#init_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Seg','Ter','Qua','Qui','Sex','Sab','Dom'],
+	dayNamesMin: ['Seg','Ter','Qua','Qui','Sex','Sab','Dom'],
+	dateFormat: 'dd/mm/yy'
+});
+$('#end_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Seg','Ter','Qua','Qui','Sex','Sab','Dom'],
+	dayNamesMin: ['Seg','Ter','Qua','Qui','Sex','Sab','Dom'],
+	dateFormat: 'dd/mm/yy'
+});
+</script>

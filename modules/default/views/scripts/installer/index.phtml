@@ -1,0 +1,23 @@
+<div class="snep_form">
+<?php
+    if( $this->error['error'] ) : ?>
+        <div class="error_box"> <?php echo $this->error['message']  ?> </div>
+    <?php endif ?>
+
+    <div class="info_box">
+        <h1> <?php echo $this->translate("Welcome to SNEP!"); ?> </h1>
+
+        <p>
+        <?php echo $this->translate("You will be redirected to the SNEP Installer"); ?>
+        </p>
+        <ul>
+            <li><?php echo $this->translate("Language and Locale selection") ?></li>
+            <li><?php echo $this->translate("System diagnostic") ?></li>
+            <li><?php echo $this->translate("Asterisk and Database Access information"); ?></li>
+            <li><?php echo $this->translate("Define administrator password"); ?></li>
+        </ul>
+    </div>
+</div>
+
+<?php echo $this->form ?>
+

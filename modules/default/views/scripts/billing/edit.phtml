@@ -1,0 +1,136 @@
+<?php
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("change tariff"), $this->translate("tariffs"), $this->baseUrl() . "/index.php/default/billing");
+$this->headScript()->prependFile($this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile($this->baseUrl() . '/includes/javascript/maskCostCenter.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+?>
+
+<form name="formulario" style="width: 690px;" class="snep_form" id="snep_form" method="POST" action="">
+    <?php
+    $cnt = 0;
+    $c = 0;
+    foreach ($this->billingValues as $idBill => $bill) :
+        ?>
+        <?php ($c ? $c = 0 : $c = 1 ); ?>
+        <div class="line" style="background-color: #E5E5E5; padding:10px; border-radius:10px;">
+            <div class="label">
+                <input type="hidden" name="data[<?php echo $idBill ?>]" id="data"value="<?php echo $bill['data'] ?>" />
+                <?php echo new Zend_Date($bill['data']); ?>
+            </div>
+            <div class="input">
+                <?php echo $this->translate("Tariff to Fixed:") ?>
+                <input type="text"
+                       name="vfix[<?php echo $idBill ?>]" id="vfix"
+                       value="<?php echo $bill['vfix'] ?>" class="campos maskCurrency"
+                       style="text-align: right;" size="1"
+                       onKeyUp="$('#edit<?php echo $idBill ?>').attr('checked', true).change();" />
+            </div>
+            <div class="input">
+                <?php echo $this->translate("Tariff to Cellular:") ?>
+                <input type="text"
+                       name="vcel[<?php echo $idBill ?>]" id="vcel"
+                       value="<?php echo $bill['vcel'] ?>" class="campos maskCurrency"
+                       style="text-align: right;" size="1"
+                       onKeyUp="$('#edit<?php echo $idBill ?>').attr('checked', true).change();" />
+            </div>
+            <div class="input">
+                <input class="campos newcheck" type="checkbox"
+                       name="action[<?php echo $idBill ?>]" id="edit<?php echo $idBill ?>" value="<?php echo $idBill ?>" />
+                       <?php echo $this->translate('Edit') ?>
+            </div>
+        </div>
+        <?php
+        $cnt = $idBill;
+
+    endforeach
+    ?>
+
+<?php $cnt++ ?>
+    <div class="line" style="background-color: #E5E5E5; padding:10px; border-radius:10px;">
+        <div class="label">
+<?php echo $this->translate('New Adjustment'); ?> - <?php echo new Zend_Date(); ?>
+            <input type="hidden" name="data[<?php echo $cnt ?>]" id="data"
+                   value="<?php echo Zend_Date::now() ?>" />
+        </div>
+        <div class="input">
+<?php echo $this->translate("Tariff to Fixed:") ?>
+            <input type="text" 
+                   name="vfix[<?php echo $cnt ?>]"
+                   id="vfix" class="campos maskCurrency" style="text-align: right;" size="1"
+                   value="0"
+                   onKeyUp="$('#add<?php echo $cnt ?>').attr('checked', true).change();" />
+        </div>
+        <div class="input">
+<?php echo $this->translate("Tariff to Cellular:") ?>
+            <input type="text" name="vcel[<?php echo $cnt ?>]"
+                   id="vcel" class="campos maskCurrency" style="text-align: right;" size="1"
+                   value="0"
+                   onKeyUp="$('#add<?php echo $cnt ?>').attr('checked', true).change();" />
+        </div>
+        <div class="input">
+            <input class="campos newcheck" type="checkbox"
+                   name="action[<?php echo $cnt ?>]" id="add<?php echo $cnt ?>" value="<?php echo $cnt ?>" />
+<?php echo $this->translate('Add'); ?>
+        </div>
+    </div>
+</form>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><h2>Tarifas - Alterar</h2><p>
+
+
+    <p>Esta rotina permite que uma Tarifa tenha o seu Valor 
+        Alterado no Sistema.</p>
+    <span style="display:none;" id="text_description">
+        <ul>  
+            <li><strong>Tarifa para Fixo: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Fixos.</li>
+            <li><strong>Tarifa para Celular: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Celulares.</li>
+        </ul>
+
+        <ul>
+            <li><p>A primeira caixa esta datada com o dia e a hora na qual foi inserida as devidas tarifas. Você tem a opção de <strong>Editar</strong> essas tarifas, fazendo com que nos relatórios as tarifas mudem para esse valor, mesmo aquelas ligações que ja tenham sido feitas. Ou fazer um novo ajuste na caixa abaixo, acionando o botão <strong>Adicionar</strong>, fazendo que apartir da data de hoje as ligações serão tarifadas com o valor novo, e as antigas permanecerão com o valor antigo.</p></li>
+        </ul>
+
+
+        </li>
+        </ul>
+
+        </li>
+        </ul>
+        </li>
+        </ul>
+        </p>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;top:25px;margin:15px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div></div>
+
+<script type="text/javascript">
+
+                       $(document).ready(function() {
+                           $(".more_description").click(function(e) {
+                               $('.description_form').animate({height: "100%", }, 500);
+                               $("#text_description").show();
+                               $(".less_description").show();
+                               $(".more_description").hide();
+                               e.preventDefault();
+                           });
+                           $(".less_description").click(function(e) {
+                               $(".description_form").animate({height: "100%", }, 500);
+                               $("#text_description").hide();
+                               $(".more_description").show();
+                               $(".less_description").hide();
+                               e.preventDefault();
+                           });
+                       })
+</script>
+</div>
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/billing/');
+echo $buttons->getHtml();
+?>
+

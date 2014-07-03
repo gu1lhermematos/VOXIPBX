@@ -1,0 +1,85 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/jqueryui.css");
+$this->headLink()->appendStylesheet($this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css");
+
+$this->headScript()->appendFile($this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form_config.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("New Group"), $this->translate("Extension Groups"), $this->baseUrl() . "/index.php/default/extensions-groups");
+
+echo $this->form;
+?>
+
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Cadastrar Grupos de Ramais</h2>
+
+    <p>Essa rotina é usada para criação de grupo de ramais no ToFalando.</p>
+
+    <p>Grupos podem ser do tipo usuário,administrador ou nenhum. Esse tipo indica herança.</p>
+
+    <span style="display:none;" id="text_description">
+
+        <p><strong>Por exemplo</strong> : Se uma regra de negócio for criada permitindo
+            ligações para Administradores e o grupo Comercial for do tipo Administrador,
+            todos os ramais que pertentecem ao grupo Comercial também serão considerados
+            pela regra como administradores.
+        </p>
+
+        <p><strong>Seleção de Ramais</strong> : É possivel, ao criar um grupo, que você
+            selecione os ramais que farão parte do mesmo.
+        </p>
+
+        <p><strong>Ramais Disponíveis</strong> : Contém a relação de ramais disponíveis
+            no sistema. Cada ramal possue o atual grupo a que ele pertence entre parênteses:</p>
+
+        <strong>Ex:</strong> 1001 (admin)</p>
+
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/extensions-groups/');
+echo $buttons->getHtml();
+?>
+
+<style>
+    .ui-multiselect{
+        border:solid 1px #DDD;
+        border-radius:5px;
+        padding: 2px;
+        background-color: #FFF;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

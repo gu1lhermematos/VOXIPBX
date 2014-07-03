@@ -1,0 +1,243 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css");
+
+$this->headScript()->appendFile($this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/ui/jquery-ui-timepicker-addon.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+
+
+$this->headLink()->appendStylesheet($this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css");
+
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$locale = str_replace("_", "-", Snep_Locale::getInstance()->getLocale());
+if ($locale == "en-US") {
+    $locale = 'en_US';
+}
+?>
+
+<?php
+$title = new Snep_Title("Reports");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Relatório de Chamadas", "", "", "reports");
+?>
+
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Relat&oacute;rio de Chamadas</h2>
+    <p>
+        Este Relatório permite que sejam visualizadas as chamadas registradas no sistema, mediante varios critérios de filtros.
+        <br>
+        Também pode ser visualizado a tarifas calculadas para cada ligação de saída e ouvir-se a gravação de cada ligação, desde que estas existam e estejam disponíveis .
+    </p>
+    <span style="display:none;" id="text_description">
+        <ul>
+            <li>
+                <strong>Per&iacute;odo: </strong>Define o intervalo de datas/hora do qual se deseja extrair as informa&ccedil;&otilde;es;
+            </li>
+            <li>
+                <strong>Ordenar: </strong>Possibilidade de ordenar os resultados por data, números de origem ou destino.
+            </li>
+            <li>
+                <strong>Origem/Destino: </strong>Define um filtro de n&uacute;mero(s) ou parte dele(s) para chamadores.
+            </li>
+            <li>
+                <strong>Centro de Custos: </strong>Define de qual ou quais Centros de Custo se deseja ver as chamadas.
+            </li>
+            <li>
+                <strong>Status da Liga&ccedil;&atilde;o: </strong>Define qual Status as Liga&ccedil;&otilde;es que devem
+                ser exibidas no relat&oacute;rio devem ter.
+            </li>
+            <li>
+                <strong>Dura&ccedil;&atilde;o: </strong>Tempo em SEGUNDOS que as liga&ccedil;&otilde;es devem ter.
+            </li>
+            <li>
+                <strong>Tipo de Chamada: </strong>Que tipos de liga&ccedil;&atilde;o devem ser exibidas
+                no relat&oacute;rio. O crit&eacute;rio de Originadas/Recebidas &eacute; baseado no conceito de Tamanho
+                M&aacute;ximo do Campo "src" e Tamanho M&iacute;nimo do Campo "dst" encontrado em Configura&ccedil;&otilde;es >> Par&acirc;metros.
+            </li>
+            <li>
+                <strong>Ver Tarifa&ccedil;&atilde;o: </strong>Define se liga&ccedil;&otilde;es devem exibir os valores
+                tarifados, baseado nas tarifas definidas no sistema.
+            </li>
+            <li>
+                <strong>Ver arquivos de gravação:</strong> Esta opção permite que você veja os arquivos de gravação, se disponíveis.
+            </li>
+            <li>
+                <strong>Tipo de Relatório: </strong> Permite que você escolha o tipo de relatório a ser exibido
+                <ul>
+                    <li><strong>Analítico:</strong> É o relatório normal, onde todos os dados são disponibilizados para uma analise mais minuciosa.</li>
+                    <li><strong>Sintético:</strong> Disponibiliza um panorama geral sobre os dados selecionados, com as totalizações. É utilizado para relatórios restritos a um ou mais ramais ou grupo de ramal.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Resultados:</strong>
+
+                Cada linha do relatório representa um registro de ligação, sendo possível verificar a rastreabilidade da ligação, ou seja,
+                as ligações que foram tranferidas ou sofreram transbordo de filas ou agentes da fila possuem um botão para que este comportamento seja
+                observado.
+            </li>
+            <li>
+                <strong>Gr&aacute;fico: </strong>Se optar por exibir um gr&aacute;fico ao inv&eacute;s de
+                um relat&oacute;rio, define o tipo de gr&aacute;fico a ser exibido.
+            </li>
+            <li>
+                <strong>Exportar CSV:</strong> Gera relat&oacute;rio no formato CSV (Valores separados por v&iacute;rgula) afim
+                de tais informa&ccedil;&otilde;es sejam utilizadas em Planilhas Eletr&ocirc;nicas e outros Softwares estat&iacute;sticos.</li>
+
+            <li>
+                <strong>Exportar para PDF:</strong> Gera relat&oacute;rio no formato PDF.</li>
+
+        </ul>
+
+        <strong> Observações Importantes</strong>:
+        <br>
+        <ul>
+            <li>Os <strong>Sub-totais</strong> compreendem todas as ocorr&ecirc;ncias da sele&ccedil;&atilde;o informada, mesmo que a ocorr&ecirc;ncia seja parte de um contexto maior. Exemplo: - Se um relatorio de todas as chamadas recebidas pelo ramal 8033 foi solicitado, as ocorr&ecirc;ncias de transfer&ecirc;ncia para este ramal tamb&eacute;m s&atilde;o contabilizadas, mas n&atilde;o necessariamente ser&aacute; exibida na lista principal.</li>
+            <li>Ao solicitar um relat&oacute;rio onde &eacute; especificada uma origem ou destino, toda e qualquer  ocorr&ecirc;ncia ser&aacute; contabilizada, mesmo que esta seja apenas parte de uma chamada.</li>
+        </ul>
+        <br>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+
+<?php if (isset($this->error)) { ?>
+    <div class="error_box" > 
+        <?php echo $this->error ?>
+    </div>
+    <?php
+}
+
+echo $this->form;
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('gerar', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+    // Period
+    $('.line').eq(0).addClass('colun');
+    $('.line').eq(1).addClass('colun');
+    // Source
+    $('.line').eq(2).addClass('colun');
+    $('.line').eq(3).addClass('colun');
+    $('#source').css('width', 320);
+    // Destination
+
+    $('.line').eq(4).addClass('colun');
+    $('.line').eq(5).css('width',200); 
+    $('.line').eq(5).addClass('colun');
+    $('.line').eq(6).css('width',200); 
+    $('.line').eq(6).addClass('colun');
+
+    // Call duration
+    $('.line').eq(7).addClass('colun');
+    $('.line').eq(8).addClass('colun');
+    
+    
+    
+    
+    //$('#source-srctype').css('width', 125).prependTo($('#source-groupSrc').css('width', 150).parent());
+    //$('#destination-dsttype').css('width', 125).prependTo($('#destination-groupDst').css('width', 150).parent());
+  
+
+    $('#period-initDay').datetimepicker({
+        timeText: 'Tempo',
+        hourText: 'Hora',
+        minuteText: 'Minuto',
+        secondText: 'Segundo',
+        currentText: 'Agora',
+        closeText: 'Fechar',
+        prevText: 'Anterior',
+        nextText: 'Próximo',
+        monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+        monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        dayNamesMin: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        dateFormat: 'dd/mm/yy'
+    });
+    $('#period-finalDay').datetimepicker({
+        timeText: 'Tempo',
+        hourText: 'Hora',
+        minuteText: 'Minuto',
+        secondText: 'Segundo',
+        currentText: 'Agora',
+        closeText: 'Fechar',
+        prevText: 'Anterior',
+        nextText: 'Próximo',
+        monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+        monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        dayNamesMin: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        dateFormat: 'dd/mm/yy'
+    });
+
+    $('#source-selectSrc').change(function() {
+        if ($(this).val() == '') {
+            $('#source-srctype').removeAttr('disabled');
+            $('#source-groupSrc').removeAttr('disabled');
+        } else {
+            $('#source-srctype').attr('disabled', true);
+            $('#source-groupSrc').attr('disabled', true);
+        }
+    });
+    $('#source-selectSrc').change();
+    $('#destination-selectDst').change(function() {
+        if ($(this).val() == '') {
+            $('#destination-dsttype').removeAttr('disabled');
+            $('#destination-groupDst').removeAttr('disabled');
+        } else {
+            $('#destination-dsttype').attr('disabled', true);
+            $('#destination-groupDst').attr('disabled', true);
+        }
+    });
+    $('#destination-selectDst').change();
+</script>
+<style>
+    .ui-multiselect{
+        border:solid 1px #DDD;
+        border-radius:5px;
+        padding: 2px;
+        background-color: #FFF;
+        margin: 0px !important;
+        width: 630px !important;
+    }
+    .available{
+        width: 334px !important;	
+    }
+    .ui-multiselect .search{
+        width: 220px !important;		
+    }
+    .snep_form {
+        width: 700px !important;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

@@ -1,0 +1,81 @@
+<?php
+$this->headScript()->appendFile( $this->baseUrl() .'/includes/filter.js');
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Reports");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Calls", "", "", "reports");
+
+?>
+<form method="POST" class="snep_form filter_form" id="snep_form" action="<?php echo $this->baseUrl().'/index.php/calls-report/'?>">
+	<div class="line">
+		<div>
+			<label class="label">Período</label>
+		</div>
+		<div class="input">
+			<div style="float:left; display: table;">
+				<input type="text" name="initDay" class="maskDate" size="0"/> até <input type="text" class="maskDate" name="finalDay" size="0"/>
+			</div>
+			<div style="float:left; display: table; margin-left: 15px; margin-top: 3px;">
+				<input type="checkbox" class="newcheck" name="30dias"><div class="check_label"><label> Últimos 30 Dias </label></div>
+			</div>
+		</div>
+	</div>
+		<div class="line">
+		<div>
+			<label class="label">Outras Opções</label>
+		</div>
+		<div class="input">
+			<div style="float:left; display: table; margin-left: 15px; margin-top: 3px;">
+				<input type="checkbox" class="newcheck" name="charging"><div class="check_label"><label> Mostrar tarifação </label></div>
+			</div>
+			<div style="float:left; display: table; margin-left: 15px; margin-top: 3px;">
+				<input type="checkbox" class="newcheck" name="show_records"><div class="check_label"><label> Mostrar Arquivos de Gravação </label></div>
+			</div>
+		</div>
+	</div>
+	<h2 class="subtitle"><img src="/snep/modules/default/img/filter_icon.png?">Filtros Condicionais</h2>
+	<div class="filters"></div>
+</form>
+
+<div class="description_form"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rhoncus vehicula molestie. Morbi eu quam id orci egestas dignissim. Nunc pulvinar lacus sed nisl sollicitudin vel interdum eros auctor. Cras quis lectus ullamcorper orci viverra tristique. Mauris lectus magna, lobortis ac elementum id, semper id orci. Proin enim leo, porttitor laoreet tristique eget, dapibus scelerisque augue.</p><p>In fringilla faucibus mauris, vel venenatis nisl gravida id. Maecenas lacus tortor, fermentum ac pellentesque sodales, facilisis sed nibh. Nulla vitae arcu lacus. Morbi convallis ultricies nunc, at ultrices neque malesuada eu. Aenean dignissim vestibulum dui non condimentum.</p></div>
+
+<script>
+$inputs = new Array();
+$inputs['filter'] = "<select class='input' name='filter[]'>\
+	<option value=''></option>\
+	<option value='origem'>Origem</option>\
+	<option value='destino'>Destino</option>\
+	<option value='status'>Status</option>\
+	</select>";
+$inputs['origem'] = "<select class='input' name='origem[]'>\
+	<option value=''></option>\
+	<option value='a'>A</option>\
+	<option value='b'>B</option>\
+	</select>";
+$inputs['status'] = "<select class='input' name='origem[]'>\
+	<option value=''></option>\
+	<option value='a'>A</option>\
+	<option value='b'>B</option>\
+	</select>";
+$inputs['status'] = "<div class='center'>\
+	<input type='checkbox' name='status_todas[]' value='1' value=''/> Todas\
+	<input type='checkbox' name='status_atendidas[]' value='1' value=''/> Atendidas\
+	<input type='checkbox' name='status_naoatendidas[]' value='1' value=''/> Não Atendidas\
+	<input type='checkbox' name='status_ocupadas[]' value='1' value=''/> Ocupadas\
+	<input type='checkbox' name='status_falharam[]' value='1' value=''/> Falharam\
+	</div>";
+
+addFilters();
+
+</script>
+
+<?php 
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('gerar', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/');
+echo $buttons->getHtml();
+
+?>

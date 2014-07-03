@@ -1,0 +1,23 @@
+<?php
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Links errors"), "", $this->baseUrl()."/index.php/default/extensions", "export");
+
+?>
+<style>
+#errorBox{
+	width: 620px;
+	margin: 20px auto;
+	padding: 0 20px;
+	background: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+}
+
+</style>
+<div id="errorBox">
+	<?php $i18n = Zend_Registry::get("i18n");?>
+    <h1><?php  echo $i18n->translate("Error!"); ?></h1>
+    
+    <p><?php echo $i18n->translate("Unable to connect to Asterisk. Please contact system administrator"); ?>.</p>
+</div>

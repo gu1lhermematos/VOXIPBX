@@ -1,0 +1,38 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jqueryui.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form_config.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Members"),  $this->translate("Queues"), $this->baseUrl()."/index.php/default/queues");
+
+echo $this->form;
+?>
+<div class="description_form"><p><h2>Membros da Fila</h2>
+
+<p>Esta rotina do sistema permite que Ramais sejam Cadastrados em uma determinada
+Fila.</p>
+<p>O Membros Cadastrados atrav&eacute;s desta rotina s&atilde;o considerados membros Est&aacute;ticos, ou seja,
+membros que n&atilde;o precisam efetuar Login para fazer parte de uma determinada Fila.</p>
+ <p>
+ Para selecionar o(s) Ramal(is) desejado(s), cliquem no sinal de "+" (mais) referente ao ramal, ele ir&aacute; para o lado direito e ent&atilde;o clique no bot&atilde;o "Gravar".
+</p></p></div>
+
+<script type="text/javascript">
+	$("#members_box_add").css("height", 500);
+</script>
+<?php 
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/queues/');
+echo $buttons->getHtml();
+?>

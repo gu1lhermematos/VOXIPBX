@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : buttonsOptions.xml
+    Author     : Iago Uilian Benrdt
+-->
+<buttons>
+	<add>
+		<name>new</name>
+		<icon>new_icon.png</icon>
+	</add>
+	<save>
+		<name>Save</name>
+		<icon>save_form_icon.png</icon>
+	</save>
+	<gerar>
+		<name>Generate report</name>
+		<icon>report_button.png</icon>
+	</gerar>
+	<route>
+		<name>Generate route</name>
+		<icon>report_button.png</icon>
+	</route>
+	<cancel>
+		<name>Cancel</name>
+		<icon>form_cancel_icon.png</icon>
+	</cancel>
+	<delete>
+		<name>Delete</name>
+		<icon>delete_icon.png</icon>
+	</delete>
+	<import>
+		<name>Import</name>
+		<icon>import_button.png</icon>
+	</import>
+	<export>
+		<name>Export</name>
+		<icon>export_button.png</icon>
+	</export>
+</buttons>

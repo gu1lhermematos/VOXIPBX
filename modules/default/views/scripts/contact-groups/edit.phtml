@@ -1,0 +1,41 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jqueryui.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form_config.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Edit Group"),  $this->translate("Contact Groups"), $this->baseUrl()."/index.php/default/contact-groups");
+
+echo $this->form;
+
+?>
+<div class="description_form"><p><h2>Grupo de Contatos - Alterar</h2>
+
+<p>
+    Cadastra um novo grupo de contatos ou edita um grupo existente. Basta
+    fornecer um nome para cadastrar o grupo. Opcionalmente você pode selecionar
+    os contatos diretamente da lista abaixo para facilitar a administração.
+</p></p></div>
+<?php 
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/contact-groups/');
+echo $buttons->getHtml();
+?>
+<style>
+.ui-multiselect{
+	border:solid 1px #DDD;
+	border-radius:5px;
+	padding: 2px;
+	background-color: #FFF;
+}
+</style>

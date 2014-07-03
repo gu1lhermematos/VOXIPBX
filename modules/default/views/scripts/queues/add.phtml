@@ -1,0 +1,73 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form_config.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("New Queue"), $this->translate("Queues"), $this->baseUrl() . "/index.php/default/queues");
+
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Filas - Incluir</h2>
+
+    <p>Esta rotina permite a Inclus&atilde;o do Cadastro 
+        de uma Fila de Atendimento.</p>
+    <p>As Filas s&atilde;o uma das funcionalidades que o Asterisk tem para a implementa&ccedil;&atilde;o
+        de um call center b&aacute;sico</p>
+    <span style="display:none;" id="text_description">
+        <ul>
+            <li><strong>Nome:</strong> Nome da Fila - N&atilde;o use espa&ccedil;os ou caracters acentuados/especiais como: &ccedil;&atilde;&eacute;@#%... </li>
+            <li><strong>Tempo do toque por agente:</strong> Tempo que o ramal fica a tocar.</li>
+            <li><strong>Tempo de la&ccedil;o...:</strong> Tempo que a musica volta a tocar do inicio.</li>  
+
+            <li><strong>Tempo de espera para tocar todos...:</strong> Quando um prazo expira, esse é o tempo em que a chamada irá ser novamente apresentada a um agente disponível.</li> 
+
+            <li><strong>Tempo de descanso...:</strong> Tempo que o agente tem para descanso ap&oacute;s seu &uacute;ltimo atendimento.</li>
+            <li><strong>N&uacute;mero m&aacute;ximo de liga&ccedil;&atilde;o...:</strong> M&aacute;ximo de liga&ccedil;&otilde;es que a fila suporta.</li>
+            <li><strong>SLA fila:</strong> &Eacute; o tempo máximo que a liga&ccedil;&atilde;o fica esperando na fila.</li>
+            <li><strong>Estrat&eacute;gia de distribui&ccedil;&atilde;o... : </strong>Estrat&eacute;gias de distribui&ccedil;&atilde;o
+                de chamadas aos agentes.</li>
+
+            <p><strong>CONFIGURA&Ccedil;&Atilde;O AVAN&Ccedil;ADA</strong></p>
+
+            <li><strong>Prioridade da fila:</strong> N&uacute;mero que indica a prioridade da fila, N&uacute;meros mais baixos maior a prioridade da mesma.</li>
+
+      
+        </ul> </p>
+
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+</div>
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/queues/');
+echo $buttons->getHtml();
+?>
+<script type="text/javascript">
+    subTitle($(".snep_form h2").eq(1), "<?php echo $this->baseUrl(); ?>/modules/default/img/filter_icon.png?");
+    subTitle($(".snep_form h2").eq(2), "<?php echo $this->baseUrl(); ?>/modules/default/img/filter_icon.png?");
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

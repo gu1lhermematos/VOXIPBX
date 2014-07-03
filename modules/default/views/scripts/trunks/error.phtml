@@ -1,0 +1,9 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+?>
+
+<div id="error">
+    <?php echo $this->error; ?>
+    <br>
+    <input class="new_button" type="button" id="voltar" title="Voltar" style="" value="Voltar" onClick="javascript:location.href = 'javascript:history.back();'" />
+</div>

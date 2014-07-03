@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : billing.xml
+    Author     : Iago Uilian Berndt
+-->
+<modelo>
+    <elements>
+    	<operadora>
+            <type>select</type>
+            <options>
+                <required>true</required>
+                <label>Carrier</label>
+            </options>
+        </operadora>
+    	<pais>
+            <type>select</type>
+            <options>
+                <required>true</required>
+                <label>Country</label>
+            </options>
+        </pais>
+    	<estado>
+            <type>select</type>
+            <options>
+                <required>true</required>
+                <label>State</label>
+            </options>
+        </estado>
+    	<cidade>
+            <type>select</type>
+            <options>
+                <required>true</required>
+                <label>City</label>
+            </options>
+        </cidade>
+    	<ddi>
+            <type>text</type>
+            <options>
+                <required>true</required>
+                <maxlength>4</maxlength>
+                <label>Country Code</label>
+                <validators>
+	                <regex>
+	                    <validator>regex</validator>
+	                    <options>
+	                        <pattern>/^(([0-9]\.?)+)$/</pattern>
+	                        <messages>
+	                            <regexNotMatch>This field should contain numbers only</regexNotMatch>
+	                        </messages>
+	                    </options>
+	                </regex>
+	            </validators>
+            </options>
+        </ddi>
+    	<ddd>
+            <type>text</type>
+            <options>
+                <required>true</required>
+                <maxlength>2</maxlength>
+                <label>City Code</label>
+                <validators>
+	                <regex>
+	                    <validator>regex</validator>
+	                    <options>
+	                        <pattern>/^(([0-9]\.?)+)$/</pattern>
+	                        <messages>
+	                            <regexNotMatch>This field should contain numbers only</regexNotMatch>
+	                        </messages>
+	                    </options>
+	                </regex>
+	            </validators>
+            </options>
+        </ddd>
+    	<prefixo>
+            <type>text</type>
+            <options>
+                <required>true</required>
+                <maxlength>4</maxlength>
+                <label>Prefix</label>
+                <validators>
+	                <regex>
+	                    <validator>regex</validator>
+	                    <options>
+	                        <pattern>/^(([0-9]\.?)+)$/</pattern>
+	                        <messages>
+	                            <regexNotMatch>This field should contain numbers only</regexNotMatch>
+	                        </messages>
+	                    </options>
+	                </regex>
+	            </validators>
+            </options>
+        </prefixo>
+    	<vfix>
+            <type>text</type>
+            <options>
+                <required>true</required>
+                <label>Minute Fee for Residencial</label>
+                <description>Use dot for decimal</description>
+                <class>maskCurrency</class>
+                <validators>
+	                <regex>
+	                    <validator>regex</validator>
+	                    <options>
+	                        <pattern>/^(([0-9]\.?)+)$/</pattern>
+	                        <messages>
+	                            <regexNotMatch>This field should contain numbers only</regexNotMatch>
+	                        </messages>
+	                    </options>
+	                </regex>
+	            </validators>
+            </options>
+        </vfix>
+    	<vcel>
+            <type>text</type>
+            <options>
+                <required>true</required>
+                <label>Minute Fee for Mobile</label>
+                <description>Use dot for decimal</description>
+                <class>maskCurrency</class>
+                <validators>
+	                <regex>
+	                    <validator>regex</validator>
+	                    <options>
+	                        <pattern>/^(([0-9]\.?)+)$/</pattern>
+	                        <messages>
+	                            <regexNotMatch>This field should contain numbers only</regexNotMatch>
+	                        </messages>
+	                    </options>
+	                </regex>
+	            </validators>
+            </options>
+        </vcel>
+    </elements>
+</modelo>

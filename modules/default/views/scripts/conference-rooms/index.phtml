@@ -1,0 +1,126 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/index.css");
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->translate("Conference Rooms"), NULL, $this->baseUrl() . "/index.php/default/extensions-groups", 'config');
+?>
+<style type="text/css">
+    .checkbox_{
+        vertical-align: middle;
+        margin-right: 5px;	
+    }
+    .password{
+        text-align: center;	
+    }
+</style>
+
+<div style="height:100%;width: 22%; margin: 5px 0 40px 0;"class="description_form" ><p><h2>Salas de conferência</h2>
+
+    <p>A conferência consiste em adicionar uma ou mais pessoas a uma conversa, 
+        possibilitando que sejam feitas salas de conferência.Os números das Salas de 
+        Conferências são pré­determinados na Instalação do ToFalando, e são reconhecidos no 
+        Sistema como se fossem um “RAMAL”. 
+    </p>
+
+    <ul>  
+        <li><strong>Código: </strong>Código da sala de conferência.</li>
+        <li><strong>Autenticação: </strong>Ativa ou desativa a senha da sala.</li>
+        <li><strong>Senha: </strong>Senha da sala de conferência.</li>
+        <li><strong>Centro de custo: </strong>Centro de custo da sala de conferência.</li>
+        <li><strong>Ativo: </strong>Ativa ou desativa a sala de conferência.</li>
+        <li><strong>Gravação: </strong>Ativa ou desativa a gravação da sala de conferência.</li>
+
+    </ul>
+</div>
+
+<form class="snep_form" id="snep_form" style="width: 750px; margin:0px;" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th> <?php echo $this->translate('Code') ?> </th>
+                <th> <?php echo $this->translate('Password Authentication') ?> </th>
+                <th> <?php echo $this->translate('Password') ?> </th>
+                <th> <?php echo $this->translate('Cost Center') ?> </th>
+                <th class="action"> <?php echo $this->translate('Active') ?> </th>
+                <th class="action"> <?php echo $this->translate('Recording') ?> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $c = 0;
+
+            if ($this->conferenceRooms):
+
+                foreach ($this->conferenceRooms as $id => $conferenceRooms):
+                    ?>
+
+                    <?php ($c ? $c = 0 : $c = 1 ); ?>
+                    <tr class="c<?php echo $c ?>">
+                        <td class="numeric"> <b> <?php echo $conferenceRooms['id'] ?> </b> </td>
+                        <td class="password"> 
+                            <?php
+                            if (empty($conferenceRooms['authenticate'])) {
+
+                                $checked = '';
+                                $display = 'disabled="disabled"';
+                            } else {
+
+                                $checked = 'checked="checked"';
+                                $display = '';
+                            }
+                            ?>                   
+                            <input class="newcheck" id="check_a_authenticate<?php echo $id ?>_check" type='checkbox' <?php echo $checked ?> name='authenticate[<?php echo $conferenceRooms['id'] ?>]' />
+                        </td>
+                        <td>                       
+                            <input class="maskInt" type="password" size="0" <?php echo $display ?> id="check_a_authenticate<?php echo $id ?>_text" name="password[<?php echo $conferenceRooms['id'] ?>]"  value="<?php echo $conferenceRooms['authenticate'] ?>"> 
+                            <br /><?php echo $this->translate('Just numbers') ?>
+                        </td>
+                        <td>
+                            <select name="costCenter[<?php echo $conferenceRooms['id'] ?>]">
+                                <?php foreach ($this->costCenter as $chave => $costCenter): ?>
+
+                                    <?php ( $conferenceRooms['ccustos'] == $costCenter['codigo'] ? $select = 'selected' : $select = '' ); ?>
+
+                                    <option value="<?php echo $costCenter['codigo'] ?>" <?php echo $select ?> >
+                                        <?php echo $costCenter['tipo'] . " : " . $costCenter['codigo'] . " - " . $costCenter['nome']; ?>
+                                    <?php endforeach ?>
+                            </select>
+                        </td>
+                        <td class="action">
+                            <?php ( $conferenceRooms['status'] ? $chek = 'checked' : $chek = '') ?>
+                            <input type="checkbox" class="newcheck" <?php echo $chek ?> value="<?php $conferenceRooms['status'] ?>"  name="activate[<?php echo $conferenceRooms['id'] ?>]">
+                        </td>
+                        <td class="action">
+                            <?php ( $conferenceRooms['rec'] ? $chek = 'checked' : $chek = '') ?>
+
+                            <input type="checkbox" class="newcheck" <?php echo $chek ?> value="<?php $conferenceRooms['rec'] ?>"  name="rec[<?php echo $conferenceRooms['id'] ?>]">
+                        </td>
+                    </tr>
+                <?php endforeach ?>
+
+            <?php endif ?>
+
+        </tbody>
+    </table>
+</form>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/conference-rooms/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".check_a").click(function() {
+            if ($("#" + $(this).attr('id') + "_check").attr('checked'))
+                $("#" + $(this).attr('id') + "_text").removeAttr("disabled");
+            else
+                $("#" + $(this).attr('id') + "_text").attr("disabled", true);
+        });
+    });
+</script>

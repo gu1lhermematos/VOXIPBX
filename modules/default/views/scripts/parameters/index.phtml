@@ -1,0 +1,71 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Parameters",  NULL, $this->baseUrl()."/index.php/default/action-configs", 'config');
+?>
+
+<div class="description_form"><p><h2>Configurações - Parâmetros</h2>
+
+<p>Esta rotina permite que algumas configurações de usabilidade do ToFalando sejam definidas ou ajustadas pelo usuário.</p>
+<ul>
+
+    <li><strong>Nome da Empresa: </strong>Define o nome da Empresa onde o sistema está instaldo.</li>
+   <!-- <li><strong>Dados do Integrador: </strong> Caso houver cadastro, se marcado os dados da empresa serão mostrados no menu "suporte" caso não tenha, será mostrado os dados da Opens.</li> -->
+    <li><strong>Localhost: </strong>Define um número IP ou Hostname do 
+servidor onde o Asterisk está instalado.</li>
+    <li><strong>Usuário: </strong>Define o nome do usuário que será 
+usado para conectar-se com o Asterisk.</li>
+    <li><strong>Aplicação de Conferência: </strong>Define as configurações da sala de conferência.</li>
+      
+<ul><li>(*) A ligação do ToFalando, através destes campos se dá com o Asterisk através do arquivo /etc/asterisk/manager.conf </li></ul>
+   
+<ul>
+  <li><p><strong>Configuração de Localização</strong></li></p>
+</ul>
+
+<ul>
+  <li><strong>Fuso Horário: </strong>Define o fuso horário que o snep tomará de base para suas aplicações.</li>
+  <li><strong>Localidade do Sistema: </strong>Define o país onde o snep esta instaldo.</li>
+  <li><strong>Linguagem do Sistema: </strong>Define o idioma da interface.</li>
+</ul>
+
+<ul>
+  <li><p><strong>Configuração da Gravação de Ligação</strong></li></p>
+</ul>
+
+<ul>
+  <li><strong>Aplicação da Gravação: </strong>Define as configurações da usadas para as gravações.</li>
+  <li><strong>Parâmetros de Gravação: </strong> Opção usada pelo aplicaivo de gravação.</li>
+</ul>
+
+<ul>
+  <li><p><strong>Configuração do Ramal</strong></li></p>
+</ul>
+
+  <li><strong>Range de Ramais/Agentes: </strong>Define a margem de ramais/agentes que serão cadastrados por ex: 2000-2020 - Serão aceitos ramais/agentes apenas dos numeros entre essa faixa, 20 ramais/agentes 2000 ao 2020, abaixo ou acima não serão aceitos.</li>
+
+</ul>
+</p></div>
+<?php if ($this->success){?>
+<div class="error_box" style="background-color: #DDD">
+    <?php echo $this->translate('Update with success'); ?>
+</div>
+<?php }?>
+
+<?php
+if( isset( $this->error ) ) {
+    echo "<div class=\"error_box\" > {$this->error} </div>";
+}
+echo $this->form;
+
+?>
+
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/action-configs/');
+    echo $buttons->getHtml();
+?>

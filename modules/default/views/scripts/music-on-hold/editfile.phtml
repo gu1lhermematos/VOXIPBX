@@ -1,0 +1,47 @@
+<?
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Settings");
+$title->addOption('musicsessions', $this->baseUrl().'/index.php/music-on-hold');
+echo $title->getHtml();
+echo Snep_Bar::get("Edit File",  "File", $this->baseUrl()."/index.php/default/music-on-hold/file/class/".$this->class);
+	
+
+if( $this->error['error'] ) : ?>
+	<div class="error_box"> <?php echo $this->error['message']  ?> </div>
+<?php endif ?>
+        
+<?php
+echo $this->form;
+?>
+<div class="description_form"><p><h2>Arquivos de Sons - Alterar</h2>
+
+<p>Esta rotina permite que:</p>
+<ol>
+	   </ul>
+	</li>
+	<li><strong>Um Arquivo de Som novo seja colocado no diret&oacute;rio padr&atilde;o do Asterisk
+	e consequentemente cadastrado no Sistema:</strong>
+	   <ul>
+   	  <li> Se for um novo arquivo a ser inserido, selecione o arquivo a partir
+	      do bot&atilde;o [Arquivo/Browse], preencha o campo "Descri&ccedil;&atilde;o" e defina 
+	      se &eacute; um arquivo do Asterisk ou de uma URA (Unidade de resposta Aud&iacute;vel).
+	      Informe se o arquivo deve ou n&atilde;o ser convertido para o formato GSM.</li>
+	      <br>
+	   </ul>
+	</li>
+	<li><strong>Um arquivo de som cadastrado seja substitu&iacute;do por outro:</strong>
+      <ul>
+   	   <li>Neste caso, selecione o arquivo a partir do bot&atilde;o [Arquivo/Browse],
+   	    preencha o campo "Descri&ccedil;&atilde;o" e defina se o arquivo deve 
+   	    ou n&atilde;o ser convertido para o formato GSM.</li>
+      </ul>
+	</li>
+</ol>
+</p></div>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl()."/index.php/default/music-on-hold/file/class/".$this->class);
+    echo $buttons->getHtml();
+    
+?>

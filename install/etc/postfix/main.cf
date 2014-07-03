@@ -1,0 +1,20 @@
+relayhost = [smtp.gmail.com]:587
+
+#  use tls
+smtp_use_tls=yes
+
+# use sasl when authenticating to foreign SMTP servers
+smtp_sasl_auth_enable = yes 
+
+# path to password map file
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+
+# list of CAs to trust when verifying server certificate
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+# eliminates default security options which are imcompatible with gmail
+smtp_sasl_security_options =
+
+debug_peer_list=smtp.gmail.com
+debug_peer_level=3
+

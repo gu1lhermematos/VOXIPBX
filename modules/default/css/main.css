@@ -1,0 +1,883 @@
+    /* 
+    Document   : main.css
+    Created on : Mar 31, 2012, 11:23:29 AM
+    Author     : Rodrigo Cavichioli, Iago Uilian Berndt
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*DECLARACOES GERAIS*/
+
+root { 
+    display: block;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: tahoma, geneva, kalimati, sans-serif;
+    color: #333;
+    background: #dfdfdf url(../img/system_background.png) repeat-x fixed;
+}
+
+a{
+    text-decoration: none;
+    color: #666;
+}
+
+a img{
+    border: none;
+}
+a:hover{
+    color: #000;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#container{
+    width: 990px;
+    margin: 20px auto;
+    display: table;
+}
+
+/*CABECALHO E MENU PRINCIPAL*/
+
+#header{
+    width: 100%;
+    display: table;
+}
+
+#menus {
+    float: right;
+    overflow: hidden;
+}
+
+#snep_logo {
+    position: absolute;
+}
+
+#menus ul{
+    float: right;
+}
+
+#menus ul li{
+    float: left;
+    text-transform: lowercase;
+}
+
+ul.navMenu li{
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+ul.navMenu li ul{
+    display: none;
+}
+
+
+/*Sub-menu de Modulos*/
+#moduleMenuContainer{
+    float: right;
+    display: table;
+    width: 535px;
+    margin-right: 0;
+}
+
+#moduleMenuSlider{
+    float: right;
+    text-align: right;
+    display: table;
+}
+
+ul.moduleMenu{
+    font-size: 12px;
+}
+
+ul.moduleMenu li{
+    margin: 0 3px;
+}
+
+ul.moduleMenu li div.expand{
+    height: 35px;
+}
+
+ul.moduleRoutines{
+    display: none;
+}
+
+.titleTop{
+	font-size:31px;
+	color:#959595;
+	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	border-bottom: solid 1px #CCC;
+	padding-bottom:15px;
+	margin-bottom: 15px;
+}
+.titleTop a{
+	display:block;
+	float:right;
+	font-size:16px;
+	margin: 10px;
+	font-weight:normal;
+	text-transform: uppercase;
+}
+.titleTop span{
+	margin: 0px 0px 5px 5px;
+	display: block;
+	float: left;
+}
+.titleTop img{
+	display: block;
+	float: left;
+}
+.buttons{
+	display:table;
+	width:100%;	
+	border-top: solid 1px #CCC;
+}
+input#ok.buttons {
+    height: 30px;
+    width: 85px;
+    border: 0;
+    text-align: right;
+    font-weight: bold;
+    color: #fff;
+    background-color: #06c;
+    background-image: url(../img/success_save_icon.png);
+    background-repeat: no-repeat;
+    background-position: 8px;
+    cursor: pointer;    
+}
+.buttons a{
+	display:block;
+	float:left;
+	font-size:18px;
+	margin: 30px 15px 15px 15px;
+}
+.buttons span{
+	margin: 3px 0px 0px 5px;
+	display: block;
+	float: left;
+}
+.buttons img{
+	display: block;
+	float: left;
+}
+#content{
+	margin-bottom: 50px;
+}
+#content .submenu{
+	border-bottom: solid 1px #DDD;
+	padding: 15px;
+	font-size: 21px;
+	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+#content .submenu img{
+	float: right;
+	margin-left: 10px;
+}
+#content .submenu a a{
+	float: right;	
+}
+#content .submenu span{
+	float: right;
+	display: block;
+	padding: 5px;
+	color:#666;
+	font-size: 12px;
+}
+
+/*RODAPÉ (SERVIÇOS)*/
+
+div#footer{
+    width: 960px;
+    margin-left: 50%;
+    position: fixed;
+    left: -480px;
+    display: table;
+    top: -1000px;
+}
+
+
+/*Bar*/
+.barTop{
+	background-image:url(../img/background_title_bar.png);
+	display: table;
+	width: 100%;
+	border-radius:5px;
+	text-transform:lowercase;
+}
+.barTop .title{
+	float:left;
+	border-radius:5px 0px 0px 5px;
+	padding: 4px 15px 4px 15px;
+}
+.barTop .html{
+	float:right;
+	display: table;
+	padding: 5px 15px 0px 15px;
+	font-size: 14px;
+	color:#555;
+}
+.barTop .option{
+	border-radius:0px 5px 5px 0px;
+	padding: 4px 15px 4px 15px;
+	float:right;
+}
+.barTop span{
+	float:left;
+	margin:3px 5px 0px 5px;
+	color: #FFF;
+	font-size: 17px;
+}
+.barTop .html input, .barTop .html button{
+	border-radius:5px;
+	border:solid 1px #BBB;
+	background-color: #FFF;
+	padding: 3px;
+}
+.barTop .html button, .barTop .html input[type=submit]{
+	border-radius:5px;
+	border:solid 1px #BBB;
+	background-color: #FFF;
+	padding: 3px 13px 4px 13px;
+	cursor: pointer;
+}
+.barTop .icon{
+	height: 30px;
+	width: 30px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.barTop form input[type=submit]{
+	float: left;
+}
+.barTop form input[type=text]{
+	float: left;
+}
+.barTop form select{
+	margin-right: 8px;
+	margin-top: 2px;
+	float: left;
+	padding: 2px;
+	border-radius:3px;
+	border:solid 1px #BBB;
+}
+.barTop form label{
+	margin-top: 4px;
+	margin-right: 5px;
+	float: left;
+}
+
+.barTop .add .title{
+	background-image:url(../img/background_title_add.png);	
+}
+.barTop .add .option{
+	background-image:url(../img/background_title_list_view.png);
+}
+.barTop .add .icon{
+	background-image:url(../img/new_icon_title_bar.png);
+}
+.barTop .add .option .icon{
+	background-image:url(../img/icon_view_title_bar.png);
+}
+
+.barTop .view .title{
+	background-image:url(../img/background_title_list_view.png);
+}
+.barTop .view .option{
+	background-image:url(../img/background_title_add.png);	
+}
+.barTop .view .icon{
+	background-image:url(../img/icon_view_title_bar.png);
+}
+.barTop .view .option .icon{
+	background-image:url(../img/new_icon_title_bar.png);	
+}
+
+.barTop .config .title{
+	background-image:url(../img/background_title_config.png);	
+}
+.barTop .config .option{
+	background-image:none;
+}
+.barTop .config .icon{
+	background-image:url(../img/edit_icon_title.png);
+}
+.barTop .config .option .icon{
+	background-image:none;
+}
+
+
+.barTop .export .title{
+	background-image:url(../img/background_title_config.png);	
+}
+.barTop .export .option{
+	background-image:url(../img/background_title_list_view.png);
+}
+.barTop .export .icon{
+	background-image:url(../img/links_icon_title.png);
+}
+.barTop .export .option .icon{
+	background-image:url(../img/icon_view_title_bar.png);
+}
+
+.barTop .reports .title{
+	background-image:url(../img/background_title_add.png);
+}
+.barTop .reports .option{
+	background-image:none;	
+}
+.barTop .reports .icon{
+	background-image:url(../img/report_title_icon.png);
+}
+.barTop .reports .option .icon{
+	background-image:none;	
+}
+
+/* new checkbox */
+.newcheck{
+	display:none;
+}
+.checkbox_{
+	widows: 30px;
+	height: 30px;
+}
+.tolabel{
+	float: left;
+}
+.linetolabel{
+	display: table;
+}
+.linetolabel label{
+	margin: 6px;
+	display: block;
+	float: left;
+}
+
+/*Errors/Warnings*/
+.errors li{
+    color: #f00;
+}
+
+.error_box{
+    text-align: center;
+    width: 670px;
+    background: #F66;
+    margin: 20px;
+    padding: 15px;
+    color: #333;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.inspect{
+    width: 945px;
+    display: table;
+}
+
+.inspect ul li{
+    margin: 5px 0;
+    padding: 8px 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.inspect ul li.list_no_error{
+    background: #ddd;
+}
+
+.inspect ul li.list_no_error:before{
+    content: url(../img/success_save_icon.png);
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+.inspect ul li.list_error{
+    background: #ddd;
+    padding-right: 25px;
+}
+
+.inspect ul li.list_error:before{
+    content: url(../img/alert_save_icon.png);
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+}
+
+.inspect li.inspectorError{
+    margin-left: 40px;
+    margin-top: 15px;
+    background: #f99;
+    padding: 0 20px;
+    margin-bottom: -5px;
+}
+
+/*STATUS tables*/
+
+.statusTable{
+    margin-top: 15px;
+    padding: 5px;
+    width: 100%;
+    display: table;
+}
+
+.statusTable .column, #khompErrors{
+    display: table;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+#khompErrors td.cen{
+    text-align: center;
+}
+
+#khompErrors thead td{
+    text-align: center;
+}
+
+.statusTable .title{
+    text-align: left;
+}
+
+.statusTable .title h2{
+    font-size: 30px;
+    color: #666;
+    font-weight: normal;
+    margin: 10px 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.statusTable .subTitles ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.statusTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.statusTable table td{
+    font-size: 12px;
+}
+
+.statusTable table td, .statusTable table th {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.statusTable table thead td {
+    text-align: left;
+    font-size: 18px;
+}
+
+input[type=submit].statusButton {
+    height: 38px;
+    width: 180px;
+    border: 0;
+    text-align: right;
+    float: right;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #06c;
+    background-image: url(../img/send_to_dashboard_button.png);
+    background-repeat: no-repeat;
+    background-position: 8px;
+    cursor: pointer;
+}
+
+/*CNL Update*/
+
+/*#cnlUpdate.zend_form {
+    margin: 70px auto;
+      display: table;
+    width: 100%;
+    text-align: left; 
+    background: #ddd;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}*/
+
+#cnlUpdate label{
+    margin: 20px 0;
+    display: block;
+    font-size: 26px;
+}
+
+#cnlUpdate .menus{
+    display:table;
+    width:100%;	
+    border-top: solid 1px #CCC;
+    padding: 10px 0px ;
+
+}
+
+#cnlUpdate .hide_bar {
+    text-align: center ;
+    display: none;
+    margin: 10px ;
+}
+
+#cnlUpdate .show_bar {
+    display: block;
+    text-align: center ;
+    margin: 10px ;
+}
+
+
+#cnlUpdate input[type=file]{
+    width: 300px;
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+
+
+#cnlUpdate .menus input[type=submit]{
+    border: 0;
+    width: 95px;
+    height: 30px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background: url(../img/save_form_icon.png) #06c no-repeat left center;
+    cursor: pointer;
+    
+}
+
+/*Instalador*/
+
+#instalador{
+    margin: 70px auto;
+    display: table;
+    width: 400px;
+    text-align: center;
+    background: #ddd;
+    border: 1px solid #ccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#instalador label{
+    margin: 20px 0;
+    display: block;
+    font-size: 26px;
+}
+
+#instalador .menus{
+    float: right;
+    margin: 10px 15px;
+}
+
+#instalador .menus input[type=submit]{
+    border: 0;
+    width: 95px;
+    height: 30px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background: url(../img/send_to_dashboard_button.png) #06c no-repeat left center;
+    cursor: pointer;
+}
+
+/*System Status LOGS*/
+
+.bgfiltro{
+    margin: 10px 0;
+}
+
+.bgfiltro span{
+    margin: 0 20px;
+}
+
+.bgfiltro span input[type=text]{
+    border: 1px solid #ccc;
+    width: 30px;
+    padding: 5px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#tail{
+    width: 100%;
+    display: table;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.normal{
+    background: #ddd;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.terminal{
+    background: #222;
+    color: #f0f0f0;
+    border: 1px solid #333;
+}
+
+.contraste{
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+/*order icons*/
+.order.asc{
+    display: block;
+    background: url(../img/down_icon.png) no-repeat 0 5px;
+    padding-left: 18px;
+}
+.order.desc{
+    display: block;
+    background: url(../img/up_icon.png) no-repeat 0 5px;
+    padding-left: 18px;
+}
+
+/*Dashboard messagebox*/
+.dashTint {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5);
+	display: block;
+}
+
+.dashTint .dashBox{
+    width: 450px;
+    height: 250px;
+    position: absolute;
+    background: #ccc;
+    margin-left: 50%;
+    left: -225px;
+    margin-top: 200px;
+}
+
+.dashBox .dashTitle{
+    margin: 0;
+    height: 40px;
+    background: #333;
+    color: #fff;
+    padding: 10px 0 0 10px;
+    font-size: 26px;
+}
+
+.dashBox .dashText{
+    margin: 20px 10px;
+    font-size: 20px;
+}
+
+form .dashBox .dashText{
+    margin: 20px 10px 10px 10px;
+    font-size: 20px;
+    display: table;
+}
+
+.dashBox .dashText input{
+    padding: 10px;
+    border: solid 1px #BBB;
+    border-radius:5px;
+    float: left;
+    width: 300px;
+}
+form .dashBox .dashText span{
+    display: table;
+    float: left;
+    margin-top: 5px;
+    width: 100px;
+}
+
+.dashBox .dashSubmit{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.dashBox .dashSubmit a{
+    display: block;
+    margin: 0 5px;
+    padding: 7px 8px 5px 30px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: left;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dashBox .dashSubmit .dashSend{
+    background-color: #8ba923;
+    background-image: url(../img/new_icon.png);
+}
+
+.dashBox .dashSubmit .dashCancel{
+    background-color: #e83400;
+    background-image: url(../img/form_cancel_icon.png);
+}
+
+/*Export/import message dialog*/
+.exInfo{
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #ddd;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+/*Dashboard edit screen*/
+#addDashboard .title{
+    margin-top: 20px;
+    border-bottom: 1px solid #999;
+}
+
+#form_ie{
+    margin: 70px auto;
+    display: table;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    background: #ddd;
+    border: 1px solid #ccc;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#form_ie span{
+    margin-bottom: 10px;
+    display: block;
+    font-size: 26px;
+}
+
+#form_ie .menus{
+	width: 100%;
+	margin-top: 10px;
+	display: table;
+}
+
+#form_ie input[type=file]{
+    width: 300px;
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+#form_ie .menus input[type=submit]{
+    border: 0;
+    width: 75px;
+    height: 30px;
+    color: #fff;
+    text-align: right;
+    font-weight: bold;
+    background: url(../img/save_form_icon.png) #06c no-repeat left center;
+    cursor: pointer;
+	float: right;
+}
+#form_ie .menus input.voltar{
+    background: url(../img/import_button.png) #0065cd no-repeat left center;	
+}
+
+/*links KHOMP*/
+
+#khomp_links{
+    width: 100%;
+    display: table;
+}
+
+#khomp_links td{
+    padding: 4px 3px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+#khomp_links table{
+    border-spacing: 0 1px;
+}
+
+#khomp_links table td td{
+    border-spacing: 0;
+    padding: 3px;
+    border-bottom: 0;
+}
+
+#khomp_main{
+    width: 100%;
+    display: table;
+}
+
+#khomp_main .board_info{
+    width: 95%;
+    clear: both;
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 13px;
+    margin: 15px auto;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+
+#khomp_main .board_info table{
+    width: 100%;
+}
+
+#khomp_main .boards_khomp{
+    font-size: 20px;
+}
+
+#khomp_main .khomp_channels_status{
+    text-align: center;
+}
+
+#khomp_aside{
+    font-size: 13px;
+    text-align: center;
+    color: #333;
+}
+
+#errorExceptionBox{
+	width: 620px;
+	margin: 20px auto;
+	padding: 0 20px;
+	background: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+}
+

@@ -1,0 +1,32 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Routing");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Default Configs",  NULL, $this->baseUrl()."/index.php/default/action-configs", 'config');
+?>
+
+<div class="description_form"><p><h2>Regras de Negócio - Configurações Padrão - Configurar</h2>
+
+<p>
+    O formulário de configuração de ação é gerado automaticamente a partir
+    dos parâmetros da ação. Caso a configuração de algum parâmetro não esteja
+    clara verifique o manual do usuário ou consulte o suporte técnico.
+</p>
+
+</p></div>
+<?php if ($this->success){?>
+<div class="error_box" style="background-color: #DDD">
+    <?php echo $this->translate('Update with success'); ?>
+</div>
+<?php }?>
+
+<?php echo $this->form; ?>
+
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/action-configs/');
+    echo $buttons->getHtml();
+?>

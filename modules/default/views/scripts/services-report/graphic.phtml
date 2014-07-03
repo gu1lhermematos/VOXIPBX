@@ -1,0 +1,14 @@
+<?php 
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/graphic.css" );
+
+$title = new Snep_Title("Reports");
+$title->addOption('report', $this->baseUrl()."/index.php/services-report/view");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title, null, null, 'view', $this->form);
+
+echo "<img src='".$this->graphic."'/>";
+
+?>

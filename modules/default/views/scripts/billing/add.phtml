@@ -1,0 +1,150 @@
+<?php
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("new tariff"), $this->translate("tariff"), $this->baseUrl() . "/index.php/default/billing");
+$this->headScript()->prependFile($this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile($this->baseUrl() . '/includes/javascript/maskCostCenter.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+if ($this->message)
+    '<div class="error_box">' . $this->message . '</div>';
+
+
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p>
+    <h2>Tarifas - Incluir</h2>
+
+    <p>Esta rotina permite que uma Tarifa seja Cadastrada no Sistema.</p>
+
+    <span style="display:none;" id="text_description">
+        <ul>  
+            <li><strong>Operadora: </strong>Define o nome da Operadora.</li>
+            <li><strong>Pais: </strong>Define o nome do pa&iacute;s.</li>
+            <li><strong>Estado: </strong>Define a Sigla do Estado.</li>
+            <li><strong>Cidade: </strong>Define o nome do cidade , baseado no estado 
+                escolhido.</li>
+            <li><strong>C&oacute;digo do País: </strong>Define o c&oacute;digo DDI do pa&iacute;s informado.</li>
+            <li><strong>C&oacute;digo da Cidade: </strong>Define o c&oacute;digo DDD da cidade escolhida.</li>
+            <li><strong>Prefixo: </strong>Define o prefixo de telefones , da cidade escolhida
+                sobre o qual incidir&aacute; a tarifa a ser informada. Caso a tarifa seja a mesma para
+                todos os prefixos, informe o valor "0000" neste campo.</li>
+            <li><strong>Tarifa para Fixo: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Fixos.</li>
+            <li><strong>Tarifa para Celular: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Celulares.</li>
+        </ul>
+        <ul> <h2>Regras Gerais</h2>
+            <li>
+                Os valores padrão (Fixo e Móvel) para casa operadora é informado em seu cadastro.            </li>
+            <li>
+                Para ajustar os valores padrão, deixe os campos com os seguintes dados:            </li>
+            <li>
+                <ul>
+                    <li>
+                        <strong>Estado:</strong> <i>---</i>
+                    </li>
+                    <li>
+                        <strong>Cidade:</strong> <i>Selecione</i>
+                    </li>
+                    <li>
+                        <strong>Codigo da Cidade:</strong> <i> 0 </i>
+                    </li>
+                    <li>
+                        <strong>Prefixo:</strong> <i>0000</i>
+                    </li>
+                </ul>
+            </li>
+            <br/>
+            <li>
+                <b>O cadastro de tarifação deve seguir estas 3 regras:</b><ul>
+                    <li>
+                        <br/> 1 - Se cidades diferentes tem diferentes valores, independentemente do PREFIXO do destino, uma Tarifa deve ser criada, informando o DDD e o PREFIXO correto da cidade.<strong>'0000'</strong>
+                    </li>
+                    <li>
+                        <br/>2 - se a operadora tem um valor diferente para alguns PREFIXOS de uma mesma CIDADE,</li>
+                    <li>
+                        <br/>3 - Para                        <strong> Tarifação INTERNACIONAL, </strong>
+                        uma tarifa individual deve ser criada para cada PAÍS, prestando atenção aos seguintes detalhes:
+                        <ul>
+                            <li>
+                                a) Informe o Código                            </li>
+                            <li>
+                                b) Informe o DDD = 000
+                            </li>
+                            <li>
+                                c) Informe o PREFIXO = 0000
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        </p>
+
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;top:25px;margin:15px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div></div>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/billing/');
+echo $buttons->getHtml();
+?>
+
+<script language="javascript" type="text/javascript">
+
+    document.forms[0].elements[0].focus();
+
+    function cidades(uf) {
+
+        var url = '<?php echo $this->url ?>/cidade/';
+        var params = 'uf=' + uf;
+        var retorno = new Ajax.Request(
+                url, {
+            method: 'POST',
+            parameters: params,
+            onComplete: ret_cidade
+        }
+        );
+
+    }
+
+    function ret_cidade(ret) {
+        $('#cidade').innerHTML = "";
+        $('#cidade').html(ret.responseText);
+    }
+
+    $("#estado").change(function() {
+        cidades($(this).val());
+    });
+
+<?php
+if (isset($this->dados['estado'])) {
+    echo "cidades('{$this->dados['estado']}');";
+}
+?>
+
+</script>
+

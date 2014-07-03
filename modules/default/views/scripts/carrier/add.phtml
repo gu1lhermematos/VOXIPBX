@@ -1,0 +1,73 @@
+<?php
+
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("add carrier"),  $this->translate("carriers list"), $this->baseUrl()."/index.php/default/carrier");
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jqueryui.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+echo $this->form;
+
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Operadoras - Incluir</h2>
+
+    <p>Esta rotina permite que uma Operadora seja Cadastrada no Sistema.</p>
+    <span style="display:none;" id="text_description">
+        <ul>  
+            <li><strong>Nome: </strong> Define o nome que identificar&aacute; a Operadora.</li>
+            <li><strong>Tempo de Arranque: </strong> Define o tempo em SEGUNDOS que
+                a Operadora cobra a Tarifa de sa&iacute;da. Normalmente as Operadoras cobram o primeiro 
+                minuto cheio (60 segundos) de uma chamada , independente da dura&ccedil;&atilde;o desta.</li>
+            <li><strong>Valor Controle de Qualidade: </strong>Define o tempo em SEGUNDOS das
+                fra&ccedil;&otilde;es seguintes de incid&ecirc;ncia da tarifa. Exemplo: o valor &eacute; tarifado a cada
+                6 segundos em 1/10, ou seja, se a tarifa for de R$ 0,50 por minuto, a cada 6
+                segundos de dura&ccedil;&atilde;o , ser&aacute; cobrado R$ 0,05. </li> 
+            <li><strong>Tarifa para Fixo: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Fixos.</li>
+            <li><strong>Tarifa para Celular: </strong>Define o valor da Tarifa padr&atilde;o
+                para chamadas  a telefones Celulares.</li>
+            <li><strong>Centro de Custos: </strong>Define o(s) Centro(s) de Custo(s) que 
+                fazem parte da Operadora. Quando uma chamada &eacute; efetuada, um Centro de Custos
+                &eacute; definido para esta.
+                Baseado no Centro de Custo defiunido para cada registro de chamada efetuada, o
+                sistema ir&aacute; encontrar a Operadora e consequentemente o valor da Tarifa.</li>
+        </ul></p>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/carrier/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

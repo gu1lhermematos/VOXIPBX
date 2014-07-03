@@ -1,0 +1,13 @@
+<?php
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/removeItem.js');
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title,  "Cost Center", $this->baseUrl()."/index.php/default/cost-center", "export");
+
+echo $this->form;
+?>

@@ -1,0 +1,17 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Import",  "Contacts", $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() , "export");
+
+?>
+
+<div class="zend_form" id="form_ie">
+	<span>Erro</span><?php echo $this->error ?>
+	<div class="menus">
+		<input type="submit" name="submit" onclick=' document.location = "/snep/index.php/default/contacts" ' class="voltar" id="submit" title="Voltar" value="Voltar">
+	</div>
+</div>

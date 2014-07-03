@@ -1,0 +1,72 @@
+/* 
+    Document   : graphic.css
+    Created on : Mar 31, 2012, 11:23:29 AM
+    Author     : Iago Uilian Berndt
+*/
+
+/*DECLARACOES GERAIS*/
+.periodo input[type=text]{
+	width: 70px;
+}
+.periodo div{
+	float: left;
+	display: table;
+}
+.periodo .sep{
+	margin:0px 5px 0px 5px;
+	height: 30px;
+	border-left: solid 1px #CCC;
+}
+.periodo span{
+	float: left;
+	display: table;	
+	margin: 5px;
+	font-size: 14px;
+	color: #333;
+}
+.type_bar{
+	display: table;
+	float: left;
+	padding-left: 20px;
+	background-image: url(../img/bar_chart_icon.png);
+	background-repeat: no-repeat;
+	margin: 5px;
+}
+.type_line{
+	display: table;
+	float: left;
+	padding-left: 20px;
+	background-image: url(../img/line_icon_chart.png);
+	background-repeat: no-repeat;
+	margin: 5px;
+}
+.export_pdf{
+	display: block;
+	float: left;
+	background-image: url(../img/export_pdf_button.png);
+	height: 30px;
+	width: 30px;
+}
+.aba{
+	height: 480px;
+	width: 960px;
+	position: relative;
+}
+.aba img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+}
+.aba_button{
+	float: left;
+	background-image:url(../img/background_title_config.png);
+	cursor:pointer;
+	margin: 10px 5px 10px 5px;
+	padding: 10px 20px 10px 20px;
+	color: #FFF;
+	border-radius:5px;
+}
+.aba_button.a, .aba_button:hover{
+	background-image:url(../img/background_title_list_view.png);	
+}

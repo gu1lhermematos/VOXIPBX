@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>    
+    <elements>
+        <nome>
+            <type>text</type>
+            <options>
+                <label>Name</label>
+                <readonly>true</readonly>
+            </options>
+        </nome>
+        <city>
+            <type>text</type>
+            <options>
+                <label>City</label>
+                <readonly>true</readonly>
+            </options>
+        </city>
+        <state>
+            <type>text</type>
+            <options>
+                <label>State</label>
+                <readonly>true</readonly>
+            </options>
+        </state>
+        <address>
+            <type>text</type>
+            <options>
+                <label>Address</label>  
+                <readonly>true</readonly>              
+            </options>
+        </address>
+        <cep>
+            <type>text</type>
+            <options>
+                <label>Zip Code</label>  
+                <readonly>true</readonly>              
+            </options>
+        </cep>
+        <phone_1>
+            <type>text</type>
+            <options>
+                <label>Business phone</label>  
+                <readonly>true</readonly>              
+            </options>
+        </phone_1>
+        <phone_2>
+            <type>text</type>
+            <options>
+                <label>Fixed phone</label>  
+                <readonly>true</readonly>              
+            </options>
+        </phone_2>
+        <cell_1>
+            <type>text</type>
+            <options>
+                <label>Cellular</label>  
+                <readonly>true</readonly>              
+            </options>
+        </cell_1>
+        <email>
+            <type>text</type>
+            <options>
+                <label>Email</label>  
+                <readonly>true</readonly>              
+            </options>
+        </email>
+    </elements>
+</form>

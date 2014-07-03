@@ -1,0 +1,80 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/index.css");
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->translate("Update CNL"),  NULL, NULL, "config");
+?>
+<div style="height:100%; margin: 5px 0 40px 0;"class="description_form" ><p><h2>Atualizar CNL</h2>
+    
+    <p>A atualização da CNL permite que seja atualizadas as tabelas do banco de dados 
+        que contém os nomes das cidades, ddd's e prefixos de telefones de todas as 
+        operadoras de telefonia.</p>
+    <span style="display:none;" id="text_description">
+             <p>Estes dados são utilizados para mostrar nos relatórios de qual cidade a chamade se originou ou se destinou. </p>
+             <br />
+            IMPORTANTE: <br />
+            1) Os dados são fornecidos pela ANATEL (www.anatel.gov.br) <br />
+            2) O arquivo de atualização é preparado pela Opens e está no formato JSON. <br />
+            3) Existem 2 tipos de arquivos: para telefonia fixa e telefonia movel e 
+            seus nomes seguem o seguinte formato: <br />
+            * Movel: cnl-movel-dd-mm-aaaa.json <br />
+            * Fixo.: cnl-fixo-dd-mm-aaaa.json <br />
+            onde: <br />
+            dd = dia, mm=mes, aaaa=ano  => data que o arquivo foi gerado.
+    </span>
+     <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+</div>
+<form enctype="multipart/form-data" action="<?php echo $this->formAction; ?>" method="post">
+    <div class="zend_form" id="cnlUpdate">
+    	<?php if($this->message){ ?>
+        	<label for="cnl" style="text-align: center;" class="optional"><?php echo $this->translate($this->message); ?></label>
+                <div class="menus">
+	            <input type="button" name="ok" id="ok"  class="buttons"
+                           value="<?php echo $this->translate("Ok !"); ?> "
+                           onClick="history.go(-1)">
+	        </div>
+        <?php }else{ ?>
+                <label for="type" class="input"><?php echo $this->translate("Type of archive"); ?></label>
+                <ul class="input">
+                    <li>
+                        <input type="radio" name="type" value="type-fix" checked /> <?php echo $this->translate('Fixo');?>
+                    </li>
+                    <?php if ($this->isARS) {?>
+                        <li>
+                            <input type="radio" name="type" value="type-mobile" /> <?php echo $this->translate('Celular');?>
+                        </li>
+                    <?php } ?>
+                </ul>
+                <label for="cnl" class="optional"><?php echo $this->translate("CNL File"); ?></label>
+	        <input type="hidden" name="MAX_FILE_SIZE" value="2097152" id="MAX_FILE_SIZE">
+	        <input type="file" name="cnl" id="cnl">
+	        <?php if(!$this->valid): ?>
+	        <ul class="errors">
+	            <li style="display:inline-block;"><?php echo $this->translate("File is not valid"); ?></li>
+	        </ul>
+	        <?php endif; ?>
+	        <?php if($this->error): ?>
+	        <ul class="errors">
+	            <li style="display:inline-block;"><?php echo $this->translate($this->error); ?></li>
+	        </ul>
+	        <?php endif; ?>
+	        
+	        
+                <div id="bar" align="center" class="hide_bar">
+                     <?php echo $this->translate("Please Wait..."); ?>
+                </div>
+                 <div class="menus">
+                    <input type="submit" name="submit" id="submit" 
+                           title="<?php echo $this->translate("Update"); ?>" 
+                           value=<?php echo $this->translate("Update"); ?>
+                           onClick="document.getElementById('bar').className='show_bar';" >
+                </div>
+                <?php
+                        
+        }?>
+    </div>
+</form>

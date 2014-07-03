@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+    <extension>
+        <elements>
+            <exten>
+                <type>Text</type>
+                <options>
+                    <label>Extensions</label>
+                    <description>
+                        Ex: 1000-1050;1060;1063;1070-1100
+                    </description>
+                    <class>maskRange</class>
+                </options>
+            </exten>
+            <exten_group>
+                <type>ExtensionGroup</type>
+                <options>
+                    <label>Extension Group</label>
+                    <value>users</value>
+                    <size>1</size>
+                </options>
+            </exten_group>
+             <pickup_group>
+                <type>PickupGroup</type>
+                <options>
+                    <label>Pickup Group</label>
+                    <value>1</value>
+                    <size>1</size>
+                </options>
+            </pickup_group>
+        </elements>
+    </extension>
+    <technology>
+        <elements>
+            <type>
+                <type>Select</type>
+                <options>
+                    <label>Type</label>
+                    <size>1</size>
+                    <multioptions>
+                        <sip>SIP</sip>
+                        <iax2>IAX2</iax2>
+                        <khomp>Khomp</khomp>
+                        <virtual>Virtual</virtual>
+                    </multioptions>
+                </options>
+            </type>
+        </elements>
+    </technology>
+    <ip>
+        <elements>
+            <nat>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>NAT</label>
+                </options>
+            </nat>
+            <qualify>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Qualify</label>
+                </options>
+            </qualify>
+            <dtmf>
+                <type>radio</type>
+                <options>
+                    <label>DTMF Mode</label>
+                    <value>rfc2833</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <rfc2833>RFC-2833</rfc2833>
+                        <inband>Inband</inband>
+                        <info>Info</info>
+                    </multioptions>
+                </options>
+            </dtmf>
+             <codec>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>alaw</value>
+                    <label>Codec 1</label>
+                    <description>Prioritary</description>
+                </options>
+            </codec>
+            <codec1>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ulaw</value>
+                    <label>Codec 2</label>
+                </options>
+            </codec1>
+            <codec2>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>gsm</value>
+                    <label>Codec 3</label>
+                </options>
+            </codec2>
+             <codec3>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>g729</value>
+                    <label>Codec 4</label>
+                </options>
+            </codec3>
+             <codec4>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 5</label>
+                </options>
+            </codec4>
+             <directmedia>
+                <type>radio</type>
+                <options>
+                    <label>Direct Media</label>
+                    <value>yes</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <yes>yes</yes>
+                        <no>no</no>
+                    </multioptions>
+                </options>
+            </directmedia>
+        </elements>
+    </ip>
+    <virtual>
+        <elements>
+            <virtual>
+                <type>Trunk</type>
+                <options>
+                    <label>Trunk</label>
+                    <size>1</size>
+                </options>
+            </virtual>
+        </elements>
+    </virtual>
+    <khomp>
+        <elements>
+            <board>
+                <type>Select</type>
+                <options>
+                    <label>Board</label>
+                </options>
+            </board>
+        </elements>
+    </khomp>
+</form>
+

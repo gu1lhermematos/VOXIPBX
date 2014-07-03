@@ -1,0 +1,28 @@
+<?php if($this->message): ?>
+    <span class="<?php echo $this->msgclass; ?>"><?php echo $this->message; ?></span>
+<?php endif; ?>
+
+
+<form  action="<?php echo $this->url(array("controller"=>"auth", "action"=>"login"), null, true); ?>" METHOD="post">
+    <div id="login">
+        <dl id="login_form">
+            <div class="login_box">
+
+                <div class="form_element">
+                    <dt><?php echo $this->translate("User/Extension"); ?>:</dt>
+                    <dd><input type="text" id="exten" name="exten"></dd>
+                </div>
+
+                <div class="form_element">
+                    <dt><?php echo $this->translate("Password"); ?>:</dt>
+                    <dd><input type="password" name="password" /></dd>
+                </div>
+
+                <div class="form_element">
+                    <dt></dt>
+                    <dd><input type="submit" value="<?php echo $this->translate("Sign in"); ?>" /></dd>
+                </div>
+            </div>
+        </dl>
+    </div>
+</form>

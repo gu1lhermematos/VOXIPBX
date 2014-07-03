@@ -1,0 +1,38 @@
+<?php 
+
+echo $this->doctype(); 
+
+$diretorio = getcwd() . "/modules/default/img/login_backgrounds/";
+$ponteiro = opendir($diretorio);
+while ($nome_itens = readdir($ponteiro)) {
+    if ($nome_itens != "." && $nome_itens != "..")
+        $itens[] = $nome_itens;
+}
+$background = array_rand($itens, 1);
+?>
+<html>
+    <head>
+        <?php echo $this->headTitle() . "\n"; ?>
+        <?php $this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/login.css"); ?>
+        <?php echo $this->headLink() . "\n"; ?>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headStyle() . "\n"; ?>
+        <?php echo $this->headScript() . "\n"; ?>
+    </head>
+    <body style="background: url(<?php echo $this->baseUrl(); ?>/modules/default/img/login_backgrounds/<?php echo $itens[$background]; ?>) no-repeat center center;">
+        <div id="loginLayout">
+            <div id="wrapper">
+                <div class="logo"></div>
+                <div class="content">
+                    <?php echo $this->layout()->content; ?>
+                </div>
+                <div id="help">
+                    <ul>
+                        <li><a href="http://www.tofalando.com.br" target="_blank"><div class="helpIcon"><img src="<?php echo $this->baseUrl(); ?>/modules/default/img/snep_support_icon_login.png" alt=""/></div><?php echo ("Support ToFalando");
+                    ?></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

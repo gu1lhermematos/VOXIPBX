@@ -1,0 +1,155 @@
+<?php
+    $this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+	$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+	
+	$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css" );
+	$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+	$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+	$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/maintence.css");
+	
+	$title = new Snep_Title("Settings");
+	echo $title->getHtml();
+	echo Snep_Bar::get($this->translate("Maintenance"),  NULL, NULL, "reports");
+?>
+<div class="maintenance">
+
+    <?php if( $this->errors['error'] == 1 ) : ?>
+        <div class="error_box" style="width: 890px;">
+           <?php echo nl2br($this->errors['message']); ?>
+        </div>
+        <br />
+    <?php endif ?>
+
+    <form action="<?php echo $this->baseUrl(); ?>/index.php/default/maintenance/compact/" method="POST">
+        <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+            <thead>
+                <tr>
+                    <th colspan="5"><?php echo $this->translate("Compression of sound files"); ?></th>
+                </tr>
+            </thead>
+            <tr>
+                <td><b> <?php echo $this->translate('Period');?> :</b></td>
+                <td>
+                    <?php echo $this->translate('Date Initial');?>:
+                    <input id="init-data-compact" name="init-data-compact"  value="<?php echo $this->dates['init'];?>" type="text" />
+                </td>
+                <td>
+                    <?php echo $this->translate('End date');?>:
+                    <input id="end-data-compact" name="end-data-compact"  value="<?php echo $this->dates['end'];?>" type="text" />
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <input type="radio" name="type" value="type-compact-remove"  /> <?php echo $this->translate('Compact and Remove');?>
+                        </li>
+                        <li>
+                            <input type="radio" name="type" value="type-only-compact" checked /> <?php echo $this->translate('Just  Compact (backup)');?>
+                        </li>
+                    </ul>
+                </td>
+                <td class="action">
+                    <input type="submit" name="submit" id="submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <table>
+       <thead>
+           <tr>
+                <th colspan="5"> <?php echo $this->translate('Archives compressed');?> </th>
+           </tr>
+       </thead>
+       <tr class="tableIndex">
+          <td><b> <?php echo $this->translate('Filename');?> </b></td>
+          <td><b> <?php echo $this->translate('Generated in');?> </b></td>
+          <td><b> <?php echo $this->translate('Size');?> </b></td>
+          <td colspan="2"> <b>  <?php echo $this->translate('Actions');?> </b> </td>
+       </tr>
+    <?php
+    
+    foreach($this->files as $file ) : ?>
+       <tr>
+          <td> <?php echo $file['name']; ?> </td>
+          <td> <?php echo $file['date']; ?> </td>
+          <td> <?php echo $file['size']; ?> </td>
+          <td class="action">
+             <a href="<?php echo $this->baseUrl() . '/arquivos/backup/'. $file['name']; ?>" class="download"></a>
+          </td>
+          <td class="action">
+             <a href="<?php echo $this->baseUrl() . '/index.php/default/maintenance/remove-file/file/'. $file['name']; ?>" class="excluir"></a>
+          </td>
+       </tr>
+    <?php endforeach ?>
+    </table>
+
+    <form action="<?php echo $this->baseUrl(); ?>/index.php/default/maintenance/remove-register/" method="POST">
+        <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" >
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        <?php echo $this->translate('Remove records of bindings conform period');?>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b><?php echo $this->translate('Period'); ?>:</b></td>
+                    <td>
+                        <?php echo $this->translate('Date Initial'); ?>:
+                        <input id="init-data-remove" name="init-data-remove" value="<?php echo $this->dates['init'];?>" type="text" />
+                    </td>
+                    <td>
+                        <?php echo $this->translate('End date'); ?>:
+                        <input id="end-data-remove" name="end-data-remove" value="<?php echo $this->dates['end'];?>" type="text" />
+                    </td>
+                    <td class="action">
+                        <input type="submit" name="submit" id="submit" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<script>
+$("#init-data-compact").datepicker({
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+$("#end-data-compact").datepicker({
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+$("#init-data-remove").datepicker({
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+$("#end-data-remove").datepicker({
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+	
+</script>

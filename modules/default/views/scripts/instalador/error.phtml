@@ -1,0 +1,13 @@
+<?php
+$title = new Snep_Title("Installation");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("module installer"), NULL, NULL, "reports");
+?>
+
+<div id="error" style="padding: 10em; text-align: center; font-size: 12px;">
+    <h3> <?php echo $this->error; ?></h3>
+    <br/><br/>
+        <input type="image" src="/snep/modules/default/img/voltar.png" title="Voltar" value="submit" width="70" height="32" value="<?php echo $this->back; ?>" onClick="javascript:location.href='javascript:history.back();'" />
+</div>
+
+

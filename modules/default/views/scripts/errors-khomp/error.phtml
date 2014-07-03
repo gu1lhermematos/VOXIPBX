@@ -1,0 +1,9 @@
+<?php 
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get("Erros links",  NULL, NULL, "reports");
+?>
+<div class="zend_form" id="form_ie">
+	<span>Erro</span>
+	<?php echo $this->erro; ?>
+</div>

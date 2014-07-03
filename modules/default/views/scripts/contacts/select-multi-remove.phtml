@@ -1,0 +1,23 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Remove Multiple",  "Contacts", $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName());
+
+?>
+<div class="description_form"><p>Essa funcionalidade permite que sejam excluidos todos contatos ao mesmo tempo no SNEP. Para usar essa funcionalidade basta escolher na opção<strong> Grupo</strong> o ítem Todos os Grupos, para ser excluido todos contatos cadastrados, ou escolher a qual grupo deseja excluir</p></div>
+
+<div style='text-align: center;' class="error_box">
+	<?php echo $this->message ?>
+</div>
+<?php echo $this->form ?>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/contacts/');
+    echo $buttons->getHtml();
+    
+?>

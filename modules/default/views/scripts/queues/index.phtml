@@ -1,0 +1,51 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/removeItem.js');
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/import');
+$title->addOption('export', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/export');
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+?>
+
+<table>
+   <thead>
+      <tr>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate("Name"), "name") ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate("Audio Class"), "musiconhold") ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate("Strategy"), "strategy") ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate("SLA"), "servicelevel") ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate("Timeout"), "timeout") ?> </th>
+         <th colspan="3" class="action"> <?php echo $this->translate('Actions') ?> </th>
+      </tr>
+   </thead>
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->queues) :
+        foreach($this->queues as $cha => $queue ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td> <b> <?php echo $queue['name'] ?> </b> </td>
+                <td> <?php echo $queue['musiconhold'] ?> </td>
+                <td> <?php echo $queue['strategy'] ?> </td>
+                <td> <?php echo $queue['servicelevel'] ?> </td>
+                <td> <?php echo $queue['timeout'] ?> </td>
+                <td class="action">
+                    <a class="alterar" href="<?php echo $this->url ?>/edit/id/<?php echo $queue['name'] ?>"></a>
+                </td>
+                <td class="action">
+                   <a class="excluir" href="<?php echo $this->url ."/remove/id/".  $queue['name'] ?>"></a>
+                </td>
+                <td class="action">
+                    <a class="membros" href="<?php echo $this->url ?>/members/id/<?php echo $queue['name'] ?>"></a>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

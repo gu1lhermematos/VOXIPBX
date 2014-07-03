@@ -1,0 +1,23 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("multi remove"),  $this->translate("extensions"), $this->baseUrl()."/index.php/default/extensions");
+
+if($this->retornos){	
+?>
+<div style = "border-radius: 7px; background-color: #DDD; width: 900px; padding: 15px; font-size: 12px; margin: 15px; float: left; display: table;">
+<?php echo $this->retornos; ?>
+</div>
+<?php
+}
+echo $this->form;    
+?>
+<div class="description_form"><p>In fringilla faucibus mauris, vel venenatis nisl gravida id. Maecenas lacus tortor, fermentum ac pellentesque sodales, facilisis sed nibh. Nulla vitae arcu lacus. Morbi convallis ultricies nunc, at ultrices neque malesuada eu. Aenean dignissim vestibulum dui non condimentum.</p></div>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('delete', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/extensions/');
+    echo $buttons->getHtml();
+    
+?>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Document   : subMenu.xml
+    Author     : Iago Uilian Benrdt, Rodrigo Cavichioli
+	Atualizado : 02/10/2012 - Johnny Ewert
+				-incluso menu Suporte
+-->
+<submenus>
+	<menu>
+		<title>dashboard</title>
+		<link></link>
+	</menu>
+        
+        <menu>
+		<title>Status</title>
+		<default_icon>view_icon.png</default_icon>
+                <default_icon_title>View</default_icon_title>
+		<sub>
+			<title>Links </title>
+			<link>khomp-links</link>
+		</sub>
+                <sub>
+			<title>Extensions, IP Trunks, Queues</title>			
+			<link>ip-status</link>
+		</sub>
+                <sub>
+			<title>Errors Links</title>
+			<link>errors-khomp</link>
+		</sub>
+                <sub>
+			<title>System Logs</title>
+			<link>logs</link>
+                </sub>
+                
+        </menu>
+        
+	<menu>
+		<title>Entries</title>
+		<default_icon>view_icon.png</default_icon>
+                <default_icon_title>View</default_icon_title>
+		<sub>
+			<title>Cost Center</title>
+			<link>cost-center</link>
+			<option>
+				<link>cost-center/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+		<sub>
+			<title>Contacts</title>
+			<link>contacts</link>
+			<option>
+				<link>contacts/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+		<sub>
+			<title>Contact Groups</title>
+			<link>contact-groups</link>
+			<option>
+				<link>contact-groups/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+		<sub>
+			<title>Queues</title>
+			<link>queues</link>
+			<option>
+				<link>queues/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+		<sub>
+			<title>Extension Groups</title>
+			<link>extensions-groups</link>
+			<option>
+				<link>extensions-groups/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+                <sub>
+			<title>Pickup Groups</title>
+			<link>pickup-groups</link>
+			<option>
+				<link>pickup-groups/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+                <sub>
+			<title>Extensions</title>
+			<link>extensions</link>
+			<option>
+				<link>extensions/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+		<sub>
+			<title>Conference Rooms</title>
+			<link>conference-rooms</link>
+		</sub>
+                <sub>
+                <title>Trunks</title>
+			<link>default/trunks</link>
+			<option>
+				<link>default/trunks/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+                </sub>
+                <sub>
+			<title>Carrier</title>
+			<link>carrier</link>
+			<option>
+				<link>carrier/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+                <sub>
+			<title>Billing</title>
+			<link>billing</link>
+			<option>
+				<link>billing/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+	</menu>
+	<menu>
+		<title>Reports</title>
+                <default_icon>report_button.png</default_icon>
+                <default_icon_title>Generate report</default_icon_title>
+		<sub>
+			<title>Calls</title>
+			<link>calls-report</link>
+		</sub>
+                <sub>
+			<title>Call Ranking</title>
+			<link>ranking-report</link>
+		</sub>
+                <sub>
+			<title>Services Report</title>
+			<link>services-report</link>
+		</sub>
+	</menu>
+	
+	<menu>
+		<title>Routing</title>
+                <default_icon>view_icon.png</default_icon>
+                <default_icon_title>View</default_icon_title>
+                <sub>
+			<title>Routes</title>
+			<link>route</link>
+			<option>
+				<link>route/frame/actionkey/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+			
+		</sub>
+		
+		<sub>
+			<title>Simulator</title>
+			<link>simulator/index</link>
+		</sub>
+                <sub>
+			<title>Default Settings</title>
+			<link>action-configs</link>
+		</sub>
+		
+                <sub>
+			<title>Expression Aliases</title>
+			<link>expression-alias</link>
+			<option>
+				<link>expression-alias/add</link>
+				<icon>new_icon.png</icon>
+                                <icon_title>Add</icon_title>
+			</option>
+		</sub>
+	</menu>
+	<menu>
+		<title>Settings</title>
+                <default_icon>edit_icon_2.png</default_icon>
+                <default_icon_title>Edit</default_icon_title>
+		<sub>
+			<title>Parameters</title>
+			<link>parameters</link>
+		</sub>
+                <sub>
+			<title>Sound Files</title>
+			<link>sound-files</link>
+		</sub>
+                <sub>
+			<title>Music on Hold</title>
+			<link>music-on-hold</link>
+		</sub>
+                <sub>
+			<title>System Diagnosis</title>
+			<link>inspector</link>
+		</sub>
+        <sub>
+			<title>CNL Update</title>
+			<link>cnl</link>
+		</sub>
+        <sub>
+			<title>Maintenance</title>
+			<link>maintenance</link>
+		</sub>
+              <!--  <sub>
+			<title>Module installer</title>
+			<link>instalador</link>
+		</sub> -->
+	</menu>
+	<!--<menu>
+		<title>Support</title>
+		<link>suporte</link>
+	</menu> -->
+</submenus>

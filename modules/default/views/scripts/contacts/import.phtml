@@ -1,0 +1,16 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Import CSV"),$this->translate("contats"), $this->baseUrl()."/index.php/default/contacts");
+?>
+<div class="exInfo">
+	<?php echo $this->message ?>
+</div>
+<?php echo $this->form ?>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('import', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/contacts/');
+    echo $buttons->getHtml();
+?>

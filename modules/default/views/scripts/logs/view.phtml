@@ -1,0 +1,68 @@
+<?php
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("System logs"),  NULL, NULL, "reports");
+?>
+
+<div class="bgfiltro">
+        <input style="float:right;" class="new_button" type="button" id="voltar" 
+	       value="<?php echo $this->back; ?>" onClick="location.href='<?php echo $this->baseUrl();?>/index.php/logs'" />
+
+        <span>
+            <strong><?php echo $this->exibition_mode; ?></strong>
+            <input type="radio" name="modo" checked id="modo" value="normal" onclick="logStyle(this.value);"> <?php echo $this->normal; ?>
+            <input type="radio" name="modo" id="modo" value="terminal" onclick="logStyle(this.value);"> <?php echo $this->terminal; ?>
+            <input type="radio" name="modo" id="modo" value="contraste" onclick="logStyle(this.value);"> <?php echo $this->contrast; ?>
+        </span>
+	<?php if ($this->mode == 'tail'): ?>
+	    <span>
+                <strong><?php echo $this->lines; ?>:</strong>
+                <input type="text" name="n" value="30" class="campos" id="n"/>
+            </span>
+     <?php endif ?>
+</div>
+
+<div id="tail" class="normal">
+    <?php 
+    if ($this->mode != 'tail') {
+        foreach($this->result as $row) {
+            echo $row . "<br>";
+                }
+    } else { ?>
+                <script>
+                    $(document).ready(function logsRefresh(){
+                        var get = $.get(pathName+'index.php/logs/tail/lines/'+parseInt($(".campos#n").val()), function(data)  {
+                            $('#tail').html(data);
+                        });
+                        get.complete(function(){setTimeout(logsRefresh, 1000)});
+                    });
+                </script>
+    <?php } ?>
+</div>
+<script>
+    function logStyle(style){
+        switch(style){
+            case "normal":
+                $('#tail').fadeOut('250', function(){
+                    $(this).removeClass('terminal');
+                    $(this).removeClass('contraste');
+                    $(this).addClass('normal').fadeIn('250');
+                });
+                break;
+            case "terminal":
+                $('#tail').fadeOut('250', function(){
+                    $(this).removeClass('normal');
+                    $(this).removeClass('contraste');
+                    $(this).addClass('terminal').fadeIn('250');
+                });
+                break;
+            case "contraste":
+                $('#tail').fadeOut('250', function(){
+                    $(this).removeClass('terminal');
+                    $(this).removeClass('normal');
+                    $(this).addClass('contraste').fadeIn('250');
+                });
+                break;
+        }
+    }
+</script>

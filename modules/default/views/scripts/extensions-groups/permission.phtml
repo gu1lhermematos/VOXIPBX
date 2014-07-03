@@ -1,0 +1,40 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css" );
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jqueryui.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Permission"),  $this->translate("Extension Groups"), $this->baseUrl()."/index.php/default/extensions-groups");
+
+echo $this->form;
+?>
+
+<div class="description_form"><p>
+<h1>Permiss&otilde;es</h1>
+<p>Esta rotina do sistema controla as permiss&otilde;es de acesso que cada Grupo de Ramal tem no uso do sistema:</p>
+<p>Escolha a rotina e defina se o grupo de ramal selecionado ter&aacute; ou n&atilde;o permiss&atilde;o para acessa-la.</p>
+<p><strong>Importante</strong> : Para o Menus de Cadastro, Relat&oacute;rios e Configura&ccedil;&otilde;es, pode-se optar por esconder ou exibi-los por inteiro, defindo isso nas op&ccedil;&otilde;es:
+</p></div>
+
+<?php 
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/extensions-groups/');
+echo $buttons->getHtml();
+?>
+
+<style>
+.ui-multiselect{
+	border:solid 1px #DDD;
+	border-radius:5px;
+	padding: 2px;
+	background-color: #FFF;
+}
+</style>
