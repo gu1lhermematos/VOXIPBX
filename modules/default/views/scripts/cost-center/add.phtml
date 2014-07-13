@@ -1,0 +1,89 @@
+<?php
+$title = new Snep_Title("Entries");
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("new cost center"), $this->translate("cost center"), $this->baseUrl() . "/index.php/default/cost-center");
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Centro de Custos - Incluir</h2>
+
+
+    <p>Esta rotina permite a Inclusão do Cadastro de um Centro de Custos.</p>
+    <span style="display:none;" id="text_description">
+        <p>Os Centro de Custos s&atilde;o usados pelo Asterisk para definir o "Accountcode" de Cada 
+            liga&ccedil;&atilde;o de sa&iacute;da, gravando esta informa&ccedil;&atilde;o na tabela cdr.</p>
+        <p>Um Centro de Custos &eacute; composto dos seguintes campos:</p>
+        <ul>
+            <li><strong>C&oacute;digo:</strong>O c&oacute;digo pode ser de 1, 3 ou 5 digitos, sempre 
+                NUM&Eacute;RICOS, e distribuidos em at&eacute; 3 "casas", que determinam sua herarquia. Defini&ccedil;&atilde;o:<br>
+                <strong>9</strong> - c&oacute;digo com 1 d&iacute;gito, &eacute; considerado o c&oacute;digo PAI. Devem existir apenas 2 (dois) c&oacute;digos
+                PAI no sistema - um para ENTRADAs e um para SA&Igrave;DAS.<br>
+                <strong>9.99</strong> - c&oacute;digo com 3 d&iacute;gitos, &eacute; considerado o c&oacute;digo Filho de 1a. Gera&ccedil;&atilde;o<br>
+                <strong>9.99.99</strong> - c&oacute;digo com 5 d&iacute;gitos, &eacute; considerado o c&oacute;digo Filho de 2a. Gera&ccedil;&atilde;o<br>
+                <p><strong>Exemplo:</strong></p>
+                &nbsp;&nbsp;1 - Liga&ccedil;&otilde;es de Entrada<br>
+                &nbsp;&nbsp;1.01 - Departamento Comercial<br>
+                &nbsp;&nbsp;1.01.01 - Diretor Comercial<br>
+                &nbsp;&nbsp;1.01.02 - Vendedores<br>
+                &nbsp;&nbsp;1.01.03 - Telemarketing<br>
+                &nbsp;&nbsp;...</li>
+            <li><strong>Nome:</strong>Define um Nome para o centro de Custos;</li>
+            <li><strong>Tipo:</strong>Define em que tipo de liga&ccedil;&atilde;o o Centro de Custos ser&aacute; aplicado: de Entrada ou de Sa&iacute;da</li>
+            <li><strong>Descri&ccedil;&atilde;o:</strong>Breve descri&ccedil;&atilde;o do objetivo do Centro de Custos</li>
+
+
+            </li>
+        </ul> 
+        </p>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/cost-center/');
+echo $buttons->getHtml();
+?>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>
+
+<script type="text/javascript">
+
+    document.forms[0].elements[0].focus();
+    $('#id').attr("autocomplete", "off");
+
+    function inUse(i) {
+        $.post('<?php echo $this->baseUrl(); ?>/index.php/cost-center/inUse/', {id: i}, function(data) {
+            $('.hint').eq(0).html(data);
+        });
+
+    }
+    $("#id").keyup(function() {
+        inUse($(this).val());
+    });
+
+
+</script>

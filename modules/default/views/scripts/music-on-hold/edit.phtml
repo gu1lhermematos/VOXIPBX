@@ -1,0 +1,65 @@
+<?
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+echo Snep_Bar::get("Edit",  "Music on Hold Sessions", $this->baseUrl()."/index.php/default/music-on-hold");
+	
+if( $this->error['error'] ) : ?>
+	<div class="error_box"> <?php echo $this->error['message']  ?> </div>
+<?php endif ?>
+        
+<?php
+echo $this->form;
+?>
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Se&ccedil;&otilde;es - Alterar</h2>
+
+    <p>Esta rotina permite que se&ccedil;&otilde;es de m&uacute;sica em Espera sejam Alteradas.</p>
+    <p>As m&uacute;sicas em espera s&atilde;o agrupadas em "SE&Ccedil;&Otilde;ES" 
+        e por padr&atilde;o, o SNEP cria tr&ecirc;s se&ccedil;&otilde;es na sua 
+        instala&ccedil;&atilde;o, al&eacute;m da se&ccedil;&atilde;o "Default" do Asterisk.<br></p>
+    <span style="display:none;" id="text_description">
+        <p>Os arquivos de som ser&atilde;o colocados nestas se&ccedil;&otilde;es
+            conforme for o casoe as se&ccedil;&otilde;es ser&atilde;o usadas de 
+            acordo com o Plano de Discagem definido.</p> 
+        <p>Esta rotina atualiza o arquivo snep-musiconhold.conf.</p>
+        <ul>  
+            <li><strong>Sessão: </strong>Define o nome da se&ccedil;&atilde;o. N&atilde;o use espa&ccedil;os ou caracters 
+                acentuados/especiais como: &ccedil;&atilde;&eacute;@#%...   </li>
+            <li><strong>Modo: </strong>Define a maneira com que o Snep ir&aacute; ler o(s)
+                arquivo(s) contido(s) na se&ccedil;&atilde;o.</li>
+            <li><strong>Caminho Padrão: </strong>Define o diretório que será usado pela sessão.</li>
+            <li><strong>Pasta: </strong> Nome da pasta onde o arquivo de som está armazenado.</li>   
+        </ul></p>
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+<?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/music-on-hold/');
+    echo $buttons->getHtml();
+    
+?>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

@@ -1,0 +1,33 @@
+/* 
+    Document   : multiwx.js
+    Created on : Apr 03, 2012, 03:32:25 PM
+    Author     : Iago Uilian Berndt
+    Description: MultiWx scripts
+*/
+
+.boxremove{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-image: url(../img/form_cancel_icon.png);
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+}
+.boxadd{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-image: url(../img/new_icon.png);
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+}
+.campos{
+	vertical-align: top;
+	margin-left: 10px;
+	width: 300px !important;
+}
+.optional{
+	font-size: 21px;
+	margin-top: 5px;
+	margin-left: 10px;
+}

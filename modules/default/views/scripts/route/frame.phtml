@@ -1,0 +1,36 @@
+<?php
+
+	$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+	$title = new Snep_Title("Routing");
+	$title->addOption('simulator', $this->baseUrl()."/index.php/default/simulator");
+	echo $title->getHtml();
+	echo Snep_Bar::get($this->subTitle,  "Routes", $this->baseUrl()."/index.php/default/route");
+
+?>
+
+<iframe src="<?php echo $this->baseUrl() ?>/index.php/route/<?php echo str_replace('-', '/', $this->action); ?>" style="width:960px; border:none; overflow: hidden;"></iframe>
+
+
+ <?php
+    $buttons = new Snep_Buttons();
+    $buttons->addOption('save', 'snep_form', true);
+    $buttons->addOption('cancel', $this->baseUrl().'/index.php/route/');
+    echo $buttons->getHtml();
+ ?>
+ 
+ <script type="text/javascript">
+
+ 	var interval = setInterval(function(){
+ 		$('iframe').height($('iframe').contents().find('body').height());
+ 		$('iframe').contents().find('#goto').each(function(){
+ 	 		$(window.document.location).attr('href',$(this).html());
+ 	 		clearInterval(interval);
+ 		});
+	}, 10 );
+ 
+	$(".buttons .option").eq(0).click(function(){
+		$('iframe')[0].contentWindow.atualizaValues();
+		$('iframe').contents().find('#snep_form').submit();
+	});
+	
+ </script>

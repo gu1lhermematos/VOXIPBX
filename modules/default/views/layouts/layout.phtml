@@ -1,0 +1,62 @@
+<?php
+/* 
+    Document   : layout.phtml
+    Created on : Mar 31, 2012, 11:18:12 AM
+    Author     : Iago Uilian Benrdt, Rodrigo Cavichioli
+    Description: Base layout
+*/
+?>
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+    <?php echo $this->headTitle() . "\n"; ?>
+    <?php echo $this->headLink() . "\n"; ?>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headStyle() . "\n"; ?>
+    <?php echo $this->headScript() . "\n"; ?>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="<?php echo Zend_Registry::get('config')->system->path->web; ?>/index.php/" alt="Tofalando 2.0" style="position: relative; display: table" title="Tela inicial">
+                <img src="<?php echo $this->baseUrl(); ?>/modules/default/img/logo_snep_system.png" alt="ToFalando 2.0" id="snep_logo" />
+                <img src="<?php echo $this->baseUrl(); ?>/modules/default/img/preload.gif" id="preload" style=" position: absolute; left: 95px; top: 4px; ">
+            </a>
+            <div id="menus">
+                <div id="mainMenu">
+                    <ul class="navMenu">
+                        <?php echo Snep_SubMenu::get(); ?>
+                    </ul>
+                </div>
+                <div id="moduleMenuContainer">
+                    <div id="moduleMenuSlider">
+                        <ul class="moduleMenu">
+                            <li><div class="expand"><a href="#">&laquo; <?php echo $this->translate("more");?></a></div></li>
+                            <?php
+                            if (count($this->indexData["modules"]) > 1) {
+                                echo Snep_SubMenu::getModules();
+                            }else{ ?>
+                            <li><?php echo $this->translate("No modules instaled."); ?></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div id="breadcrumb" <?php/* if($this->hideMenu) { echo 'class="fullbreadcrumb"'; } ?>>
+            <?php echo $this->breadcrumb; */?>
+        </div>
+        -->
+        <div id="content">
+            <?php echo $this->layout()->content; ?>
+        </div>
+    </div>
+    <br />
+    <div id="footer">
+        <div id="footer_content">
+            <!--jQuery chama /snep/index.php/services/-->
+        </div>
+    </div>
+</body>
+</html>

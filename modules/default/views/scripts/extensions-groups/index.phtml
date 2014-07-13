@@ -1,0 +1,68 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->appendFile('/snep/includes/javascript/scriptaculous/src/scriptaculous.js');
+$this->headScript()->appendFile('/snep/includes/javascript/registrations.js');
+
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/import');
+$title->addOption('export', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/export');
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+?>
+
+<table>
+   <thead>
+      <tr>
+         <th> <?php echo Snep_Order::getLink($this, 'Name', 'name') ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, 'Type', 'inherit')  ?> </th>
+         <th colspan="2" class="action"> <?php echo $this->translate('Actions') ?> </th>
+      </tr>
+   </thead>
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->extensionsgroups):
+        foreach($this->extensionsgroups as $cha => $val ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td>
+                    <b>
+                        <?php if(array_key_exists($val['name'], $this->tra) ) : ?>
+                            <?php echo $this->tra[$val['name']]; ?>
+                        <?php else : ?>
+                           <?php echo $val['name']; ?>
+                        <?php endif ?>
+                    </b>
+                </td>
+                <td> 
+                        <?php if(array_key_exists($val['inherit'], $this->tra) ) : ?>
+                            <?php echo $this->tra[$val['inherit']]; ?>
+                        <?php else : ?>
+                           <?php echo $val['inherit']; ?>
+                        <?php endif ?>
+
+                </td>
+                        
+                            <td class="action">
+                                <?php if($val['name'] != "admin" ||$this->user == "admin" ): ?>
+                                <a class="permissao" href='<?php echo $this->URL; ?>permission/id/<?php echo $val['name'] ?>'></a>
+                                <?php endif; ?>
+                            </td>
+                            <td class="action">
+                                <?php if($val['name'] != "admin" ||$this->user == "admin" ): ?>
+                                <a class="alterar" href='<?php echo $this->URL; ?>edit/id/<?php echo $val['name'] ?>'></a>
+                                <?php endif; ?>
+                            </td>
+                            <td class="action">
+                                <?php if($val['name'] != "admin"): ?>
+                                <a class="excluir" href='<?php echo $this->URL; ?>delete/id/<?php echo $val['name']?>'></a>
+                                <?php endif; ?>
+                            </td>
+                           
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

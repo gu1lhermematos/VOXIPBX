@@ -1,0 +1,25 @@
+<?php
+    $this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+?>
+
+<div class="maintenance">
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <div style="padding: 10px;">
+                        <?php echo $this->translate('Were found: '); ?>
+                        <b><?php echo $this->totals['total'] ?></b>
+                        <?php echo $this->translate(" records. Do you really want to remove them?"); ?>
+
+                        <input type="hidden" name="confirm" value="1" />
+                        
+                    </div>
+                    <button>Sim, remover</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+

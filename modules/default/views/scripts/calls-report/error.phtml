@@ -1,0 +1,9 @@
+<?php 
+
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+
+?>
+<div id="error">
+    <?php echo $this->error; ?>
+    <input class="new_button" type="button" id="voltar" style="" value="<?php echo $this->back; ?>" onClick="location.href='../calls-report/index'" />
+</div>

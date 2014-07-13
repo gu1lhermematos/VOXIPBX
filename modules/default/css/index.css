@@ -1,0 +1,156 @@
+/* 
+    Document   : index.css
+    Author     : Iago Uilian Berndt
+*/
+
+
+audio {
+    width: 100px;
+    height: 5px;
+    margin-top: -17px;
+    display: table;
+}
+#content table {
+    width: 100%;
+    margin-top: 15px;	
+}
+
+#content table .action {
+    text-align: center;
+}
+
+#content td, #content th {
+    border: none;
+    font-size: 11px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+    padding: 15px 5px;
+}
+
+#content th {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#content tr .action{
+    width: 30px;
+}
+
+#content td .alterar{
+	display: block;
+	background-image: url(../img/edit_icon_2.png);
+	width: 30px;
+	height: 30px;
+}
+
+#content td .configurar{
+	display: block;
+	background-image: url(../img/edit_icon_2.png);
+	width: 30px;
+	height: 30px;
+}
+#content td .restaurar{
+	display: block;
+	background-image: url(../img/go_back_icon.png);
+	width: 20px;
+	height: 20px;
+}
+#content td .permissao{
+	display: block;
+	background-image: url(../img/off_button.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+#content td .excluir{
+	display: block;
+	background-image: url(../img/delete_icon.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+#content td .eject{
+	display: block;
+	background-image: url(../img/eject.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+#content td .download{
+	display: block;
+	background-image: url(../img/send_to_dashboard_button.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+#content td .listar{
+	display: block;
+	background-image: url(../img/duplicate_button.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+#content td .duplicar{
+	display: block;
+	background-image: url(../img/duplicate_button.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+#content td .membros{
+	display: block;
+	background-image: url(../img/member_group_icon.png);
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.buttonBar{
+	background-image:url(../img/background_title_bar.png);
+	display: table;
+	width: 100%;
+	border-radius:5px;
+	margin-top: 20px;
+	color:#555;
+	font-size: 12px;
+	overflow: hidden;
+}
+.buttonBar .pagination{
+	float: right;
+}
+.buttonBar .page{
+	display: block;
+	float: left;
+	margin: 7px 4px 7px 0px;
+	font-size: 12px;
+	padding: 4px 8px 4px 8px;
+}
+.buttonBar span{
+	display: block;
+	float: left;
+	margin: 11px 0px 0px -4px;
+}
+.buttonBar .previous{
+	display: block;
+	float: left;
+	background-image:url(../img/pagination_button_back.png);
+	width: 52px;
+	height: 38px;
+}
+.buttonBar .next{
+	display: block;
+	float: left;
+	background-image:url(../img/pagination_button_forward.png);
+	width: 52px;
+	height: 38px;
+}
+.buttonBar .page:hover, .buttonBar .a{
+	border: solid 1px #888;
+	padding: 3px 7px 3px 7px;
+	background-color: #D5D5D5;
+}
+.buttonBar .view{
+	float: left;
+	margin: 11px 0px 0px 11px;
+}

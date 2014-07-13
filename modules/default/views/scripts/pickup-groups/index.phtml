@@ -1,0 +1,42 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/removeItem.js');
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/import');
+$title->addOption('export', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/export');
+echo $title->getHtml();
+echo $this->render('filter.phtml');
+?>
+<table>
+   <thead>
+      <tr>
+         <th class="action"> <?php echo Snep_Order::getLink($this, 'Code', 'cod_grupo') ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, 'Name', 'nome') ?> </th>
+         <th colspan="2" class="action"> <?php echo $this->translate('Actions') ?> </th>
+      </tr>
+   </thead>
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->pickupgroups):
+        foreach($this->pickupgroups as $id => $pickupGroups ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td class="numeric"> <b> <?php echo $pickupGroups['cod_grupo'] ?> </b> </td>
+                <td> <?php echo $pickupGroups['nome'] ?> </td>
+                <td class="action">
+                    <a class="alterar" href='<?php echo $this->URL; ?>edit/id/<?php echo $pickupGroups['cod_grupo'] ?>'></a>
+                </td>
+                <td class="action">
+                    <?php if($pickupGroups['cod_grupo'] != "1"): ?>
+                       <a class="excluir"  href='<?php echo $this->URL; ?>delete/id/<?php echo $pickupGroups['cod_grupo'] ?>'></a>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+   </tbody>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

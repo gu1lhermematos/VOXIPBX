@@ -1,0 +1,11 @@
+<?php 
+$html="";
+if( isset($this->filter) ) :
+	foreach($this->filter as $links):
+	endforeach;
+endif;
+if( isset( $this->form_filter ) ) :
+	$html = $this->form_filter;
+endif;
+echo Snep_Bar::get($this->title, $links['display'], $links['url'], 'view', $html)
+?>

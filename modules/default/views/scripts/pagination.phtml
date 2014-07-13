@@ -1,0 +1,36 @@
+<div class="buttonBar">
+<?php 
+if(count( $this->pages->pagesInRange ) > 1){
+	$link = "/limit/". $this->limit ."/order/".$this->order[0].($this->order[1]?"/desc/true":"").($this->filter_value?"/filter/".$this->filter_value:"");
+	echo "<div class='view'>";
+		echo $this->translate("Showing ").' '.$this->pages->firstItemNumber." - ".$this->pages->lastItemNumber.' '.$this->translate(" of ").' '.$this->pages->totalItemCount." ".$this->translate("items founds");
+	echo "</div>";
+	echo "<div class='pagination'>";
+		echo "<a class='page ".($this->pages->current==1?"a":"")."' href='". $this->PAGE_URL ."page/1".$link."'>1</a>";
+		
+		$ini = max(array($this->pages->current -5, 2));
+		$fim = min(array($this->pages->current +5, $this->pages->last-1));
+		
+		if($ini > 2) echo "<span>...</span>";
+		$i = $ini-1;
+		while($i++<$fim){
+			echo "<a class='page ".($this->pages->current==$i?"a":"")."' href='". $this->PAGE_URL ."page/$i.$link'>$i</a>";
+		}
+		if($fim+1 < $this->pages->last) echo "<span>...</span>";
+		echo "<a class='page ".($this->pages->current==$this->pages->last?"a":"")."' href='". $this->PAGE_URL ."page/".$this->pages->last.$link."'>".$this->pages->last."</a>";	
+		
+
+                
+                 if (!isset($this->pages->previous)) {
+           $this->pages->previous = "";
+        }
+                if($this->pages->previous) echo "<a class='previous' href='". $this->PAGE_URL ."page/".$this->pages->previous.$link."'></a>";		
+                if(isset($this->pages->next)){
+                if($this->pages->next) echo "<a class='next' href='". $this->PAGE_URL ."page/".$this->pages->next.$link."'></a>";
+                }else {
+                    $this->pages->next = "";
+                }
+	echo "</div>";
+}
+?>
+</div>

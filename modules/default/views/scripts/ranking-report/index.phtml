@@ -1,0 +1,161 @@
+<?php
+
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/ui/jquery-ui-timepicker-addon.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+
+
+$locale = str_replace("_", "-", Snep_Locale::getInstance()->getLocale());
+if( $locale == "en-US") { $locale = 'en_US'; }
+?>
+
+<?php 
+
+$title = new Snep_Title("Reports");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Call Ranking", "", "", "reports");
+?>
+
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Relat&oacute;rio de Ranking das Liga&ccedil;&otilde;es</h2>
+
+<p>Exibe um relat&oacute;rio estat&iacute;stico, rankeado por n&uacute;mero de ramal/telefone que
+mais fizeram ou receberam liga&ccedil;&otilde;es no per&iacute;odo especificado.</p>
+<span style="display:none;" id="text_description">
+<p>O Sistema acumula o total de chamadas ou tempo de chamadas efetuadas + recebidas a partir de ou
+para um telefone dentro do per&iacute;odo especificado. O Ranking &eacute; baseado neste total,
+apesar de ser exibido somente os TOP 'n' de cada n&uacute;mero rankeado.</p>
+<p>Alguns filtros podem ser aplicados para refinar a pesquisa:</p>
+<ul>
+  <li><strong>Per&iacute;odo: </strong>Define o intervalo de datas/hora do qual se
+  deseja extrair as informa&ccedil;&otilde;es;</li>
+  <li><strong>Tipo de Ranking: </strong>Define se o ranking deve ser feito com base 
+  no N&uacute;mero de Liga&ccedil;&otilde;es (Quantidade) ou tempo das Liga&ccedil;&otilde;es (Tempo).</li>
+  <li><strong>Exibir Ranking das 'n' Origens: </strong>Define quantos rankeados
+  devem ser exibidos.</li>
+  <li><strong>Exibir os TOP 'n' por  Origem: </strong>Define quantos n&uacute;meros de
+  telefones chamados ou chamadores deve ser exibido para cada rankeado.</li>  
+  <li><strong>Aplicar Filtro de Descarte: </strong>Exclui liga&ccedil;&otilde;es cujo destino
+  seja igual a lista apresentada.</li> 
+</ul>
+Este relat&oacute;rio mostra , acumulado em cada rankeado do per&iacute;odo solicitado:
+ 
+<ul>
+   <li>N&uacute;mero do Telefone Rankeado - Origem da Liga&ccedil;&atilde;o
+      <ul>
+         <li>N&uacute;mero do Destino da Liga&ccedil;&atilde;o</li>
+         <li>Quantidade de Liga&ccedil;&otilde;es
+            <ul>
+              <li>N&uacute;mero de Chamadas Atendidas</li>        
+              <li>N&uacute;mero de Chamadas n&atilde;o Atendidas</li>
+              <li>Total de Chamadas (Atendidas + N&atilde;o Atendidas)</li>
+            </ul>
+         </li>
+         <li>Tempo das Liga&ccedil;&otilde;es
+            <ul>
+              <li>Tempo de dura&ccedil;&atilde;o das Chamadas Atendidas</li>        
+              <li>Tempo de dura&ccedil;&atilde;o das Chamadas n&atilde;o Atendidas</li>
+              <li>Tempo Total das Chamadas (Atendidas + N&atilde;o Atendidas)</li>
+            </ul>
+         </li>
+      </ul>
+   </li>   
+</ul>
+<li><strong>Exportar CSV:</strong> Gera relat&oacute;rio no formato CSV (Valores separados por v&iacute;rgula) afim
+  de tais informa&ccedil;&otilde;es sejam utilizadas em Planilhas Eletr&ocirc;nicas e outros Softwares estat&iacute;sticos.</li>
+<li><strong>Exportar para PDF:</strong> Gera relatório no formato PDF</li>
+</p>
+</span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+
+<?php
+
+if( isset( $this->error ) ){ ?>
+    <div class="error_box" > 
+        <?php echo  $this->error ?>
+    </div>
+<?php 
+}
+
+echo $this->form;
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('gerar', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/');
+echo $buttons->getHtml();
+
+?>
+
+<script type="text/javascript">
+
+$('#exten-group_select').change(function(){
+	if($(this).val() == ''){
+		$('#exten-exten_select').removeAttr('disabled');
+	}else{
+		$('#exten-exten_select').attr('disabled', true);
+	}
+});
+
+
+$('.line').eq(0).addClass('colun');
+$('.line').eq(1).addClass('colun');
+$('#period-init_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+$('#period-till_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+
+</script>
+ 
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

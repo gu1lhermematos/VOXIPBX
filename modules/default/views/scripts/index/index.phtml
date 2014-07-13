@@ -1,0 +1,21 @@
+<?
+$this->headScript()->appendFile($this->baseUrl() . '/includes/jquery-1.7.2.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/ui/jquery.ui.core.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/ui/jquery.ui.widget.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/ui/jquery.ui.mouse.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/ui/jquery.ui.sortable.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/dashboard.css');
+
+$title = new Snep_Title("Dashboard");
+$title->addOption('edit', $this->baseUrl() . '/index.php/index/edit');
+echo $title->getHtml();
+?>
+
+<div class="dashboard">
+    <?php
+    $dashboard = $this->dashboard;
+    foreach($dashboard as $valor){
+        echo "<a href='".$this->baseUrl() ."/index.php/".(isset($valor['module']) && $valor['module'] ? $valor['module'] : "default")."/$valor[link]' class='$valor[modelo]'><img src='".$this->baseUrl() . "/modules/".(isset($valor['module']) && $valor['module'] ? $valor['module'] : "default")."/img/$valor[icone]' /><span>$valor[nome]</span><br/>$valor[descricao]</a>";
+    }
+    ?>
+</div>

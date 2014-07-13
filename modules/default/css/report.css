@@ -1,0 +1,62 @@
+/* 
+    Document   : route.js
+    Created on : Apr 03, 2012, 03:32:25 PM
+    Author     : Iago Uilian Berndt
+    Description: Report scripts
+*/
+#error{
+	padding: 50px; 
+	text-align: center; 
+	background-color:#DDD;
+	margin:50px 150px 50px 150px; 
+	color:#000; 
+	border-radius:5px; 
+	font-size: 16px;
+}
+#error input{
+	background-color: #e83400; 
+	background-image: url(../img/form_cancel_icon.png);  
+	margin: 0 5px;
+    padding: 7px 8px 5px 30px;
+    background-repeat: no-repeat;
+    background-position: left;
+    color: #fff;
+    font-weight: bold;
+	border:none;
+	cursor: pointer;
+}
+
+.check_a{
+	height: 30px;
+	width: 30px;
+	display: block;
+	float: left;
+}
+.labelcheck{
+	display: block;
+	margin: 5px;
+	float: left;
+}
+[for=service-serv_select-SIGAME], [for=service-serv_select-DND], [for=service-stat_select-A], [for=service-stat_select-D]{
+	display: table;
+	height: 30px;
+	width: 200px;
+	background-color: #FFF;
+	color: #333;
+	float: left;
+	margin-left: 10px;
+	border: solid 1px #BBB;
+	border-radius:4px;
+	padding: 5px
+}
+.line br{
+	display: none;
+}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 11px; }
+.ui-datepicker{ border: solid 1px #CCC; }

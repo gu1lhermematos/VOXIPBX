@@ -1,0 +1,38 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$title = new Snep_Title("Reports");
+$title->addOption('graphic', $this->baseUrl()."/index.php/services-report/graphic");
+$title->addOption('exportcsv', $this->baseUrl()."/index.php/services-report/csv");
+$title->addOption('exportpdf', $this->baseUrl()."/index.php/services-report/pdf");
+$title->addOption('dashboardform', $this->baseUrl()."/index.php/services-report/add-dashboard");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title, null, null, 'reports', $this->form_filter);
+
+?>
+<table>
+   <thead>
+      <tr>
+         <th> <?php echo Snep_Order::getLink($this, 'Extension', 'peer') ?> </th>
+         <th> <?php echo Snep_Order::getLink($this, $this->translate('Date and Time'), 'dated') ?> </th>
+         <th> <?php echo $this->translate('Service - Activated/Deactivated') ?> </th>
+         <th> <?php echo $this->translate('Service Status') ?> </th>
+      </tr>
+   </thead>
+   <tbody>
+       <?php
+    $c = 0;
+    if($this->report):
+        foreach($this->report as $cha => $val ): ?>
+            <?php ($c ? $c = 0 : $c = 1 ); ?>
+            <tr class="c<?php echo $c ?>">
+                <td> <b> <?php echo $val['peer'] ?> </b> </td>
+                <td> <?php echo $val['date'] ?> </td>
+                <td> <?php echo $val['service'] ?><?php echo $val['state'] ?></td>
+                <td> <?php echo $val['status'] ?> </td>
+            </tr>
+        <?php endforeach ?>
+    <?php endif ?>
+</table>
+<?php echo $this->render('pagination.phtml') ?>

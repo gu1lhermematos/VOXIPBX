@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : trunks.xml
+    Created on : 4 de Abril de 2011, 13:35
+    Author     : Iago Uilian Berndt, Rafael Bozzetti
+    Description:
+    Snep Form specification for trunks controller
+-->
+
+<form>
+    <trunks>
+        <elements>
+            <callerid>
+                <type>Text</type>
+                <options>
+                    <required>true</required>
+                    <label>Name</label>
+                    <size>7</size>
+                </options>
+            </callerid>
+        </elements>
+    </trunks>
+    <technology>
+        <elements>
+            <type>
+                <type>Select</type>
+                <options>
+                    <label>Trunk type</label>
+                    <multioptions>
+                        <sip>SIP</sip>
+                        <iax2>IAX2</iax2>
+                        <khomp>Khomp</khomp>
+                        <virtual>TDM/Virtual</virtual>
+                        <snepsip>ToFalando SIP</snepsip>
+                        <snepiax2>ToFalando IAX2</snepiax2>
+                    </multioptions>
+                    <size>1</size>
+                </options>
+            </type>
+        </elements>
+    </technology>
+    <ip>
+        <elements>
+            <dialmethod>
+                <type>radio</type>
+                <options>
+                    <label>Dial Method</label>
+                    <value>normal</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <normal>Normal</normal>
+                        <noauth>Without Authentication</noauth>
+                    </multioptions>
+                </options>
+            </dialmethod>
+            <username>
+                <type>Text</type>
+                <options>
+                    <label>Username</label>
+                    <size>4</size>
+                </options>
+            </username>
+            <secret>
+                <type>password</type>
+                <options>
+                    <label>Password</label>
+                    <size>4</size>
+                </options>
+            </secret>
+            <host>
+                <type>Text</type>
+                <options>
+                    <label>Remote Host</label>
+                    <size>9</size>
+                </options>
+            </host>
+            <fromuser>
+                <type>text</type>
+                <options>
+                    <label>Specify user of origin</label>
+                    <size>4</size>
+                </options>
+            </fromuser>
+            <fromdomain>
+                <type>text</type>
+                <options>
+                    <size>9</size>
+                    <label>Domain of origin</label>
+                </options>
+            </fromdomain>
+            <dtmfmode>
+                <type>radio</type>
+                <options>
+                    <label>DTMF Mode</label>
+                    <value>rfc2833</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <rfc2833>RFC-2833</rfc2833>
+                        <inband>Inband</inband>
+                        <info>Info</info>
+                    </multioptions>
+                </options>
+            </dtmfmode>
+            <qualify>
+                <type>radio</type>
+                <options>
+                    <label>Delay Qualification</label>
+                    <value>yes</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <yes>Yes</yes>
+                        <no>No</no>
+                        <specify>Specify</specify>
+                    </multioptions>
+                </options>                
+            </qualify>
+            <qualify_value>
+                <type>text</type>
+                <options>
+                     <class>maskPhone</class>
+                     <description>milisegundos</description>
+                    <label>Qualification time</label>
+                	<size>1</size>
+                </options>
+            </qualify_value>
+            <peer_type>
+                <type>radio</type>
+                <options>
+                    <label>Peer Type</label>
+                    <value>peer</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <peer> Peer</peer>
+                        <friend> Friend</friend>
+                    </multioptions>
+                </options>
+            </peer_type>
+            <reverse_auth>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <value>1</value>
+                    <label>Force reverse authentication</label>
+                </options>
+            </reverse_auth>
+            <nat>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>NAT Optimization</label>
+                </options>
+            </nat>  
+            
+            <codec>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ulaw</value>
+                    <label>Codec 1</label>
+                    <description>Prioritary</description>
+                </options>
+            </codec>
+            <codec1>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>alaw</value>
+                    <label>Codec 2</label>
+                </options>
+            </codec1>
+            <codec2>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 3</label>
+                </options>
+            </codec2>
+            <codec3>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 4</label>
+                </options>
+            </codec3>
+            <codec4>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 5</label>
+                </options>
+            </codec4>
+
+            <domain>
+                <type>text</type>
+                <options>
+                    <label>Domain</label>
+                    <size>7</size>
+                </options>
+            </domain>
+            <insecure>
+                <type>Text</type>
+                <options>
+                    <label>Insecure</label>
+                </options>
+            </insecure>
+            <port>
+                <type>text</type>
+                <options>
+                    <label>Port</label>
+                	<size>1</size>
+                </options>
+            </port>
+            <!-- 
+            IMPORTANTE:
+            O nome deste campo deveria ser call-limit (com hifem), porém o Zend
+            tem problemas em reconhecer nomes de campo com hifem. O ajuste disso
+            está no controlador. By Flavio 05/10/2013
+            -->
+            <calllimit>
+                <type>text</type>
+                <options>
+                    <size>1</size>
+                    <label>Channel Limit</label>
+                </options>
+            </calllimit>
+        </elements>
+    </ip>
+    <iax2>
+        <elements>
+            <istrunk>
+                <type>select</type>
+                <options>
+                    <label>IAX2 Trunking</label>
+                    <multioptions>
+                        <yes>Yes</yes>
+                        <no>No</no>
+                    </multioptions>
+                </options>
+            </istrunk>
+        </elements>
+    </iax2>
+    <virtual>
+        <elements>
+            <channel>
+                <type>Text</type>
+                <options>
+                    <label>Channel Technology</label>
+                </options>
+            </channel>
+            <id_regex>
+                <type>Text</type>
+                <options>
+                    <label>ID Regular Expression</label>
+                </options>
+            </id_regex>
+        </elements>
+    </virtual>
+    <khomp>
+        <elements>
+            <board>
+                <type>Select</type>
+                <options>
+                    <label>Board</label>
+                </options>
+            </board>
+        </elements>
+    </khomp>
+    <snepsip>
+        <elements>
+            <host>
+                <type>text</type>
+                <options>
+                    <label>Remote Host</label>
+                </options>
+            </host>
+            <dtmfmode>
+                <type>radio</type>
+                <options>
+                    <label>DTMF Mode</label>
+                    <value>rfc2833</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <rfc2833>RFC-2833</rfc2833>
+                        <inband>Inband</inband>
+                        <info>Info</info>
+                    </multioptions>
+                </options>
+            </dtmfmode>
+            <codec>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ulaw</value>
+                    <label>Codec 1</label>
+                    <description>Prioritary</description>
+                </options>
+            </codec>
+            <codec1>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>alaw</value>
+                    <label>Codec 2</label>
+                </options>
+            </codec1>
+            <codec2>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 3</label>
+                </options>
+            </codec2>
+            <codec3>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 4</label>
+                </options>
+            </codec3>
+            <codec4>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 5</label>
+                </options>
+            </codec4>
+        </elements>
+        
+    </snepsip>
+    <snepiax2>
+        <elements>
+            <username>
+                <type>text</type>
+                <options>
+                    <label>Identifier</label>
+                    <description>Same on both servers</description>
+                </options>
+            </username>
+            <nat>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>NAT optimization</label>
+                    <description>Enabled</description>
+                </options>
+            </nat>
+            <codec>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ulaw</value>
+                    <label>Codec 1</label>
+                    <description>Prioritary</description>
+                </options>
+            </codec>
+            <codec1>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>alaw</value>
+                    <label>Codec 2</label>
+                </options>
+            </codec1>
+            <codec2>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 3</label>
+                </options>
+            </codec2>
+            <codec3>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 4</label>
+                </options>
+            </codec3>
+            <codec4>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 5</label>
+                </options>
+            </codec4>
+            <istrunk>
+                <type>select</type>
+                <options>
+                    <label>IAX2 Trunking</label>
+                    <multioptions>
+                        <yes>Yes</yes>
+                        <no>No</no>
+                    </multioptions>
+                </options>
+            </istrunk>
+        </elements>
+    </snepiax2>
+   <advanced>
+        <elements>
+            <map_extensions>
+                <type>Checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Extension Mapping</label>
+                </options>
+            </map_extensions>
+            <dtmf_dial>
+                <type>Checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>DTML dial mode</label>
+                    
+                </options>
+            </dtmf_dial>
+            <dtmf_dial_number>
+                <type>Text</type>
+                <options>
+                    <label>DTML dial mode number</label>
+                </options>
+            </dtmf_dial_number>
+            <tempo>
+                <type>Checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Minute Control</label>
+                    <value>no</value>
+                    <separator> </separator>                    
+                </options>
+            </tempo>
+            <time_total>
+                <type>Text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Minutes</label>
+                </options>
+            </time_total>
+            <time_chargeby>
+                <type>radio</type>
+                <options>
+                    <label>Type of control</label>
+                    <separator> </separator>
+                    <multioptions>
+                        <Y>Year</Y>
+                        <M>Month</M>
+                        <D>Day</D>
+                    </multioptions>
+                </options>
+            </time_chargeby>
+        </elements>
+    </advanced>
+</form>
+

@@ -1,0 +1,17 @@
+<?php 
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/debugger.css" );
+
+$title = new Snep_Title("Routing");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Simulator", "Routes", $this->baseUrl()."/index.php/default/route");
+
+
+?>
+
+<div id="error">
+    <?php echo $this->error; ?>
+    <br/><br/>
+        <input class="new_button" type="button" id="voltar" value="<?php echo $this->back; ?>" onClick="javascript:history.go(-1)" />
+</div>

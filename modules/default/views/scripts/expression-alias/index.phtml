@@ -1,0 +1,45 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$title = new Snep_Title("Routing");
+echo $title->getHtml();
+
+echo $this->render('filter.phtml')
+?>
+<table cellspacing="0" cellpadding="0" border="0" align="center" >   
+    <thead>
+        <tr>
+            <th valign="middle" width="10px"><?php echo $this->translate('Code') ?></th>
+            <th><?php echo $this->translate('Name') ?></th>
+            <th  colspan="2" class="action"><?php echo $this->translate('Actions') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+      <?php
+        $c = 0;
+        foreach ($this->aliases as $value) {
+        ($c ? $c = 0 : $c = 1 );
+        ?>
+        <tr class="c<?php echo $c ?>">
+            <td align="center"><?php echo $value['id'] ?></td>
+            <td><?php echo $value['name'] ?></td>
+            <td valign="middle" align="center" width="20px">
+                <a class="alterar"  href='<?php echo $this->baseUrl(); ?>/index.php/expression-alias/edit/id/<?php echo $value['id'] ?>'></a>
+            </td>
+            <td class="action">
+                <span class="excluir" onclick="remove_grupo('<?php echo $value['id'] ?>');"></span>
+            </td>
+        </tr>
+        <?php 
+        }
+        ?>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    function remove_grupo(id) {
+        if(confirm("<?php echo $this->translate('Really want to remove this alias?') ?>")) {
+            window.location.href="<?php echo $this->baseUrl(); ?>/index.php/expression-alias/delete/id/"+parseInt(id);
+        }
+    }    
+</script>

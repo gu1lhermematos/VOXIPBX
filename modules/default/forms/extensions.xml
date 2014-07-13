@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : extensions.xml
+    Created on : 4 de Abril de 2011, 13:35
+    Author     : Henrique Grolli Bassotto
+    Description:
+        Snep Form specification for extensions controller
+-->
+
+<form>
+    <extension>
+        <elements>
+            <exten>
+                <type>Text</type>
+                <options>
+                    <label>Extension</label>
+                    <required>true</required>
+                </options>
+            </exten>
+            <password>
+                <type>Password</type>
+                <options>
+                    <label>Password</label>
+                    <description>Interface acess and peer lock (just numbers)</description>
+                </options>
+            </password>
+            <name>
+                <type>Text</type>
+                <options>
+                    <label>Name</label>
+                    <size>9</size>
+                </options>
+            </name>
+            <exten_group>
+                <type>ExtensionGroup</type>
+                <options>
+                    <label>Extension Group</label>
+                    <value>users</value>
+                    <size>1</size>
+                </options>
+            </exten_group>
+            <pickup_group>
+                <type>PickupGroup</type>
+                <options>
+                    <label>Pickup Group</label>
+                    <value>1</value>
+                    <size>1</size>
+                </options>
+            </pickup_group>
+        </elements>
+    </extension>
+    <technology>
+        <elements>
+            <type>
+                <type>Select</type>
+                <options>
+                    <label>Type</label>
+                    <size>1</size>
+                    <multioptions>
+                        <sip>SIP</sip>
+                        <iax2>IAX2</iax2>
+                        <khomp>Khomp</khomp>
+                        <virtual>Virtual</virtual>
+                        <manual>Manual</manual>
+                    </multioptions>
+                </options>
+            </type>
+        </elements>
+    </technology>
+    <advanced>
+        <elements>
+            <voicemail>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Voicemail</label>
+                </options>
+            </voicemail>
+            <email>
+                <type>Text</type>
+                <options>
+                    <label>E-Mail</label>
+                    <validators>
+                        <EmailAddress>EmailAddress</EmailAddress>
+                    </validators>
+                </options>
+            </email>
+
+            <padlock>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Padlock</label>
+                </options>
+            </padlock>
+            
+            <minute_control>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Minute Control</label>
+                </options>
+            </minute_control>
+            
+            <timetotal>
+                <type>Text</type>
+                <value>0</value>
+                <options>
+                    <label>Time Total</label>
+                    <class>maskMinutes</class>
+                    <description>Minutes</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </timetotal>
+            
+            <controltype>
+                <type>radio</type>
+                <options>
+                    <label>Control Type</label>
+                    <separator> </separator>
+                    <multioptions>
+                        <Y>Anually</Y>
+                        <M>Monthly</M>
+                        <D>Daily</D>
+                    </multioptions>
+                </options>
+            </controltype>
+            
+        </elements>
+    </advanced>
+    <ip>
+        <elements>
+            <password>
+                <type>Password</type>
+                <options>
+                    <label>Password</label>
+                </options>
+            </password>
+            <calllimit>
+                <type>Text</type>
+                <options>
+                    <label>Simultaneous Call Limit</label>
+                    <description>Numbers Only</description>
+                    <class>maskInt</class>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </calllimit>
+            <nat>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>NAT</label>
+                </options>
+            </nat>
+            <qualify>
+                <type>checkbox</type>
+                <options>
+                    <class>newcheck tolabel</class>
+                    <label>Qualify</label>
+                </options>
+            </qualify>
+             <directmedia>
+                <type>radio</type>
+                <options>
+                    <label>Direct Media</label>
+                    <value>yes</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <yes>yes</yes>
+                        <no>no</no>
+                    </multioptions>
+                </options>
+            </directmedia>
+            <dtmf>
+                <type>radio</type>
+                <options>
+                    <label>DTMF Mode</label>
+                    <value>rfc2833</value>
+                    <separator> </separator>
+                    <multioptions>
+                        <rfc2833>RFC-2833</rfc2833>
+                        <inband>Inband</inband>
+                        <info>Info</info>
+                    </multioptions>
+                </options>
+            </dtmf>
+            <codec>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>alaw</value>
+                    <label>Codec 1</label>
+                    <description>Prioritary</description>
+                </options>
+            </codec>
+            <codec1>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ulaw</value>
+                    <label>Codec 2</label>
+                </options>
+            </codec1>
+            <codec2>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>gsm</value>
+                    <label>Codec 3</label>
+                </options>
+            </codec2>
+             <codec3>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>g729</value>
+                    <label>Codec 4</label>
+                </options>
+            </codec3>
+             <codec4>
+                <type>codec</type>
+                <options>
+                    <class>lineleft</class>
+                    <value>ilbc</value>
+                    <label>Codec 5</label>
+                </options>
+            </codec4>
+        </elements>
+    </ip>
+    <manual>
+        <elements>
+            <manual>
+                <type>Text</type>
+                <options>
+                    <label>Manual</label>
+                </options>
+            </manual>
+        </elements>
+    </manual>
+    <virtual>
+        <elements>
+            <virtual>
+                <type>Trunk</type>
+                <options>
+                    <label>Trunk</label>
+                </options>
+            </virtual>
+        </elements>
+    </virtual>
+    <khomp>
+        <elements>
+            <board>
+                <type>Select</type>
+                <options>
+                    <label>Board</label>
+                </options>
+            </board>
+            <channel>
+                <type>Select</type>
+                <options>
+                    <label>Channel</label>
+                </options>
+            </channel>
+        </elements>
+    </khomp>
+</form>
+

@@ -1,0 +1,51 @@
+<?php
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Links Errors"),  NULL, NULL, "reports");
+?>
+
+<div id="khompErrors" class="statusTable">
+    <table>
+        <thead>
+            <tr>
+                <td class="esq" ><?php echo $this->translate("Error Type") ?></td>
+                <?php
+                $colunas = 1;
+                foreach ($this->canais as $board_key => $board_item) {
+                    foreach ($this->canais[$board_key] as $link_key => $link_item) {
+                    ?>
+                        <td>
+                        <?php echo $this->translate("Board : ") . $this->translate($board_key) . $this->translate(", Link : ") . $this->translate($board_key) ?>
+                        <br />
+                        <?php echo $this->translate($link_item) ?>
+                        </td>
+                    <?php
+                    $colunas = $colunas + 1;
+                    }
+                } ?>
+            </tr>
+        </thead>
+        <?php foreach ($this->status as $sts_key => $sts_item) : ?>
+            <tr>
+                <td><?php echo $this->translate($sts_key) ?></td>
+                <?php
+                foreach ($this->status[$sts_key] as $sb_key => $sb_item) {
+                    foreach ($this->status[$sts_key][$sb_key] as $sl_key => $sl_item) {
+                    ?>
+                        <td class="cen"><?php echo $this->translate($sl_item) ?></td>
+                    <?php
+                    }
+                }
+                ?>
+            </tr>
+        <?php endforeach ?>
+        <tr>
+            <td colspan="<?php echo $colunas ?>">
+                <form  method="POST">
+                    <input class="button statusButton" type="submit" id="resetar"  value="<?php echo $this->translate("Reset Counters") ?>">
+                </form>
+            </td>
+        </tr>
+    </table>
+<br />
+</div>

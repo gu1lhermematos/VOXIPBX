@@ -1,0 +1,263 @@
+<?php
+    $this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/index.css");
+
+    $title = new Snep_Title("Reports");
+    $title->addOption('graphic', $this->baseUrl() . "/index.php/calls-report/graphic");
+    $title->addOption('exportcsv', $this->baseUrl() . "/index.php/calls-report/csv");
+    $title->addOption('exportpdf', $this->baseUrl() . "/index.php/calls-report/pdf");
+    $title->addOption('dashboardform', $this->baseUrl() . "/index.php/calls-report/add-dashboard");
+    echo $title->getHtml();
+
+    echo Snep_Bar::get($this->title, null, null, 'reports', $this->form_filter);
+?>
+
+<div>
+    <style>
+        .total{
+            margin:15px;
+        }
+        .total b{
+            color:#09C;
+        }
+        .newtable tr.c1{
+            background-color:#FFF;
+        }
+        .newtable th{
+            background-color:#666;
+            color:#FFF;
+            margin:none;
+            border:none;
+        }
+        .newtable tr.c0{
+            background-color:#f0f9f8;
+        }
+        .newtable tr{	
+            padding:none;
+            margin:none;
+        }
+        .newtable td{
+            border-bottom:solid 1px #DDD !important;	
+        }
+        .newtable{
+            border-left:solid 1px #DDD !important;
+            border-right:solid 1px #DDD !important;
+            border-radius:5px 7px 0px 0px;	
+            position:absolute;
+            margin-top:0px !important;
+            border-spacing: 0px;
+        }
+        .expand_button{
+            text-align:center !important;
+            background-color:#CCC;
+            padding:3px !important;
+            font-size:10px !important;	
+            color:#666 !important;
+            border-radius:5px 5px 0px 0px;	
+            border-top:solid 1px #AAA !important;
+        }
+        .resize{
+            left:-479px;
+            width:958px;
+            position:absolute;
+        }
+        .reference{
+            display:table;
+            width:0px;
+            margin:auto;
+            position:relative;
+        }
+    </style>
+    <form name="tabela" id="tabela">
+        <input type="hidden" value="" id="selected" />
+        <div class="reference"><div class="resize">
+            <div class="total">
+                <?php echo $this->answered; ?>: <b><?php echo $this->totals['answered']; ?></b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo $this->nanswered; ?>: <b><?php echo $this->totals['notanswer']; ?></b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo $this->busy; ?>: <b><?php echo $this->totals['busy']; ?></b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo $this->failure; ?>: <b><?php echo $this->totals['fail']; ?></b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo $this->other; ?>: <b><?php echo $this->totals['oth']; ?></b>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php if ($this->tariffed): ?>
+                    <?php echo $this->tot_tariffed; ?>: <b><?php echo $this->totals['tot_tarifado']; ?></b>
+                <?php endif ?>
+            </div>
+            <table align="center" class="newtable">
+                <tr>
+                    <td colspan="13" class="expand_button">&lt; modo expandido &gt;</td>
+                </tr>
+                <tr>
+                    <th class="cen"><?php echo $this->seq; ?></th>
+                    <th class="cen"><?php echo $this->calldate; ?></th>
+                    <th class="esq"><?php echo $this->origin; ?></th>
+                    <th class="esq"><?php echo $this->destination; ?></th>
+                    <th class="esq"><?php echo $this->operator; ?></th>
+                    <th class="esq"><?php echo $this->callstatus; ?></th>
+                    <th class="esq"><?php echo $this->duration; ?></th>
+                    <th class="esq"><?php echo $this->conversation; ?></th>
+                    <th class="esq"><?php echo $this->cost_center; ?></th>
+                    <th class="esq"><?php echo $this->city; ?> - <?php echo $this->state; ?></th>
+
+                    <?php if ($this->tariffed): ?>
+                        <th class="esq"><?php echo $this->tarrifation ?></th>
+                    <?php endif ?>
+
+                    <?php if ($this->files): ?>
+                        <th class="cen" colspan="3">
+                            <script>
+                                toggleAll = function(ref) {
+                                    if (!ref.attr('checked')) {
+                                        $('input[type="checkbox"]').removeAttr('checked');
+                                    } else {
+                                        $('input[type="checkbox"]').attr('checked', true);
+                                    }
+                                }
+                            </script>
+                           <div style="white-space: nowrap;">
+                               <input type="checkbox" title="Selecionar Todos" onclick="toggleAll($(this));">
+                                <?php echo $this->gravation; ?>
+                           </div>
+                        </th>
+                    <?php endif ?>
+                </tr>
+                <?php $c = 0; ?>
+                <?php foreach ($this->call_list as $id => $callsList): ?>
+                    <?php ( $c ? $c = 0 : $c = 1 ); ?>
+                    <tr class="c<?php echo $c ?>" >
+                        <td>
+                            <?php echo $callsList['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $callsList['dia']; ?> 
+                        </td>
+                        <td>
+                            <?php echo $callsList['src']; ?> 
+                        </td>
+                        <td>
+                            <?php echo $callsList['dst']; ?> 
+                        </td>
+                        <td>
+                            <?php
+                                if (preg_match("/Local/i", $callsList['dstchannel'])) {
+                                    echo strTok(str_replace('Local/', '', $callsList['dstchannel']), "@");
+                                }
+                                if(isset($callsList['operador'])) {
+                                    echo $callsList['dstchannel'];
+                                } else {
+                                    echo "";    
+                                }
+                            ?> 
+                        </td>
+                        <td>
+                            <?php echo $callsList['disposition']; ?> 
+                        </td>
+                        <td>
+                            <?php echo $callsList['duration'] ?>	
+                        </td>
+                        <td>
+                            <?php echo $callsList['billsec'] ?>	
+                        </td>
+                        <td>
+                            <?php echo $callsList['nome'] ?>
+                        </td>
+                        <td>
+                            <?php echo $callsList['city'] ?>
+                        </td>
+                        <?php if ($this->tariffed): ?>
+                            <td>
+                                <?php
+                                    if (isset($callsList['rate']))
+                                        echo str_replace(".", ",", $callsList['rate']);
+                                    else
+                                        echo str_replace(".", ",", sprintf("%0.2f", "0,0"));
+                                 ?>	 
+                                </td>
+                        <?php endif ?>
+
+                        <?php if ($this->files): ?>
+                            <td style="text-align:center">
+                                <?php if ($callsList['userfield'] != ""): ?>
+                                    <?php if ($callsList['file_path'] != 'N.D.'): ?>
+                                        <br><br><br><br>
+                                        <audio controls="controls">
+                                            <source src='<?php echo $callsList['file_path'] ?>' type="audio/mpeg" />
+                                        </audio> 
+                                        <input type="checkbox" value="<? echo $callsList['file_name']; ?>">    
+                                    <?php else: ?>
+                                        <img src="<?php echo $this->baseUrl(); ?>/modules/default/img/semaudio.png" />
+                                    <?php endif ?>
+                                <?php else: ?>
+                                    ---
+                                <?php endif ?>
+                            </td>
+                        <?php endif ?>
+                    </tr>
+
+                <?php
+                endforeach;
+                if ($this->files):
+                    ?>
+                    <tr>
+                        <td colspan="11" style="background-color:none">
+                            <input style="background-color:#EEE; padding:5px; float:right; border:solid 1px #999; border-radius:5px; cursor:pointer;" class="button" type="button" value="<?php echo $this->compress_files ?>" OnClick="compactCheckeds();"/>
+                        </td>
+                    </tr>
+                <? endif ?>
+            </table>
+        </div>
+        </div>
+    </form>
+
+    <?php
+    echo $this->render('pagination.phtml');
+
+    if ($this->files):  ?>
+        <script>
+            function compactCheckeds() {
+
+                var dados = '';
+                $('form input:checked').each(function() {
+                    dados += $(this).val() + ",";
+                });
+
+                $.get('/snep/index.php/default/calls-report/compact/', {'files': dados}, function(data) {
+                    if (!data) {
+                        alert("Erro");
+                    } else {
+                        alert("<?php echo $this->compact_success ?>");
+                        window.location = data;
+                    }
+                });
+            }
+            function play(musica) {
+                $("#player").html('<EMBED SRC="' + musica + '" height="0" width="0" id="play"/>');
+            }
+        </script>
+        <div id="player"></div>
+    <?php endif ?>
+</div>
+
+<script>
+    var expandState = false;
+    function updateHeightTable() {
+        $(".reference").height($(".resize table").height() + 40);
+        $(".resize").height($(".reference").height());
+    }
+    updateHeightTable();
+    $(".expand_button").click(function() {
+        var size;
+        if (expandState) {
+            size = 958;
+            $(this).html("&lt; modo expandido &gt;");
+        } else {
+            size = Math.max($(window).width() - 40, 958);
+            $(this).html("&gt; modo normal &lt;");
+        }
+        $(".resize").stop().animate({width: size, left: size / -2}, 500, updateHeightTable);
+
+        expandState = !expandState;
+    });
+</script>

@@ -1,0 +1,147 @@
+# Data do cadastro
+
+SELECT data FROM cache WHERE `data` BETWEEN data AND (CURRENT_DATE - 7)
+
+# Apagar cadastro antigo 7 DIAS
+
+DELETE FROM cache WHERE `data` BETWEEN data AND (CURRENT_DATE - 7)
+
+mysql -u root -ptofalando2014 -e 'use portabilidade; DELETE FROM cache WHERE `data` BETWEEN data AND (CURRENT_DATE - 5)’
+
+# Conulta se o número exite
+SELECT csp,numero FROM `cache` WHERE 553413791530792 LIKE 553413791530792
+
+
+# Se o numero nao  existe:
+
+INSERT INTO `portabilidade`.`cache` (`numero`, `operadora`, `csp`, `data`, `hora`) VALUES ('3791530792', 'TIM', '55341', '2014-03-25', CURRENT_TIMESTAMP);
+
+
+# TESTE REAL
+
+OI=SIP/6000/031
+VIVO=SIP/6000/015
+CLARO=SIP/6000/021
+TIM=SIP/6000/041
+CTBC=SIP/6000/012
+
+
+exten => _XX[6-9]XXXXXXX,1,NoOp(Número discado: ${EXTEN} )
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Connect connid localhost root tofalando2014 portabilidade)
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Query resultid ${connid} SELECT `numero`  FROM `cache`  WHERE  `numero`  LIKE ${EXTEN} )
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Fetch fetchid ${resultid} numero)
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Clear ${resultid})
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Query resultid ${connid} DELETE FROM cache WHERE `data` BETWEEN data AND (CURRENT_DATE - 7))
+exten => _XX[6-9]XXXXXXX,n,MYSQL(Disconnect ${connid})
+exten => _XX[6-9]XXXXXXX,n,NoOp( Ramal encontrado -> ${numero} )
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${numero}" = ""]?falhou)
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${numero}" = "${numero}"]?achou)
+exten => _XX[6-9]XXXXXXX,n(achou),NoOp(Achei: ${numero})
+exten => _XX[6-9]XXXXXXX,n,goto(disca,${EXTEN},1)
+exten => _XX[6-9]XXXXXXX,n(falhou),NoOp(--> DE ${CALLERID(num)} PARA ${EXTEN} <--)
+exten => _XX[6-9]XXXXXXX,n,AGI(consulta_op.php,${EXTEN})
+exten => _XX[6-9]XXXXXXX,n,NoOp(--> ${OPERADORA} <--)
+exten => _XX[6-9]XXXXXXX,n(ctbc),Set(TRONCO=${IF($["${OPERADORA}"="55312"]?"${CTBC}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55312"]?macro-dial,012${EXTEN},1:oi31)
+exten => _XX[6-9]XXXXXXX,n(oi31),Set(TRONCO=${IF($["${OPERADORA}"="55331"]?"${OI}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55331"]?macro-dial,031${EXTEN},1:oi14)
+exten => _XX[6-9]XXXXXXX,n(oi14),Set(TRONCO=${IF($["${OPERADORA}"="55314"]?"${OI}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55314"]?macro-dial,014${EXTEN},1:oi24)
+exten => _XX[6-9]XXXXXXX,n(oi24),Set(TRONCO=${IF($["${OPERADORA}"="55324"]?"${OI}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55324"]?macro-dial,031${EXTEN},1:vivo)
+exten => _XX[6-9]XXXXXXX,n(vivo),Set(TRONCO=${IF($["${OPERADORA}"="55320"]?"${VIVO}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55320"]?macro-dial,015${EXTEN},1:claro)
+exten => _XX[6-9]XXXXXXX,n(claro),Set(TRONCO=${IF($["${OPERADORA}"="55321"]?"${CLARO}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55321"]?macro-dial,021${EXTEN},1:tim)
+exten => _XX[6-9]XXXXXXX,n(tim),Set(TRONCO=${IF($["${OPERADORA}"="55341"]?"${TIM}":"")})
+exten => _XX[6-9]XXXXXXX,n,GotoIf($["${OPERADORA}" = "55341"]?macro-dial,041${EXTEN},1:outras)
+exten => _XX[6-9]XXXXXXX,n(outras),Set(TRONCO=${OUTRAS})
+exten => _XX[6-9]XXXXXXX,n,Goto(macro-dial,${EXTEN},1)
+
+exten => _XX9XXXXXXXX,1,NoOp(Número discado: ${EXTEN} )
+exten => _XX9XXXXXXXX,n,MYSQL(Connect connid localhost root tofalando2014 portabilidade)
+exten => _XX9XXXXXXXX,n,MYSQL(Query resultid ${connid} SELECT `numero`  FROM `cache`  WHERE  `numero`  LIKE ${EXTEN} )
+exten => _XX9XXXXXXXX,n,MYSQL(Fetch fetchid ${resultid} numero)
+exten => _XX9XXXXXXXX,n,MYSQL(Clear ${resultid})
+exten => _XX9XXXXXXXX,n,MYSQL(Query resultid ${connid} DELETE FROM cache WHERE `data` BETWEEN data AND (CURRENT_DATE - 7))
+exten => _XX9XXXXXXXX,n,MYSQL(Disconnect ${connid})
+exten => _XX9XXXXXXXX,n,NoOp( Ramal encontrado -> ${numero} )
+exten => _XX9XXXXXXXX,n,GotoIf($["${numero}" = ""]?falhou)
+exten => _XX9XXXXXXXX,n,GotoIf($["${numero}" = "${numero}"]?achou)
+exten => _XX9XXXXXXXX,n(achou),NoOp(Achei: ${numero})
+exten => _XX9XXXXXXXX,n,goto(disca,${EXTEN},1)
+exten => _XX9XXXXXXXX,n(falhou),NoOp(--> DE ${CALLERID(num)} PARA ${EXTEN} <--)
+exten => _XX9XXXXXXXX,n,AGI(consulta_op.php,${EXTEN})
+exten => _XX9XXXXXXXX,n,NoOp(--> ${OPERADORA} <--)
+exten => _XX9XXXXXXXX,n(ctbc),Set(TRONCO=${IF($["${OPERADORA}"="55312"]?"${CTBC}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55312"]?macro-dial,012${EXTEN},1:oi31)
+exten => _XX9XXXXXXXX,n(oi31),Set(TRONCO=${IF($["${OPERADORA}"="55331"]?"${OI}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55331"]?macro-dial,031${EXTEN},1:oi14)
+exten => _XX9XXXXXXXX,n(oi14),Set(TRONCO=${IF($["${OPERADORA}"="55314"]?"${OI}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55314"]?macro-dial,014${EXTEN},1:oi24)
+exten => _XX9XXXXXXXX,n(oi24),Set(TRONCO=${IF($["${OPERADORA}"="55324"]?"${OI}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55324"]?macro-dial,031${EXTEN},1:vivo)
+exten => _XX9XXXXXXXX,n(vivo),Set(TRONCO=${IF($["${OPERADORA}"="55320"]?"${VIVO}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55320"]?macro-dial,015${EXTEN},1:claro)
+exten => _XX9XXXXXXXX,n(claro),Set(TRONCO=${IF($["${OPERADORA}"="55321"]?"${CLARO}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55321"]?macro-dial,021${EXTEN},1:tim)
+exten => _XX9XXXXXXXX,n(tim),Set(TRONCO=${IF($["${OPERADORA}"="55341"]?"${TIM}":"")})
+exten => _XX9XXXXXXXX,n,GotoIf($["${OPERADORA}" = "55341"]?macro-dial,041${EXTEN},1:outras)
+exten => _XX9XXXXXXXX,n(outras),Set(TRONCO=${OUTRAS})
+exten => _XX9XXXXXXXX,n,Goto(macro-dial,${EXTEN},1)
+
+
+[macro-dial]
+exten => _X.,1,NoOp(Número ${EXTEN} não existe)
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55321"]?Set(NOMEOP=CLARO))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55341"]?Set(NOMEOP=TIM))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55331"]?Set(NOMEOP=OI))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55314"]?Set(NOMEOP=OI))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55324"]?Set(NOMEOP=OI))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55320"]?Set(ARRAY(NOMEOP,OPERADORA)=VIVO,55315))
+exten => _X.,n,ExecIf($["${OPERADORA}" = "55312"]?Set(NOMEOP=CTBC))
+exten => _X.,n,Noop( OPERADORA -> ${NOMEOP} )
+exten => _X.,n,MYSQL(Connect connid localhost root tofalando2014 portabilidade)
+exten => _X.,n,MYSQL(Query resultid ${connid} INSERT INTO `cache` (`numero`, `operadora`, `csp`, `data`, `hora`) VALUES ('${EXTEN:3}','${NOMEOP}','${OPERADORA}',NOW(),'${STRFTIME(${EPOCH},GMT+3,%H:%M:%S)}'))
+exten => _X.,n,Noop(LIGACAO DE ${CALLERID(num)} PARA ${EXTEN} NO CANAL ${CHANNEL})
+exten => _X.,n(ctbc),Set(TRONCO=${IF($["${OPERADORA}"="55312"]?"${CTBC}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55312"]?sair,${EXTEN},1:oi31)
+exten => _X.,n(oi31),Set(TRONCO=${IF($["${OPERADORA}"="55331"]?"${OI}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55331"]?sair,${EXTEN},1:oi14)
+exten => _X.,n(oi14),Set(TRONCO=${IF($["${OPERADORA}"="55314"]?"${OI}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55314"]?sair,${EXTEN},1:oi24)
+exten => _X.,n(oi24),Set(TRONCO=${IF($["${OPERADORA}"="55324"]?"${OI}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55324"]?sair,${EXTEN},1:vivo)
+exten => _X.,n(vivo),Set(TRONCO=${IF($["${OPERADORA}"="55320"]?"${VIVO}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55320"]?sair,${EXTEN},1:claro)
+exten => _X.,n(claro),Set(TRONCO=${IF($["${OPERADORA}"="55321"]?"${CLARO}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55321"]?sair,${EXTEN},1:tim)
+exten => _X.,n(tim),Set(TRONCO=${IF($["${OPERADORA}"="55341"]?"${TIM}":"")})
+exten => _X.,n,GotoIf($["${OPERADORA}" = "55341"]?sair,${EXTEN},1:outras)
+exten => _X.,n(outras),Set(TRONCO=${OUTRAS})
+exten => _X.,n,Goto(sair,${EXTEN},1)
+
+
+[disca]
+exten => _X.,1,NoOp(Discar para: ${EXTEN})
+exten => _X.,n,MYSQL(Connect connid localhost root tofalando2014 portabilidade)
+exten => _X.,n,MYSQL(Query resultid ${connid} SELECT `csp`  FROM `cache`  WHERE  `numero`  LIKE ${EXTEN} )
+exten => _X.,n,MYSQL(Fetch fetchid ${resultid} numero)
+exten => _X.,n,MYSQL(Clear ${resultid})
+exten => _X.,n,MYSQL(Disconnect ${connid})
+exten => _X.,n,NoOp( Ramal encontrado -> ${numero:3} )
+exten => _X.,n(outras),goto(sair,0${numero:3}${EXTEN},1)
+
+
+[sair]
+exten => _X.,1,Noop(LIGACAO DE ${CALLERID(num)} PARA ${EXTEN} NO CANAL ${CHANNEL})
+exten => _X.,n,Set(CHANNEL(language)=pt_BR)
+exten => _X.,n,Set(AUDIOHOOK_INHERIT(MixMonitor)=yes)
+exten => _X.,n,Set(DSTORIGINAL=${EXTEN})
+exten => _X.,n,UserEvent(SnepDial, Caller:${CALLERID(num)},Dest:${DSTORIGINAL})
+exten => _X.,n,GotoIf($["${AGENTBYCALLERID_${CALLERID(number)}}" = ""]?snep)
+exten => _X.,n,Set(CALLERID(all)=${AGENTBYCALLERID_${CALLERID(number)}})
+exten => _X.,n,AGI(snep/snep.php,-x,Agent/${CALLERID(number)})
+exten => _X.,n,Goto(h)
+exten => _X.,n(snep),AGI(snep/snep.php)
+exten => _X.,n(h),Hangup

@@ -1,0 +1,94 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css" );
+
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/ui/jquery-ui-timepicker-addon.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/report.css");
+
+
+$locale = str_replace("_", "-", Snep_Locale::getInstance()->getLocale());
+if( $locale == "en-US") { $locale = 'en_US'; }
+?>
+
+<?php 
+
+$title = new Snep_Title("Reports");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Services Use", "", "", "reports");
+?>
+
+<div class="description_form"><p><h2>Relat&oacute;rio de Servi&ccedil;os utilizados por cada ramal.</h2>
+<p>Permite que voc&ecirc; visualize e gere relat&oacute;rios de serviços utilizados
+por determinado ramal, lista de ramais ou grupos de ramais.</p>
+
+ <ul>
+   <li><strong>Período:</strong>Define o intervalo de datas/hora do qual se deseja extrair as informações.<br />
+   <li><strong>Ramais: </strong> Informa quais ramais estão envolvidos com o evento.<br />
+   <li><strong>Serviço habilitado:</strong> Relaciona qual serviço esta habilitado para o ramal.</strong>
+   <li><strong>Status do serviço:</strong> Ultimo registro do ramal.</strong>
+   <br /><br />
+  
+<li><strong>Exportar para PDF:</strong> Gera relatório no formato PDF</li>
+</ul></div>
+
+<?php
+
+echo $this->form;
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('gerar', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/');
+echo $buttons->getHtml();
+
+?>
+
+<script type="text/javascript">
+
+$('#exten-group_select').change(function(){
+	if($(this).val() == ''){
+		$('#exten-exten_select').removeAttr('disabled');
+	}else{
+		$('#exten-exten_select').attr('disabled', true);
+	}
+});
+
+
+$('.line').eq(0).addClass('colun');
+$('.line').eq(1).addClass('colun');
+$('#period-init_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+$('#period-till_day').datetimepicker({
+	timeText: 'Tempo',
+	hourText: 'Hora',
+	minuteText: 'Minuto',
+	secondText: 'Segundo',
+	currentText: 'Agora',
+	closeText: 'Fechar',
+	prevText: 'Anterior',
+	nextText: 'Próximo',
+	monthNames: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	monthNamesShort: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+	dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+	dateFormat: 'dd/mm/yy',
+});
+
+</script>
+ 
+

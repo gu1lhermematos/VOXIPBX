@@ -1,0 +1,178 @@
+/* 
+    Document   : form
+    Author     : Iago Uilian Berndt
+*/
+.subform{
+	width: 730px;
+	overflow-x: hidden; 
+	overflow-y: hidden; 
+	margin-top: 0px; 
+	margin-bottom: 0px; 
+	padding-top: 0px; 
+	padding-bottom: 0px;
+}
+.snep_form{
+	margin: 10px 0px 30px 10px;
+	float: left;
+	width: 730px;
+}
+.snep_form .line{
+	display: table;
+	margin: 15px;
+	width: 100%;
+}
+.snep_form .label{
+    float: left;
+    margin-top: 5px;
+    font-size: 21px;
+    height: 39px;
+    line-height: 27px;
+    padding-right: 12px;
+    position: relative;
+    text-align: right;
+    width: 228px;
+    color: #666;
+}
+.snep_form .input label{
+	font-size: 16px;
+}
+.snep_form .input{
+	font-size: 21px;
+    height: 50px;
+}
+.snep_form p{
+	font-size: 13px;
+	color:#999;
+	margin: 0px;
+}
+.snep_form .errors{
+	font-size: 16px;
+	margin: 0px 0px 15px 0px;
+}
+.snep_form input[type=text], .snep_form input[type=password]{
+	padding: 7px;
+	border-radius:12px;
+	border:solid 1px #CCC;
+	width: 350px;
+	float: auto;
+}
+.snep_form select{
+	padding: 7px;
+	border-radius:5px;
+	border:solid 1px #CCC;
+}
+
+.snep_form .snep_form_submit{
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+.snep_form .snep_form_cancel{
+	display: none;
+}
+.snep_form textarea{
+	padding: 7px;
+	border-radius:5px;
+	border:solid 1px #CCC;
+	width: 450px;
+	height: 80px;
+}
+.description_form{
+	float:right;
+	width: 200px;
+	border-radius:5px;
+	background-color: #e3e3e3;
+	border:solid 1px #BBB;
+	color:#888;
+	font-size:13px;
+	padding: 5px;
+	margin: 10px 0px 10px 0px
+}
+.snep_form .lineleft{
+	float: left;
+	margin-right: 15px;
+	width: auto;
+}
+.snep_form .subtitle {
+	display: block;
+	background-color:#CDCDCD;
+	background-image: url(../img/background_title_bar.png);
+	border-radius:5px;
+	padding: 7px 7px 10px 10px;
+	font-size: 18px;
+	text-transform: lowercase;
+}
+.snep_form .subtitle img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.snep_form *[size='0']{ width: 150px !important; }
+.snep_form *[size='1']{ width: 250px !important; }
+.snep_form *[size='2']{ width: 300px !important; }
+.snep_form *[size='3']{ width: 350px !important; }
+.snep_form *[size='4']{ width: 400px !important; }
+.snep_form *[size='5']{ width: 450px !important; }
+.snep_form *[size='6']{ width: 500px !important; }
+.snep_form *[size='7']{ width: 550px !important; }
+.snep_form *[size='8']{ width: 600px !important; }
+.snep_form *[size='9']{ width: 650px !important; }
+.snep_form *[size='10']{ width: 700px !important; }
+
+
+.filter_form .check_a{
+	widows: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+}
+.filter_form .check_label{
+	float: left; 
+	margin-top: 2px; 
+	margin-left: 5px;
+}
+.filter_form .content{
+	float: left;
+	display: table;
+}
+.filter_form .inputdiv{
+	float: left;
+	display: table;
+}
+.filter_form .options{
+	float: left;
+	display: table;
+	margin: 7px 0px 0px 7px;
+}
+.filter_form .filter{
+	display: table;
+}
+.filter_form .filter .input{
+	font-size: 14px;
+	margin-left: 5px;
+}
+.filter_form .filter .options .remove{
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	background-image: url(../img/form_cancel_icon.png);
+	cursor: pointer;
+}
+.filter_form .filter .options .add{
+	width: 30px;
+	height: 30px;
+	display: block;
+	float: left;
+	margin-left:5px;
+	background-image: url(../img/new_icon.png);	
+	cursor: pointer;
+}
+.filter_form .center{
+	display: table;
+	float:left;
+	margin-top:13px;
+}
+#snep_form .colun{
+	width: 300px;
+	float: left;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelo>
+    <elements>
+        <filename>
+            <type>text</type>
+            <options>
+                <label>Filename</label>
+            </options>
+        </filename>
+        <description>
+            <type>text</type>
+            <options>
+                <label>Description</label>
+                <required>true</required>           
+            </options>
+        </description>
+        <type>
+            <type>radio</type>
+            <options>
+                <label>File Type
+                </label>
+            </options>
+        </type>
+        <gsm>
+            <type>checkbox</type>
+            <options>
+                <class>newcheck tolabel</class>
+                <label>Convert to GSM</label>
+            </options>
+        </gsm>
+        <name>
+            <type>hidden</type>
+        </name>
+        
+    </elements>
+</modelo>

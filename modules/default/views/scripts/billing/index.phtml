@@ -1,0 +1,115 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headScript()->prependFile( $this->baseUrl() . '/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headScript()->appendFile( $this->baseUrl() . '/includes/javascript/removeItem.js');
+
+$title = new Snep_Title("Entries");
+$title->addOption('import', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/import');
+$title->addOption('export', $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() . '/export');
+echo $title->getHtml();
+
+echo $this->render('filter.phtml');
+?>
+<table>
+   <thead>
+      <tr>
+         <th class="numeric"> 
+            <?php echo Snep_Order::getLink($this, $this->translate('Carrier'), 'nome') ?>
+         </th>
+         <th> 
+            <?php echo Snep_Order::getLink($this, $this->translate('Country'), 'pais') ?>
+         </th>
+         <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('State'), 'estado') ?>
+         </th>
+         <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('City'), 'cidade') ?>
+         </th>
+         <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('City Code'), 'ddd') ?>
+         </th>
+         <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('Prefix'), 'prefixo') ?>
+         </th>
+          <th width="15%">
+            <?php echo Snep_Order::getLink($this, $this->translate('Starts from'), 'data') ?>
+         </th>
+          <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('Minute Fee for Mobile'), 'vcel') ?>
+         </th>
+          <th>
+            <?php echo Snep_Order::getLink($this, $this->translate('Minute Fee for Residencial'), 'vfix') ?>
+         </th>
+         <th colspan="2" class="action"> 
+            <?php echo $this->translate('Actions') ?>
+         </th>
+      </tr>
+   </thead>
+   <tbody>
+    <?php
+    $c = 0;
+    if($this->billing):
+            
+        $lst = null;
+    
+        foreach($this->billing as $billing ): ?>
+            <?php 
+            ( $c ? $c = 0 : $c = 1 );
+            ( $billing['codigo'] != $lst ? $hd = 'style="background-color: #FFF !important;"' : $hd = '' );
+            ?>
+            <tr class="c<?php echo $c ?>" <?php echo $hd ?>>
+                            
+                <td> 
+                    <b> <?php echo $billing['nome'] ?> </b>
+                </td>
+                <td> 
+                        <?php echo $billing['pais'] ?>
+                </td>
+                <td>
+                        <?php echo $billing['estado'] ?>
+                </td>
+                <td>
+                        <?php echo $billing['cidade'] ?>
+                </td>
+                <td>
+                        <?php echo $billing['ddd'] ?>
+                </td>
+                <td>
+                        <?php echo $billing['prefixo'] ?>
+                </td>
+                <td>
+                        <?php echo new Zend_Date( $billing['data'] ) ?>
+                </td>
+                <td>
+                        <?php if($billing['vcel']) echo new Zend_Currency(array('value' => $billing['vcel'] )) ?>
+                </td>
+                <td>
+                        <?php if($billing['vfix']) echo new Zend_Currency(array('value' => $billing['vfix'] )) ?>
+                </td>
+
+                <?php if( $billing['codigo'] != $lst) : ?>
+
+                <td class="action">
+                    <a class="alterar" href="<?php echo $this->url ?>/edit/id/<?php echo $billing['codigo'] ?>"></a>
+                </td>
+                <td class="action">
+                    <?php $this->remove_msg = $this->translate("Are you sure you want to delete this item?");?>
+                    <span class="excluir" onclick="remove_item('<?php echo $this->url ?>','<?php echo $billing['codigo'] ?>','<?php echo $this->remove_msg ?>')"></span>
+                </td>
+
+                <?php else: ?>
+                <td colspan="5">
+
+                </td>
+
+                <?php endif ?>                
+
+            </tr>
+            
+            <?php $lst = $billing['codigo']; ?>
+
+        <?php endforeach ?>
+    <?php endif ?>
+</table>
+
+<?php echo $this->render('pagination.phtml') ?>

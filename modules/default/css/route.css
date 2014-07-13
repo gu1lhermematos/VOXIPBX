@@ -1,0 +1,77 @@
+/* 
+    Document   : route.js
+    Created on : Apr 03, 2012, 03:32:25 PM
+    Author     : Iago Uilian Berndt
+    Description: Route scripts
+*/
+
+
+html{
+	overflow: hidden;
+}
+body{
+    font-family: tahoma, geneva, kalimati, sans-serif;
+    color: #333;
+	min-height: 100; 
+	overflow: hidden;
+}
+a img{
+	border: none;
+}
+.boxremove{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-image: url(../img/form_cancel_icon.png);
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+}
+.boxadd{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-image: url(../img/new_icon.png);
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+}
+input{
+	vertical-align: middle;
+}
+.snep_form input[size='5']{
+	width: 100px !important;
+}
+.snep_form input[size='10'], .snep_form input[size='4']{
+	width: 300px !important;
+}
+.optional{
+	font-size: 21px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+ul#dst, ul#time, ul#orig{
+	margin: 10px;
+	padding: 10px;
+	border-radius:5px;
+	background-color: #F3F3F3;
+	width: 650px;
+	border: solid 1px #CFCFCF;
+}
+.snep_form, .snep_form .line {
+	width: 680px !important;
+}
+.line .input label{	
+	padding: 10px;
+	border-radius:5px;
+	background-color: #F3F3F3;
+	border: solid 1px #CFCFCF;
+	display: table;
+	float: left;
+	margin-left: 13px;
+}
+.snep_form .label{
+	margin-left: 0px !important;
+}
+.errors{
+	list-style: none;
+	color: #D00;
+}

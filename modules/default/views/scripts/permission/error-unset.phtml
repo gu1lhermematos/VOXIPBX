@@ -1,0 +1,12 @@
+<?php 
+$title = new Snep_Title("Permissão");
+echo $title->getHtml();
+echo Snep_Bar::get("Error",  NULL, NULL, "reports");
+?>
+<div class="zend_form" id="form_ie">
+	<span><?php echo $this->translate("Error"); ?></span>
+	<div class="menus">
+		<div style="float: left; margin: 5px 15px 30px 5px;">Usuário ainda não possui permissão para executar essa ação.</div>
+		<input type="submit" class="voltar" onclick="javascript: history.go(-1)" name="submit" id="submit" title="<?php echo $this->translate("Back"); ?>" value=<?php echo $this->translate("Back"); ?>>
+	</div>
+</div>

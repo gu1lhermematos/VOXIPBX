@@ -1,0 +1,34 @@
+<?php 
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/graphic.css" );
+
+$title = new Snep_Title("Reports");
+$title->addOption('report', $this->baseUrl()."/index.php/calls-report/report");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title, null, null, 'view', $this->form);
+
+echo "<div class='aba'>";
+echo "<img src='".$this->graphic."/type/status'/>";
+echo "<img src='".$this->graphic."/type/center'/>";
+echo "<img src='".$this->graphic."/type/seconds'/>";
+if($this->tarif) echo "<img src='".$this->graphic."/type/tarif'/>";
+echo "</div>";
+
+?>
+
+<div class='aba_button' onclick='graphicAba(0)'>Estado</div>
+<div class='aba_button' onclick='graphicAba(1)'>Centro de Custos</div>
+<div class='aba_button' onclick='graphicAba(2)'>Tempo</div>
+<?php if($this->tarif) echo "<div class='aba_button' onclick='graphicAba(3)'>Tarifação</div>"; ?>
+<script type="text/javascript">
+function graphicAba(pos){
+	$('.aba img').not($('.aba img').eq(pos).fadeIn(500)).fadeOut(500);
+	$('.aba_button').not($('.aba_button').eq(pos).addClass('a')).removeClass('a');
+	
+}
+graphicAba(0);
+
+</script>
+<br/>

@@ -1,0 +1,32 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/form.css");
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/jquery-ui-2/jquery-ui-1.8.19.custom.css");
+
+$title = new Snep_Title("Installation");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("Module installer"), NULL, NULL, "reports");
+?>
+<div class="description_form"><p><h2>Instalação - Módulo instalador</h2>
+
+<p>Esta instalação é obrigatória para o uso do módulo Update do Snep.</p>
+<ul>
+
+    Ao clicar em instalar será efetuado automaticamente a instalação do módulo.
+</ul>
+
+
+</p></div>
+<form enctype="multipart/form-data" action="<?php echo $this->formAction; ?>" method="post">
+    <div class="zend_form" id="instalador">
+        <?php if ($this->message) { ?>
+            <label  style="font-size:19px" class="optional"><?php echo $this->translate($this->message); ?></label>
+        <?php } else { ?>
+            <label  class="optional"><?php echo $this->translate("Module install"); ?></label>
+
+        <?php } ?>
+               <div class="menus">
+	            <input type="submit" name="submit" id="submit" title="<?php echo $this->translate("Install"); ?>" value=<?php echo $this->translate("Install"); ?>>
+	        </div>
+
+    </div>
+</form>

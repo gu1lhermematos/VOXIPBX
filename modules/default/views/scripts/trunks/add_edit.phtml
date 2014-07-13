@@ -1,0 +1,163 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+echo Snep_Bar::get($this->subTitle, $this->translate("trunks"), $this->baseUrl() . "/index.php/default/trunks");
+
+echo $this->form;
+?>
+
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h1>Cadastro e Alteração de Troncos</h1>
+
+    <p>Esta rotina permite o Cadastro/Alteração de um Tronco no Sistema.</p>
+    <span style="display:none;" id="text_description">
+        <ul>
+            <li><strong>Nome:</strong> Nome do tronco, usado para identificação.</li>
+            <li><strong>Tipo de Tronco:</strong> Tecnologia usada pelo tronco. SIP, IAX2, KHOMP, TDM/Virtual, ToFalando Sip, ToFalando IAX2.</li>
+        </ul>
+
+        <p><h2>Troncos SIP/IAX2</h2></p>
+        <ul>
+            <li><strong>Método de Discagem: Normal:</strong> Discagem padrão usando identificação digital. </li>
+            <li><strong>Sem Autenticação:</strong> Esse modo cria um tronco extremamente simples para ligações que não aceitem usuário ou senha. A ligação é passada para um Host Remoto específicado. Usado especialmente em roteadores CISCO.</li>
+            <li><strong>Usuário:</strong> Usuário usado para se autenticar ao provedor VoIP ou Servidor SIP/IAX2.</li>
+            <li><strong>Senha:</strong> senha de autenticação referente ao usuário.</li>
+            <li><strong>Host Remoto:</strong> servidor no qual será feita a autenticação do tronco.</li>
+            <li><strong>Especificar usuário de Origem:</strong> Nome de usuário para as ligações do tronco.</li>
+            <li><strong>Domínio de Origem:</strong> Dominio do servidor que faz a requisição. <small>Nota: algumas operadoras voip podem 		requerer o dominio delas nesse campo (mesma informação 		fornecida em: Host Remoto).</small></li>
+            <li><strong>Modo de DTMF: </strong>Define os tons de freqüências utilizadas na discagem.</li>
+            <li><strong>Tempo do Controle de Qualidade:</strong> Define o tempo em que o ToFalando se baseará para considerar um ramal como ativo ou inativo no sistema, valores expressados em Millisegundos.
+            <li><strong>Sim: </strong>É utilizado controle de qualidade e o tempo por padrão é de 2000 millisegundos.</li>
+            <li><strong>Não:</strong> Não utiliza controle de qualidade.</li>
+            <li><strong>Específicar:</strong> É possível especificar um valor em Millisegundos. O aconselhável é 500 ms. </li>
+            <li><strong>Tipo: </strong>Define o tipo, se Peer apenas pode enviar chamadas, se Friend envia e recebe (<i>dependendo a sua configuração</i>).</li>
+            <li><strong>Forçar autenticação reversa:</strong> força no uso do protocolo que a outra ponta envie devolta os dados de autenticação do tronco para garantir a autenticidade da conexão. Algumas operadoras IP não suportam essa opção o que causa uma negação da requisição de ligações de entrada.</li>
+            <li><strong>Otimização de NAT:</strong> Habilita otimização no sistema para uso de NAT na rede.</li>  
+            <li><strong>CODECS: </strong>Define a sequencia dos CODECS que serão preferidos para o Ramal.</li>
+            <li><strong>Dominio:</strong> preenche o campo do cabeçalho SIP/IAX2 com a informação de dominio ao qual o tronco pertence.</li>
+            <li><small>Nota: algumas operadoras voip podem requerer o dominio delas nesse campo (mesma informação fornecida em: Host Remoto).</small></li>
+            <li><strong>Insecure:</strong> Determina qual o nível de checagem usado pelo sistema para permitir o uso de cabeçalhos SIP/IAX2 com informações faltantes. As opções são: yes, no, very, invite, port.</li>
+            <li><strong>Porta:</strong> qual porta será usada para negociação de ligações, padrão 5060 para sip e 4569 para IAX2.</li>
+            <li><strong>Limite de Canais:</strong> quantos canais simultâneos serão permitidos pelo tronco.</li></p>
+        </ul>
+
+        <ul> 
+            <li><p><strong>AVANÇADO</strong></p></li>
+        </ul>
+        <ul>
+            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+            <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
+            <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
+            <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
+        </ul> 
+
+
+        <p><h2>Troncos Khomp</h2></p>
+        Troncos que usam placas da khomp podem ser facilmente configurados nessa tela.</p>
+        <ul>
+            <li><strong>Placa:</strong> Lista de canais e links das placas khomp disponíveis para serem usadas
+                como tronco pelo ToFalando.</li>
+
+        </ul>
+        <ul> 
+            <li><p><strong>AVANÇADO</strong></p></li>
+        </ul>
+        <ul>
+            <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+            <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
+            <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
+            <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
+        </ul> 
+
+
+        <p><h2>Tronco TDM/Virtual</h2></p>
+        Essa opção permite que sejam cadastrados troncos que não tem detecção automática suportada pelo ToFalando, como troncos Digium.</p>
+        <ul>
+            <li><strong>Tecnologia do Canal:</strong> tecnologia usada pelo tronco para interface com o Asterisk. ex: DAHDI/g1, ZAP/g2, etc.</li>
+            <li><strong>ID da Expressão Regular:</strong> Opcional, ela é usada para definir uma expressão regular de identificação do tronco.
+                Quando se usa troncos khomp por exemplo pode-se usar Khomp/b0l1 para fazer a discagem para o link 1 da placa E1, mas quando uma ligação de
+                entrada ocorre ela virá com a interface real de cada canal (ex:Khomp/b0c25) para isso o snep precisa de uma expressão que identifique todos
+                os canais pertencentes a essa placa, exemplo para khomp/b0l1 é khomp/b0c[2-5]?[0-9].<small>Nota: placas khomp já possuem sistema que automatiza
+                    o uso de expressões de identificação, selecione placas de tecnologia KHOMP.<br />
+                    Caso em branco a string de identificação será a propria Tecnologia de Canais usada para discagem.</small><br>
+            </li>
+            <ul> 
+                <li><p><strong>AVANÇADO</strong></p></li>
+            </ul>
+            <ul>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
+                <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
+                <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
+            </ul> 
+
+        </ul>
+
+        <p><h2>ToFalando SIP</h2></p>
+        <ul>
+            <li><strong>Host Remoto:</strong> Servidor no qual será feita a autenticação do tronco.</li>
+            <li><strong>Modo DTMF:</strong> Define os tons de freqüências utilizadas na discagem.</li>
+            <ul> 
+                <li><p><strong>AVANÇADO</strong></p></li>
+            </ul>
+            <ul>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
+                <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
+                <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
+            </ul> 
+        </ul>
+        <h2>ToFalando IAX2</h2>
+        <ul>
+            <li><strong>Identificador:</strong> Identificação do tronco. <small>Nota: O mesmo em todos os troncos.</small><br /></li>
+            <li><strong>Otimização de NAT:</strong> Habilita otimização no sistema para uso de NAT na rede.</li>  
+            <li><strong>Modo DTMF:</strong> Define o tipo tons freqüência utilizados na discagem.</li>
+            <ul> 
+                <li><p><strong>AVANÇADO</strong></p></li>
+            </ul>
+            <ul>
+                <li><strong>Mapeamento de Ramais:</strong> Faz com que ligações que entram por esse tronco tenham o mesmo callerid de um ramal cadastrado no ToFalando, fazendo com que esta ligação seja tratada como interna e não mais do tronco.</li>
+                <li><strong>Modo de discagem DTMF:</strong> Habilita o tronco a realizar discagem DTMF.</li>
+                <li><strong>Numero do modo de discagem DTMF:</strong> Faz com que o tronco efetue a ligação para o canal do tronco e para o número destino opcional e após atendimento, envia o destino via DTMF. Usado em DISA de outras centrais.</li>
+                <li><strong>Controle de Minutos:</strong>Institui um controle de minutos sobre o tronco. Caso as ligações usadas por esse tronco excedam esse tempo limite ele deixará de funcionar.</li>
+            </ul>
+        </ul>
+
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+</div>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/trunks/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+
+    subForm('technology-type', [null, null, "sip", "iax2", "snepsip", "snepiax2", "virtual", "khomp", null]);
+
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

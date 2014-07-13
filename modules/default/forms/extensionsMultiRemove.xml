@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelo>
+    <elements>
+        <exten>
+         	<type>Text</type>
+                <options>
+               	<label>Extensions</label>
+                <description>
+                   	Ex: 1000-1050;1060;1063;1070-1100
+                </description>
+                <class>maskRange</class>
+                </options>
+            </exten>
+    </elements>
+</modelo>

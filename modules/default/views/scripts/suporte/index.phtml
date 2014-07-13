@@ -1,0 +1,15 @@
+<?php
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/suporte.css" );
+
+$title = new Snep_Title($this->translate("Support"));
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->translate("Data Integrator"), "", "", "reports");
+      
+?>
+
+<div class="description_form"><p>Esse modulo tem como finalidade trazer os dados atualizados do Integrador cadastrado no Snep Store, toda via essa opção pode ser desfeita acessando o menu configurações->parametros e desabilitando a opçao de "Exibir dados do integrador", sendo assim mostrado as informaçoes da OpenS Tecnologia. O usuario se quiser vincular um novo integrador ao seu servidor deve acessar o Snep Store e realizar a atualização do mesmo nas configurações do Servidor.</p></div>
+
+
+<?php echo $this->form; ?>

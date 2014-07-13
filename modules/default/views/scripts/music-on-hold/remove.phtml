@@ -1,0 +1,26 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Settings");
+echo $title->getHtml();
+echo Snep_Bar::get("Delete",  "Music on Hold Sessions", $this->baseUrl()."/index.php/default/music-on-hold");
+
+?>
+<div class="description_form"><p><h2>Sessão de música em espera - Exclusão</h2>
+
+<p>Esta rotina permite que uma sessão de música em espera seja excluida.</p>
+
+</p></div>
+
+<div class="error_box">
+<?php echo $this->message; ?>
+</div>
+
+<?php 
+echo $this->form;
+
+$buttons = new Snep_Buttons();
+$buttons->addOption('delete', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl().'/index.php/music-on-hold/');
+echo $buttons->getHtml();
+?>

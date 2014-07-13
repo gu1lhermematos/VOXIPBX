@@ -1,0 +1,200 @@
+<!DOCTYPE html><html>
+<head>
+<link href="<?php echo $this->baseUrl()?>/modules/default/css/agi_rules.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="<?php echo $this->baseUrl()?>/modules/default/css/form.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="<?php echo $this->baseUrl()?>/modules/default/css/route.css" media="screen" rel="stylesheet" type="text/css" >
+<link href="<?php echo $this->baseUrl()?>/modules/default/css/services.css" media="screen" rel="stylesheet" type="text/css" >
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >    
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/snep-env.js.php"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/prototype.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/functions.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/scriptaculous/src/scriptaculous.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/snep.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/javascript/agi_rules.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl()?>/includes/jquery-1.7.2.js"></script>
+</head>
+<body>
+
+<?php 
+
+$this->headScript()->appendFile( $this->baseUrl() .'/includes/javascript/scriptaculous/lib/prototype.js');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form_config.css');
+
+echo $this->form; ?>
+
+    <div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h1>Regras de negócio - Incluir/editar</h1>
+    
+        <p>
+Esta rotina permite que uma Regra de Negócios seja Cadastrada  ou Alterada. </p>
+<span style="display:none;" id="text_description">
+<strong>Descrição</strong> Nome de identificação da regra.<br>
+
+<strong>Origem</strong> Origem da regra.<br>
+
+<strong>Destino</strong> Destino da regra .<br>
+<strong>Opções de origem e destino:</strong><br>
+<u>Expressão Regular:</u> Expressão no padrão "Dialplan Asterisk" que irá verificar se o número de origem 
+da chamada "casa". Exemplos:0800X. ­> Números que iniciem com "0800";[7­9]X. ­> Números que iniciem com “7, 8 ou 9” ;<br>
+<u>Qualquer:</u>Qualquer número.<br>
+<u>Grupo de ramal:</u>Um Grupo de Ramal entre os cadastrados no sistema.<br>
+<u>Grupo de contato:</u>Um grupo de contato entre os cadastrados no sistema.<br>
+<u>Ramal:</u>Define o número de um Ramal.<br>
+<u>Aliás de expressão regular:</u>Um Alias de Expressão cadastrado no sistema<br>
+<u>Tronco:</u>Permite escolher  um tronco dentre os cadastrados no sistema<br>
+<p><strong>Dias da semana:</strong> Determina os dias da semana que a regra será válida.<br>
+
+<strong>Tempos válidos:</strong> Define os horários que a regra deve ser aplicada.<br>
+
+<strong>Gravação:</strong> Define se as chamadas que passarem pela regra deverão ser gravadas ou não.<br>
+
+<strong>Prioridade:</strong> Existem 6 níveis de prioridade(0 a 5). Quanto MAIOR o nível, MAIOR será a prioridade de execução.</p>
+<p><h2>Ações da regra</h2>
+
+<p>
+<strong>Defina Centro de custos:</strong> Define o centro de custos que será usado para gravar o registro da chamada para visualização no relatório.<br>
+</p>
+
+<p>
+<strong>Desviar para contexto:</strong> Envia a ligação para um contexto do dialplan do Asterisk. Essa opção é usada 
+para a customização de algum comportamento em um nível mais baixo.Também é usada para a criação de URA/IVR.<br>
+</p>
+
+<p>
+<strong>Discar para ramal:</strong> Encaminha a ligação para um ramal cadastrado no SNEP.<br>
+<u>Ramal:</u> Define o número do ramal para o qual as chamadas serão destinadas.<br>
+<u>Dial timeout:</u> Tempo que o sistema tentará passar uma chamada para o Ramal, em caso de Não atender.<br>
+<u>Flags de controle:</u> Flags de controle. <br>w = permite solicitar gravação da chamada (*77)<br>t = permite solicitar transferência da chamada<br>k = permite estacionamento da chamada.<br>
+<u>Diferenciar toque:</u> Diferencia o toque de chamadas internas e externas.<br>
+<u>Permitir voicemail:</u> Usa voiceMail para o ramal(desde que definido no cadastro do ramal).<br>
+<u>Não transbordar:</u> Não deixa chamada transbordar.<br>
+</p>
+
+<p>
+<strong>Discar para tronco:</strong> A ligação será direcionada para um tronco tentando alcançar o destino da ligação.<br>
+<u>Tronco:</u> Define o tronco para o qual as chamadas serão destinadas.<br>
+<u>Dial timeout:</u> Tempo que o sistema tentará passar uma chamada para o tronco.<br>
+<u>Flags de controle:</u> Flags de controle. <br>w = permite solicitar gravação da chamada (*77)<br> t = permite solicitar transferência da chamada.<br>
+<u>Omitir origem:</u> Em troncos GSM , omite o callerid que identifica a origem da chamada.<br>
+<u>Email de alerta:</u> E­mail que receberá alertas a cada vez que este tronco for usado.<br>
+</p>
+
+<p>
+<strong>Email:</strong> Envia e-mail toda vez que regra é utilizada.<br>
+</p>
+
+<p>
+<strong>Enviar para fila:</strong> Coloca a ligação em uma fila de chamadas.<br>
+<u>Fila:</u> Fila cadastrada no sistema.<br>
+<u>Timeout na fila:</u> Tempo que a chamada irá aguardar na Fila até que transborde para a próxima ação ou então seja cancelada.<br>
+</p>
+
+<p>
+<strong>Executar a aplicação:</strong> Executa uma aplicação do asterisk.<br>
+</p>
+
+<p>
+<strong>Loop:</strong> Gera um loop nas ações. Toda vez que essa ação for chamada ela direciona o 
+fluxo da execução das ações para o índice da ação definido em sua configuração. 
+Ela também pede que seja definido o número de vezes em que o loop será executado.<br>
+</p>
+
+<p>
+<strong>Pedir senha:</strong> Essa ação pede uma senha para o originador. Se não for definida na própria 
+ação , a senha será obtida do cadastro do originador (ramal de origem) se ele 
+for um ramal do SNEP.<br>
+<u>Substitui o ramal de origem com o escolhido:</u> Se ativado irá solicitar ao chamador o código e senha de um ramal previamente cadastrado.<br>
+<u>Senha Estática:</u> Define uma senha única para liberar chamadas que passarem por esta ação.<br>
+</p>
+
+<p>
+<strong>Reescrever pedido:</strong> Edita uma requisição sendo possível modificar a origem ou o destino da ligação. 
+É possível "cortar" o número de origem/destino usando o "|" (pipe) para definir até que ponto o número será cortado. ex: 0XX|XX. será cortado o 
+0XX ficando somente os números a partir do terceiro carácter. Essa ação também permite adicionar um prefixo e sufixo ao numero original.<br>
+<u>Editar:</u> Define se será alterado o número de origem ou de destino.<br>
+<u>Cortar:</u> Define se haverá corte no número de origem ou destino. O corte é proporcionado pelo uso do 
+pipe (“|”) em expressões regulares e permite que tudo o que estiver à esquerda deste caractere seja desprezado.<br>
+<u>Substituir:</u> Substitui a Origem ou Destino pelo conteúdo informado.<br>
+<u>Prefixo:</u> Anexa ao INÍCIO do Número de Origem ou Destino o conteúdo informado.<br>
+<u>Sufixo:</u> Anexa no FIM do Número de Origem ou Destino o conteúdo informado.<br>
+</p>
+
+<p>
+<strong>Restaurar pedido:</strong> Restaura a requisição aos seus valores inciais. Reverte as modificações das 
+outras ações desse grupo.<br>
+<u>Restaurar origem:</u> Restaura o número de Origem alterado pela ação anterior (Reescrever).<br>
+<u>Restaurar destino:</u> Restaura o número de Destino alterado pela ação anterior (Reescrever).<br>
+</p>
+
+<p>
+<strong>Tocar áudio:</strong> Permite tocar  um  áudio que  esteja  na  Lista.<br>
+</p>
+</span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+</div>
+
+<script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function() {
+        jQuery(".more_description").click(function(e) {
+            jQuery('.description_form').animate({height: "100%", }, 500);
+            jQuery("#text_description").show();
+            jQuery(".less_description").show();
+            jQuery(".more_description").hide();
+            e.preventDefault();
+        });
+        jQuery(".less_description").click(function(e) {
+            jQuery(".description_form").animate({height: "100%", }, 500);
+            jQuery("#text_description").hide();
+            jQuery(".more_description").show();
+            jQuery(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>    
+    
+<script type="text/javascript">
+    <?php echo $this->rule_actions; ?>
+
+    var group_list = <?php echo $this->group_list; ?>;
+    var alias_list = <?php echo $this->alias_list; ?>;
+    var trunk_list = <?php echo $this->trunk_list; ?>;
+    var contacts_group_list = <?php echo $this->contact_groups_list; ?>;
+
+    var str_any = "<?php echo $this->translate("Any"); ?>";
+    var str_regex = "<?php echo $this->translate("Regular Expression"); ?>";
+    var str_group = "<?php echo $this->translate("Extension Group"); ?>";
+    var str_contacts_group = "<?php echo $this->translate("Contact Group"); ?>";
+
+    var str_ramal = "<?php echo $this->translate("Extension"); ?>";
+    var str_trunk = "<?php echo $this->translate("Trunk"); ?>";
+    var str_s     = "<?php echo $this->translate("No Destiny"); ?>";
+    var str_alias = "<?php echo $this->translate("Expression Alias"); ?>";
+
+    window.onload = function() {
+        origObj = new MultiWx('orig', SrcField);        
+        <?php echo $this->dt_agirules["src"]; ?>
+        origObj.render();
+
+        dstObj = new MultiWx('dst', DstField);
+        <?php echo $this->dt_agirules["dst"]; ?>
+        dstObj.render();
+
+        timeObj = new MultiWx('time', TimeField);
+        <?php echo $this->dt_agirules["time"]; ?>
+        timeObj.render();
+    }
+
+    function atualizaValues() {
+        $('srcValue').value  = origObj.getValue();
+        $('dstValue').value  = dstObj.getValue();
+        $('timeValue').value = timeObj.getValue();
+    }
+
+    Event.observe($('snep_form'), 'submit', atualizaValues);
+
+    
+</script>
+</body>
+</html>

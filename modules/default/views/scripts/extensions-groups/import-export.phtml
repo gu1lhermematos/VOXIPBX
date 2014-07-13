@@ -1,0 +1,11 @@
+<?php
+
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get($this->title,  "Extension Groups", $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName(), "export");
+
+echo $this->form;
+?>

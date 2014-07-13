@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+    <period>
+        <elements>
+        	<initDay>
+            	     <type>text</type>
+            	     <options>
+                         <label>From:</label>
+                         <required>true</required>
+                         <description>dd/mm/aaaa hh:mm</description>
+                    	<size>1</size>
+                     </options>
+	        </initDay>
+
+            <finalDay>
+                <type>text</type>
+                <options>
+                    <label>To:</label>
+                    <description>dd/mm/aaaa hh:mm</description>
+                    <required>true</required>
+                    <size>1</size>
+                </options>
+            </finalDay>
+
+            
+        </elements>
+    </period>
+
+    <source>
+        <elements>
+            <selectSrc>
+                <type>select</type>
+                <options>
+                    <size>1</size>
+                    <label>Source Group</label>
+                    <value></value>
+                </options>
+            </selectSrc>
+
+            <groupSrc>
+                <type>text</type>
+                <options>
+                    <label>Source Extensions</label>
+                    <size>1</size>
+                    <description>Separated by a comma</description>
+                </options>
+            </groupSrc>
+
+            
+        </elements>
+    </source>
+
+    <destination>
+        <elements>
+            <selectDst>
+                <type>select</type>
+                <options>
+                    <size>1</size>
+                    <label>Destination Group</label>
+                    <value></value>
+                </options>
+            </selectDst>
+            
+            <groupDst>
+                <type>text</type>
+                <options>
+                   <size>0</size>
+                    <label>Destination Extensions</label>
+                    <description>Separated by a comma</description>
+                </options>
+            </groupDst>
+            
+            <dstchannel>
+                <type>text</type>
+                <options>
+                    <size>0</size>
+                    <label>Agent of queue </label>
+                    <description>Agent who answered in queue</description>
+                </options>
+            </dstchannel>
+    
+        </elements>
+    </destination>
+    <duration>
+        <elements>
+                  <duration_init>
+                <type>text</type>
+                <options>
+                    <label>From</label>
+                    <size>1</size>
+                    <class>maskInt</class>
+                    <description>seconds</description>
+                </options>
+            </duration_init>
+
+            <duration_end>
+                <type>text</type>
+                <options>
+                    <label>To</label>
+                    <size>1</size>
+                    <description>seconds</description>
+                    <class>maskInt</class>
+                </options>
+            </duration_end>
+        </elements>
+    </duration>
+
+    <calls>
+        <elements>
+            <costs_center>
+                <type>select</type>
+                <options>
+                    <multiple>True</multiple>
+                    <label>Cost Center</label>
+                    <class>multiselect</class>
+                </options>
+            </costs_center>
+
+            <status>
+                <type>MultiCheckbox</type>
+                <options>
+                    <label>Status</label>
+                    <checked>checked</checked>
+                    <separator></separator>
+                    <multioptions>
+                        <ANSWERED>Answered</ANSWERED>
+                        <NOANSWER>Not Answered</NOANSWER>
+                        <BUSY>Busy</BUSY>
+                        <FAILED>Failed</FAILED>
+                    </multioptions>
+                </options>
+            </status>
+            <type>
+                <type>radio</type>
+                <options>
+                    <label>Call Type</label>
+                    <separator></separator>
+                    <multioptions>
+                        <T>All</T>
+                        <S>Originated</S>
+                        <E>Received</E>
+                        <O>Others</O>
+                    </multioptions>
+                </options>
+            </type>
+        </elements>
+    </calls>
+
+    <others>
+        <elements>
+            <charging>
+                <type>Checkbox</type>
+                <options>
+                    <label>View Charging</label>
+                    <class>newcheck tolabel</class>
+                </options>
+            </charging>
+
+            <show_records>
+                <type>Checkbox</type>
+                <options>
+                    <label>View recording files</label>
+                    <class>newcheck tolabel</class>
+                </options>
+            </show_records>
+
+		<!--<graph_type>
+		    <type>radio</type>
+		    <options>
+			<label>Tipo de gráfico</label>
+			<separator></separator>
+			<multioptions>
+				<bars>Barras</bars>
+				<lines>Linhas</lines>
+			</multioptions>
+		    </options>
+		</graph_type>-->
+
+            <report_type>
+                <type>radio</type>
+                <options>
+                    <label>Report Type</label>
+                    <separator></separator>
+                    <multioptions>
+                        <analytical>Analytic</analytical>
+                        <synth>Synthetic</synth>
+                    </multioptions>
+                </options>
+            </report_type>
+        </elements>
+    </others>
+</form>
+
+

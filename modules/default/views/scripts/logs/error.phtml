@@ -1,0 +1,11 @@
+<?php
+$title = new Snep_Title("Status");
+echo $title->getHtml();
+echo Snep_Bar::get($this->translate("System logs"),  NULL, NULL, "reports");
+?>
+
+<div id="error" style="padding: 10em; text-align: center; font-size: 12px;">
+    <?php echo $this->error; ?>
+    <br/><br/>
+        <input class="new_button" type="button" id="voltar" value="<?php echo $this->back; ?>" onClick="location.href='../logs/index'" />
+</div>

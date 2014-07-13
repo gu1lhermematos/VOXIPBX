@@ -1,0 +1,161 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . "/modules/default/css/jqueryui.css");
+$this->headLink()->appendStylesheet($this->baseUrl() . "/includes/multiselect/css/ui.multiselect.css");
+
+$this->headScript()->appendFile($this->baseUrl() . '/includes/jquery-ui.min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/localisation/jquery.localisation-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/plugins/scrollTo/jquery.scrollTo-min.js');
+$this->headScript()->appendFile($this->baseUrl() . '/includes/multiselect/js/ui.multiselect.js');
+
+$title = new Snep_Title("Entries");
+$title->addOption('multiadd', $this->baseUrl() . '/index.php/extensions/multiadd/');
+$this->headLink()->appendStylesheet($this->baseUrl() . '/modules/default/css/form.css');
+echo $title->getHtml();
+echo Snep_Bar::get($this->subTitle, $this->translate("extensions"), $this->baseUrl() . "/index.php/default/extensions");
+?>
+
+<div style="height:100%; margin: 5px 0 40px 0;" class="description_form"><p><h2>Ramais - Incluir/Alterar</h2>
+
+    <p>Esta rotina permite o Cadastro/Alteração de uma Ramal no Sistema. Os
+        Ramais definem os membros dos sistemas Asterisk e ToFalando, ou seja, servem para
+        identificar um membro no sistema de telefonia e para acessar este sistema
+        de Gerenciamento.
+    </p>
+    <span style="display:none;" id="text_description">
+        <p>Para o cadastro de Ramais é necessário que se ajuste em
+            Configurações >> Parâmetros, <strong>"Configuração do Ramal"</strong> os ramais cadastrados devem estar entre a margem de variação do Range de Ramais.</p>
+        <ul>
+            <li><strong>Ramal: </strong>Define o código do que identificará o Ramal. Este código também será o LOGIN para o ToFalando.</li>
+
+            <li><strong>Senha: </strong>Define uma senha para o Ramal, que também será a senha para o LOGIN no ToFalando.</li>
+
+            <li><strong>Nome: </strong>Define um nome para o Ramal.</li>
+
+            <li><strong>Grupo de Ramal:</strong>Define o grupo de Ramais qual o ramal pertence</li>
+
+            <li><strong>Grupo de Captura: </strong>Grupo de Captura do qual o Ramal fará parte. Ramais em um mesmo grupo de captura permitem-se capturar ligaços uns dos outros.</li>
+        </ul>
+        <p><strong>TECNOLOGIA DE INTERFACE</strong></p>
+        <p><strong>Tecnologia: </strong> Define qual tecnologia de canal o ramal irá usar para fazer/receber ligações. </p>
+        <ul>
+            <li><strong>SIP/IAX:</strong> Canais com tecnologia SIP ou IAX.</li>
+            <li><strong>Khomp:</strong> Ramais de tecnologia Khomp</li>
+            <li><strong>Virtual:</strong> Ramais com interfaces virtuais são mapeados em um tronco. Ao selecionar um tronco para a interface virtual do ramal, a ligação para ele será feita discando através do tronco para o numero do ramal.</li>
+            <li><strong>Manual:</strong> Permite especificar qual canal/tecnologia será utlizada na criação do ramal .</li></p>
+        </ul>
+        <h3>OPÇÕES SIP / IAX</h3>
+        <ul>
+            <li><strong>Senha:</strong> Define uma senha para autenficação do ramal.
+            <li><strong>Limite de Chamadas Simultaneas: </strong> Define o número máximo de chamadas simultaneas para este ramal.</li>
+            <li><strong>NAT: </strong>Define se a conexão do Ramal irá ou não através um NAT.</li>
+            <li><strong>Controle de Qualidade: </strong>Define se haverá ou não controle de qualidade nas ligações do Ramal.</li>
+            <li><strong>Direct Media: </strong>Define passagem ou não dos pacotes RTP pelo Asterisk.</li>
+            <li><strong>Modo de DTMF: </strong>Define o tipo tons freqüência utilizados na discagem.</li>
+            <li><strong>CODECS: </strong>Define a sequencia dos CODECS que serão preferidos para o Ramal.</li>
+        </ul>
+        <h3>OPÇÃO KHOMP</h3>
+        <ul>
+            <li><strong>Placa: </strong>Define qual das placas existentes no sistema.</li>
+            <li><strong>Canal: </strong>Define qual canal da placa selecionada.</li>
+        </ul>
+        <h3>OPÇÃO VIRTUAL</h3>
+        <ul>
+            <li><strong>Tronco: </strong>Define o tronco a ser mapeado.</li>
+        </ul>     
+        <h3>OPÇÃO MANUAL</h3>
+        <ul>
+            <li><strong>Manual: </strong>Define o canal/tecnologia a ser utilizado.</li>
+        </ul>
+        <p><strong>AVANÇADO</strong></p>
+        <ul>
+            <li><strong>Correio de Voz: </strong>Define se o Ramal vai ou não utilizar Correio de Voz.</li>
+            <li><strong>E-Mail: </strong>Define um e-mail para o Ramal.</li>
+            <li><strong>Bloqueio: </strong>Cadeado para o ramal. Permite ou não efetuar chamadas.</li>
+            <li><strong>Controle de Minutos:</strong> Define se vai ser estipulado um tempo para as ligações desse ramal ou não.</li>
+            <li><strong>Tempo Total:</strong> Tempo total que o ramal pode ficar em ligação.</li>
+            <li><strong>Tipo de Controle:</strong> Define se os minutos são controlados por ano, mes ou dia.</li>
+        </ul>
+
+    </span>
+    <div style="position:absolute;display:none;margin:13px  0 0 -5px ; padding: 0px;;" class="less_description"><div>Mostrar menos informa&ccedil;&otilde;es</div> <div  style="float:right;position:absolute;relative;margin:-20px   0  0 170px;"  ><img    src="/snep/modules/default/img/less.png"> </div></div>
+
+    <div  style="position:relative;clear:both;top:22px;margin:5px  0 0 0;"  class="more_description">Mostrar mais informa&ccedil;&otilde;es <img  style="position:absolute; margin:0  0 0  8px;"  src="/snep/modules/default/img/more.png"></div>
+
+</div>
+
+<?php if (!$this->all_writable): ?>
+    <div class="error_box">
+        <p><?php echo $this->translate("Error: The following files are not writable by the system:"); ?></p>
+        <ul>
+            <?php
+            foreach ($this->writable_files as $file => $status) {
+                echo "<li>$file</li>";
+            }
+            ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php
+if (isset($this->error)) {
+    echo "<div class=\"error_box\" > {$this->error} </div>";
+}
+echo $this->form;
+?>
+
+<?php
+$buttons = new Snep_Buttons();
+$buttons->addOption('save', 'snep_form', true);
+$buttons->addOption('cancel', $this->baseUrl() . '/index.php/extensions/');
+echo $buttons->getHtml();
+?>
+
+<script type="text/javascript">
+
+    subForm('technology-type', [null, null, "sip", "iax2", "manual", "virtual", "khomp", null]);
+
+    function fillChannels(channel_id) {
+        channel = $('#khomp-board').val();
+        $.get('<?php echo $this->url ?>/get-khomp/board/' + channel, function(data) {
+            html = '';
+            $.each(data, function(i) {
+                if (channel_id != false) {
+                    if (channel_id == data[i]) {
+                        html += '<option selected value=\"' + data[i] + '\">' + data[i];
+                    } else {
+                        html += '<option value=\"' + data[i] + '\">' + data[i];
+                    }
+                } else {
+                    html += '<option value=\"' + data[i] + '\">' + data[i];
+                }
+            });
+            $('#khomp-channel').html(html);
+        });
+    }
+
+    $(document).ready(function() {
+        $('#khomp-board').change(function() {
+            fillChannels(false);
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".more_description").click(function(e) {
+            $('.description_form').animate({height: "100%", }, 500);
+            $("#text_description").show();
+            $(".less_description").show();
+            $(".more_description").hide();
+            e.preventDefault();
+        });
+        $(".less_description").click(function(e) {
+            $(".description_form").animate({height: "100%", }, 500);
+            $("#text_description").hide();
+            $(".more_description").show();
+            $(".less_description").hide();
+            e.preventDefault();
+        });
+    })
+</script>

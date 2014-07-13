@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelo>
+    <essential>
+        <elements>
+            <name>
+                <type>text</type>
+                <options>
+                    <label>Queue Name</label>
+                    <required>true</required>
+                </options>
+            </name>
+            <musiconhold>
+                <type>select</type>
+                <options>
+                    <label>Music On Hold Class</label>
+                </options>
+            </musiconhold>
+            <timeout>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Ring time per agent</label>
+                    <description>in seconds</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </timeout>
+            <announce_frequency>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Music on hold loop timer</label>
+                    <description>in seconds (Depends to set the value for Ring time per agent)</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </announce_frequency>
+            <retry>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Wait time until ringing all agents again</label>
+                    <description>in seconds</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </retry>
+            <wrapuptime>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Rest time for agent in between calls</label>
+                    <description>in seconds</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </wrapuptime>
+            <maxlen>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Maximum number of calls waiting in the queue</label>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </maxlen>
+            <servicelevel>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Queue Service Level Agreement (Used for statistics and monitoring)</label>
+                    <description>in seconds</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </servicelevel>
+            <strategy>
+                <type>select</type>
+                <options>
+                    <label>Call distribution strategy</label>
+                </options>
+            </strategy>
+        </elements>
+    </essential>
+    <advanced>
+        <elements>
+            <announce>
+                <type>select</type>
+                <options>
+                    <label>Queue notice audio</label>
+                    <description>sound file played for the agent to indicate him about a new call</description>                    
+                </options>
+            </announce>
+
+            <context>
+                <type>text</type>
+                <options>
+                    <label>Go to Context</label>
+                    <description>To witch context the call must go when the caller dial any number while waiting</description>
+                </options>
+            </context>
+
+            <queue_youarenext>
+                <type>select</type>
+                <options>
+                    <label>Audio: You're next</label>
+                </options>
+            </queue_youarenext>
+
+            <queue_thereare>
+                <type>select</type>
+                <options>
+                    <label>Audio: You're Here</label>
+                </options>
+            </queue_thereare>
+
+            <queue_callswaiting>
+                <type>select</type>
+                <options>
+                    <label>Audio: Number of calls waiting</label>
+                </options>
+            </queue_callswaiting>
+
+            <queue_thankyou>
+                <type>select</type>
+                <options>
+                    <label>Audio: Thanks for waiting</label>
+                </options>
+            </queue_thankyou>
+
+            <joinempty>
+                <type>radio</type>
+                <options>
+                    <label>Can users join this queue even if there's no agents online?
+                    </label>
+                </options>
+            </joinempty>
+
+            <leavewhenempty>
+                <type>radio</type>
+                <options>
+                    <label>Should calls be ejected from queue if all agents logout?</label>
+                </options>
+            </leavewhenempty>
+
+            <reportholdtime>
+                <type>radio</type>
+                <options>
+                    <label>Warn agent the time that call waited in queue</label>
+                </options>
+            </reportholdtime>
+
+            <memberdelay>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Silent time before connecting the agent to a caller</label>
+                    <description>in seconds</description>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </memberdelay>
+
+            <weight>
+                <type>text</type>
+                <options>
+                    <class>maskPhone</class>
+                    <label>Queue Priority</label>
+                    <validators>
+                        <regex>
+                            <validator>regex</validator>
+                            <options>
+                                <pattern>/[[:digit:]]/i</pattern>
+                                <messages>
+                                    <regexNotMatch>This field should contain numbers only</regexNotMatch>
+                                </messages>
+                            </options>
+                        </regex>
+                    </validators>
+                </options>
+            </weight>
+        </elements>
+    </advanced>
+</modelo>

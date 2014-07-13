@@ -1,0 +1,85 @@
+<?php
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/index.css" );
+$this->headLink()->appendStylesheet( $this->baseUrl() . "/modules/default/css/form.css" );
+
+$title = new Snep_Title("Entries");
+echo $title->getHtml();
+
+echo Snep_Bar::get("Import",  "Contacts", $this->baseUrl()."/index.php/default/".Zend_Controller_Front::getInstance()->getRequest()->getControllerName() , "export");
+
+?>
+<?php if($this->error): ?>
+    <div class="error_box">
+        <?php echo $this->error; ?>
+    </div>
+<?php endif ?>
+
+<?php if($this->invalid): ?>
+
+<div style="text-align:center;">
+    <h2><?php echo $this->translate("Invalid File") ?></h2>
+    <button type="button" onClick="history.back();"><?php echo $this->translate("Back"); ?></button>
+</div>
+
+<?php else: ?>
+
+<form name="formulario" method="POST" class="snep_form" id="snep_form" style="width: 100%" action="<?php echo $this->url ?>/csvprocess" >
+    <table width="100%">
+        <thead>
+            <tr>
+                <?php
+                $csvarq = $this->csvprocess;
+                foreach ( $csvarq[0] as $ind => $linha ) :
+                ?>
+                    <th>
+                        <select name="field[<?php echo $ind ?>]">
+                        <?php foreach ($this->fields as $field => $name) : ?>
+                            <option value="<?php echo $field; ?>"><?php echo $name; ?></option>
+                        <?php endforeach ?>
+                        </select>
+                    </th>
+                <?php endforeach ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($csvarq as $ind => $linha) : ?>
+            <tr>
+                <?php foreach ($linha as $item) : ?>
+                <td><?php echo $item ?></td>
+                <?php endforeach ?>
+            </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+
+    <div id="main_container" style="border-top: none;">
+            
+            <div class="line">
+            	<div id="type-label">
+            		<label for="group" class="label"><?php echo $this->translate("Group"); ?></label>
+            	</div>
+				<div class="input">
+					<select id="group" name="group" class="campos" size="1">
+	                <?php if( isset( $this->group ) )  : ?>
+	                    <?php foreach ($this->group as $id => $group) : ?>
+	                            <option value='<?php echo $id ?>'> <?php echo $group ?> </option>
+	                    <?php endforeach ?>
+	                <?php endif ?>
+	            	</select>
+				</div>
+			</div>
+			
+			<div class="line">
+				<div id="reverse_auth-label">
+					<label for="discard_first_row" class="label optional"><?php echo $this->translate("Discard header"); ?></label>
+				</div>
+				<div class="input">
+					<input type="checkbox" class="newcheck tolabel" name="discard_first_row" id="discard_first_row" />
+				</div>
+			</div>
+    </div>
+    
+    <div class="buttons"><a href="#" onclick="$('#snep_form').submit();" class="option"><img src="/snep/modules/default/img/save_form_icon.png"><span>Salvar</span></a><a href="/snep/index.php/contacts/" class="option"><img src="/snep/modules/default/img/form_cancel_icon.png"><span>Cancelar</span></a></div>
+    
+</form>
+<?php endif; ?>
