@@ -4,6 +4,8 @@
 #
 # Script incialmente desenvolvido por
 # Emerson Luiz ( eluizbr@tofalando.com.br )
+#Atualizado por 
+# Guilherme Matos ( guilherme@boxfacil.com.br )
 
 
 source funcoes.sh
@@ -11,7 +13,7 @@ source funcoes.sh
 #BRANCH='devel'
 
     clear
-    echo " > Instalar ToFalando IPBX"
+    echo " > Instalar BoxFacil IPBX"
     echo "====================================="
     echo "  1)  Instalar Central E1 / Placas"
     echo "  2)  Instalar Central SIP"
