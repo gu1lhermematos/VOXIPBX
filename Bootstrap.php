@@ -63,7 +63,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $view->doctype('HTML5');
         $view->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
         $view->headTitle()->setSeparator(' - ');
-        $view->headTitle('ToFalando 2.0');
+        $view->headTitle('BoxFacil 2.0');
 
         $view->headLink()->setStylesheet($view->baseUrl() . "/modules/default/css/main.css");
         $view->headLink()->appendStylesheet($view->baseUrl() . "/modules/default/css/services.css");

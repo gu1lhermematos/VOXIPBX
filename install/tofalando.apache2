@@ -1,10 +1,10 @@
-### OPENS ###
+### ToFalando ###
 Alias /snep "/var/www/snep"
 <Directory "/var/www/snep">
           Options Indexes FollowSymLinks
           AllowOverride All
           Order deny,allow
-          Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 0.0.0.0/0.0.0.0
+          Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 10.8.0.0/255.255.255.0
           Deny from all
           php_admin_flag engine on
           php_admin_flag register_globals On
@@ -21,7 +21,7 @@ Alias /ipbx "/var/www/ipbx"
           Options Indexes FollowSymLinks
           AllowOverride All
           Order deny,allow
-          Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 0.0.0.0/0.0.0.0
+          Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 10.8.0.0/255.255.255.0
           Deny from all
           php_admin_flag engine on
           php_admin_flag register_globals On
@@ -31,12 +31,4 @@ Alias /ipbx "/var/www/ipbx"
           php_value max_execution_time 90
 </Directory>
 
-### Configuração do modulo Update
-Alias /snepinstalador "/var/www/instalador/public"
-<Directory "/var/www/instalador/public">
-          Options Indexes FollowSymLinks
-          AllowOverride All
-          Order deny,allow
-          Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 201.47.74.147/255.255.255.255
-          Deny from all
-</Directory>
+

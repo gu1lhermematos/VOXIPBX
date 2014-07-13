@@ -1,1 +1,0 @@
-INSERT INTO groups VALUES ('NULL',null);

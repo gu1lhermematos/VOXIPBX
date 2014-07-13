@@ -1,42 +1,53 @@
 #!/bin/bash
+
+# Copyright (C) 2011-2014 ToFalando
+#
+# Script incialmente desenvolvido por
+# Emerson Luiz ( eluizbr@tofalando.com.br )
+
+# Configurar o Branch
+BRANCH='devel'
+
+apt-get -y install lsb-release
+
 # Identify Linux Distribution type
 func_identify_os() {
     if [ -f /etc/debian_version ] ; then
-    
-        DIST='DEBIAN'
-        apt-get -y install lsb-release
-        if [ "$(lsb_release -cs)" != "precise" ]; then
-            	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+        DIST='UBUNTU'
+        
+        if [ "$(lsb_release -cs)" != "precise" ] ; then
+            	echo "A instalação funciona apenas no Ubuntu LTS 12.04"
             	exit 255
         fi
         
-elif [ -f /etc/debian_version ]; then
-	 DIST='DEBIAN'
-	 if [ "$(lsb_release -cs)" != "wheezy" ]; then
-            	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
-            	exit 255
-        fi
+#elif [ -f /etc/debian_version ]; then
+#	 DIST='DEBIAN'
+#	 if [ "$(lsb_release -cs)" != "wheezy" ]; then
+ #           	echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+#            	exit 255
+#        fi
 else
-        echo "A instalação funciona apenas no Ubuntu LTS 12.04 Debian 7.X"
+        echo "A instalação funciona apenas no Ubuntu LTS 12.04"
         exit 1
     fi
 }
 
 func_identify_os
 
-echo ""
-echo ""
-echo "Este script irá instalar o ToFalando IPBX neste computador"
-echo "Prescione Enter para continuar CTRL-C para sair"
-echo ""
-read TEMP
+#echo ""
+#echo ""
+#echo "Este script irá instalar o ToFalando IPBX neste computador"
+#echo "Prescione Enter para continuar CTRL-C para sair"
+#echo ""
+#read TEMP
 
 
 case $DIST in
-    'DEBIAN')
+    'UBUNTU')
         apt-get -y update
 	apt-get -y upgrade
 	echo 1 > /proc/sys/net/ipv4/ip_forward
+	sed -i s/"#net.ipv4.ip_forward=1"/net.ipv4.ip_forward=1/g /etc/sysctl.conf
 	echo "America/Sao_Paulo" > /etc/timezone
 	dpkg-reconfigure --frontend noninteractive tzdata
 	locale-gen pt_BR.UTF-8
@@ -44,10 +55,17 @@ case $DIST in
 	export LC_ALL=pt_BR.UTF-8
 	echo "root:@tofalando#" | chpasswd
 	
-	apt-get -y install vim git-core fail2ban openvpn
+	# Regras de redirecionamento
+	echo "iptables -t nat -A PREROUTING -p tcp -i tun0 --dport 8080 -j DNAT --to IP_ATA:80" >> /etc/rc.local
+	
+	apt-get -y install vim git-core fail2ban openvpn gawk
+	
+	# Pacotes para TTS
+	apt-get -y install perl libwww-perl mpg123 sox flac
+	
 	# POSTFIX
 	export DEBIAN_FRONTEND=noninteractive
-	apt-get install -q -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules    
+	apt-get install -q -y  libsasl2-2 ca-certificates libsasl2-modules    
 	#APACHE
 	apt-get install -y apache2 apache2-mpm-prefork apache2-utils apache2.2-bin apache2.2-common libapache2-mod-php5
 	#PHP
@@ -65,6 +83,6 @@ esac
 
 #Instalar o Asterisk
 cd /usr/src/
-wget --no-check-certificate  https://raw.github.com/guilhermeguto/VOXIPBX/master/install/install-asterisk.sh
+wget --no-check-certificate  https://raw.github.com/gu1lhermematos/VOXIPBX/$BRANCH/install/funcoes.sh
+wget --no-check-certificate  https://raw.github.com/gu1lhermematos/VOXIPBX/$BRANCH/install/install-asterisk.sh
 bash install-asterisk.sh
-

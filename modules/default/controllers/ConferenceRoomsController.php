@@ -189,7 +189,7 @@ class ConferenceRoomsController extends Zend_Controller_Action {
 
                     if ($idActivate == $idCostCenter) {
 
-                        $contentConfe .= ";ToFalando(" . $idActivate . "): Room added by system\n";
+                        $contentConfe .= ";BoxFacil(" . $idActivate . "): Room added by system\n";
                         $contentConfe .= "exten => " . $idActivate . ",1,Set(CHANNEL(language)=pt_BR)\n";
                     }
 

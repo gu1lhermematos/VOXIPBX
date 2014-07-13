@@ -1,34 +1,23 @@
 #!/bin/bash
-
-# VARIAVEIS
-
-#ALEATORIO=`echo $RANDOM`
-#TOFALANDO="ToFalando-$ALEATORIO"
-#TOFALANDO2="$ALEATORIO"
-#echo " $TOFALANDO"
-#echo "$TOFALANDO2"
-#export TOFALANDO=$TOFALANDO
-#export TOFALANDO2=$TOFALANDO2
-
-echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
-MAC=$(cat /tmp/mac.txt)
-ALEATORIO=$MAC
-TOFALANDO="ToFalando-$ALEATORIO"
-TOFALANDO2="$ALEATORIO"
-echo " $TOFALANDO"
-echo "$TOFALANDO2"
-export TOFALANDO=$TOFALANDO
-export TOFALANDO2=$TOFALANDO2
-
-# FIM VARIAVEIS
+source funcoes.sh
+# Configurar o Branch
+#BRANCH='devel'
 
 
 cd /usr/src/
 
 a2enmod rewrite
 /etc/init.d/apache2 restart
+cd /var/www/
+rm -rf ipbx
 
-git clone https://github.com/guilhermeguto/VOXIPBX.git
+cd /usr/src/
+
+git clone https://github.com/gu1lhermematos/VOXIPBX.git
+cd VOXIPBX
+git branch $BRANCH
+git pull origin $BRANCH
+cd ..
 clear
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
@@ -74,44 +63,35 @@ ln -sf /var/lib/asterisk/sounds/pt_BR/ pt_BR
 
 cd /var/www/snep/install/
 mysql -uroot -ptofalando2014 < database.sql
-cd /var/www/snep/modules/default/installer
-mysql -uroot -ptofalando2014 snep25 < schema.sql
-mysql -uroot -ptofalando2014 snep25 < system_data.sql
-mysql -uroot -ptofalando2014 snep25 < cnl_data.sql
+#cd /var/www/snep/modules/default/installer
+#mysql -uroot -ptofalando2014 snep25 < schema.sql
+#mysql -uroot -ptofalando2014 snep25 < system_data.sql
+#mysql -uroot -ptofalando2014 snep25 < cnl_data.sql
 
 # Atualizar BASE
 
-cd /var/www/snep/install/
-mysql -uroot -ptofalando2014 snep25 < tofalando.sql
+#cd /var/www/snep/install/
+#mysql -uroot -ptofalando2014 snep25 < tofalando.sql
 
 # Fim Atualizar BASE
 
-
 # Seta a CPU
 
-cpu=`getconf LONG_BIT`
+	func_cpu
+	
+# Fim seta CPU	
 
-if echo $cpu | grep -i "32" > /dev/null ; then
-	echo "32"
-	cd /usr/lib/odbc/
-       	ln -s /usr/lib/i386-linux-gnu/odbc/libmyodbc.so
-
-else
-	echo "64"
-
-	cd /usr/lib/odbc/
-        ln -s /usr/lib/x86_64-linux-gnu/odbc/libmyodbc.so
-
-fi
-
-# Fim seta CPU
 
 # Alterações em Arquivos
+	
 
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cli/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/cgi/php.ini
 sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/php.ini
 sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=ToFalando PABX"/g /etc/asterisk/sip.conf
+
+	func_variaveis
+	
 #sed -i s/"SNEP_VERSION?"/""$TOFALANDO2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
 sed -i s/SNEP_VERSION/$TOFALANDO2/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
 sed -i s/$TOFALANDO2/"'$TOFALANDO2'"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
@@ -129,7 +109,16 @@ cp -rfv fail2ban /etc
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
-echo "$TOFALANDO" > /etc/hostname
+
+# Install Chaves
+
+#cd /var/www/ipbx/install/etc/ssl
+#mkdir /root/.ssh/
+#mv * /root/.ssh/
+#chmod 600 /root/.ssh/*
+#chown root.root /root/.ssh/*
+
+
 
 # Install VPN
 
@@ -141,53 +130,20 @@ cp -rfv openvpn /etc
 
 # Configura VPN
 
-cd /var/www/ipbx/install/etc/
-
-echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
-MAC=$(cat /tmp/mac.txt)
-ALEATORIO=$MAC
-TOFALANDO="ToFalando-$ALEATORIO"
-TOFALANDO2="$ALEATORIO"
-echo " $TOFALANDO"
-echo "$TOFALANDO2"
-export TOFALANDO=$TOFALANDO
-
-
-ssh root@vpn.tofalando.com.br '/usr/src/gera-key.sh '$TOFALANDO''
-scp root@vpn.tofalando.com.br:/etc/openvpn/easy-rsa/keys/$TOFALANDO* .
-
-sed -i s/"cert ipbx.crt"/"cert "$TOFALANDO".crt"/g /etc/openvpn/client.conf
-sed -i s/"key ipbx.key"/"key "$TOFALANDO".key"/g /etc/openvpn/client.conf
-
-mv ToFalando* /etc/openvpn/
-/etc/init.d/openvpn restart
+	func_vpn
 
 #FIM Configura VPN
 
 
 # Atualiza o /etc/hosts
 
-echo "127.0.0.1	localhost" > /etc/hosts
-
-
-IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
-
-echo "${IP_LOCAL}	$TOFALANDO.tofalando.net	$TOFALANDO" >> /etc/hosts
-
-echo "
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters" >> /etc/hosts
+	func_host
 
 # FIM Atualiza /etc/hosts
 
 #POSTIFX
-cd /var/www/ipbx/install/etc/
-cp -rfv postfix /etc/
+#cd /var/www/ipbx/install/etc/
+#cp -rfv postfix /etc/
 cd /usr/src/
 
 # Chaves
@@ -200,6 +156,10 @@ chown root.root /root/.ssh/authorized_keys
 
 # Seta IPTABLES
 
+cd /var/www/ipbx/install/etc
+cat rc.local > /etc/rc.local
+cp ips_brasil /etc/
+
 iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
 iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
 iptables -I INPUT  -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
@@ -208,7 +168,9 @@ service iptables save
 
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart
-/etc/init.d/asterisk start
-/etc/init.d/postfix restart
+/etc/init.d/asterisk restart
+#/etc/init.d/postfix restart
 
-bash install-asterisk.sh
+cd /usr/src/
+
+#bash install-asterisk.sh

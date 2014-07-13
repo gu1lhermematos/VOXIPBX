@@ -1,29 +1,30 @@
 #!/bin/bash
 
-cpu=`getconf LONG_BIT`
+# Copyright (C) 2011-2014 ToFalando
+#
+# Script incialmente desenvolvido por
+# Emerson Luiz ( eluizbr@tofalando.com.br )
 
-if echo $cpu | grep -i "32" > /dev/null ; then
-	echo "32"
-	cd /var/www/ipbx/
-	git pull origin master
-	cd /usr/lib/asterisk/modules/
-	wget -c http://asterisk.hosting.lv/bin/codec_g729-ast18-gcc4-glibc-pentium.so
-	mv codec_g729-ast18-gcc4-glibc-pentium.so codec_g729.so
-	chmod 755 /usr/lib/asterisk/modules/codec_g729.so
-	asterisk -x "core restart now"
-else
-	echo "64"
-	cd /var/www/ipbx/
-	git pull origin master
+source funcoes.sh
 
-	cd /usr/lib/asterisk/modules/
-	wget -c http://asterisk.hosting.lv/bin/codec_g729-ast18-icc-glibc-x86_64-pentium4.so
-	mv codec_g729-ast18-icc-glibc-x86_64-pentium4.so codec_g729.so
-	chmod 755 /usr/lib/asterisk/modules/codec_g729.so
-	asterisk -x "core restart now"
+# Checar asterisk
 
-fi
+	if [ ! -d "/etc/asterisk" ]; then
+		
+		func_install_asterisk
+		func_install_g729
+		bash install-asterisk.sh
+                ExitFinish=1
 
+		
+	else
+		func_install_g729
+		bash install-asterisk.sh
+                ExitFinish=1
+
+	fi
+		
+		
 # Fim seta CPU
 
 

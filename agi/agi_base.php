@@ -56,6 +56,6 @@ try {
 Zend_Registry::set("db", Snep_Db::getInstance());
 
 if ($opts->version) {
-    echo "ToFalando Version " . Zend_Registry::get('snep_version') . "\n";
+    echo "BoxFacil Version " . Zend_Registry::get('snep_version') . "\n";
     exit;
 }

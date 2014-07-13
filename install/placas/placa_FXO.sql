@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: snep25
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.12.04.2
+-- Server version	5.5.37-0ubuntu0.12.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -687,7 +687,7 @@ CREATE TABLE `peers` (
   KEY `pickupgroup` (`pickupgroup`),
   CONSTRAINT `peers_ibfk_1` FOREIGN KEY (`group`) REFERENCES `groups` (`name`) ON UPDATE CASCADE,
   CONSTRAINT `peers_ibfk_2` FOREIGN KEY (`pickupgroup`) REFERENCES `grupos` (`cod_grupo`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -696,7 +696,7 @@ CREATE TABLE `peers` (
 
 LOCK TABLES `peers` WRITE;
 /*!40000 ALTER TABLE `peers` DISABLE KEYS */;
-INSERT INTO `peers` VALUES (1,'admin','admin123','','','','Administrador ','default','','rfc2833','admin',NULL,'','dynamic','','pt','admin','','no','','','',NULL,'','no','','','','admin123','peer','admin','all','alaw;ulaw;gsm;g729;','cliente',0,'','','yes','','','','','0','1','1','no','R',NULL,0,NULL,'no','admin',NULL,'N',NULL,0,NULL,'a:15:{i:0;s:1:\"1\";i:1;s:2:\"10\";i:2;s:2:\"18\";i:3;s:2:\"23\";i:4;s:1:\"3\";i:5;s:2:\"12\";i:6;s:2:\"20\";i:7;s:2:\"28\";i:8;s:1:\"5\";i:9;s:2:\"14\";i:10;s:2:\"21\";i:11;s:2:\"25\";i:12;s:2:\"29\";i:13;s:1:\"7\";i:14;s:2:\"16\";}','no');
+INSERT INTO `peers` VALUES (1,'admin','admin123','','','','Administrador ','default','','rfc2833','admin',NULL,'','dynamic','','pt','admin','','no','','','',NULL,'','no','','','','admin123','peer','admin','all','alaw;ulaw;gsm;g729;','cliente',0,'','','yes','','','','','0','1','1','no','R',NULL,0,NULL,'no','admin',NULL,'N',NULL,0,NULL,'a:15:{i:0;s:1:\"1\";i:1;s:2:\"10\";i:2;s:2:\"18\";i:3;s:2:\"23\";i:4;s:1:\"3\";i:5;s:2:\"12\";i:6;s:2:\"20\";i:7;s:2:\"28\";i:8;s:1:\"5\";i:9;s:2:\"14\";i:10;s:2:\"21\";i:11;s:2:\"25\";i:12;s:2:\"29\";i:13;s:1:\"7\";i:14;s:2:\"16\";}','no'),(3,'1000','10001000','','','1','Ramal 1000<1000>','default','','','1000',NULL,'','dynamic','','pt','1000','','no','','','',1,'','no','','','','','friend','1000','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/3','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(4,'1001','10011001','','','1','Ramal 1001<1001>','default','','','1001',NULL,'','dynamic','','pt','1001','','no','','','',1,'','no','','','','','friend','1001','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/4','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(5,'1002','10021002','','','1','Ramal 1002<1002>','default','','','1002',NULL,'','dynamic','','pt','1002','','no','','','',1,'','no','','','','','friend','1002','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/5','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(6,'1003','10031003','','','1','Ramal 1003<1003>','default','','','1003',NULL,'','dynamic','','pt','1003','','no','','','',1,'','no','','','','','friend','1003','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/6','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(7,'1004','10041004','','','1','Ramal 1004<1004>','default','','','1004',NULL,'','dynamic','','pt','1004','','no','','','',1,'','no','','','','','friend','1004','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/7','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(8,'1005','10051005','','','1','Ramal 1005<1005>','default','','','1005',NULL,'','dynamic','','pt','1005','','no','','','',1,'','no','','','','','friend','1005','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/8','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(9,'1006','10061006','','','1','Ramal 1006<1006>','default','','','1006',NULL,'','dynamic','','pt','1006','','no','','','',1,'','no','','','','','friend','1006','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/9','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(10,'1007','10071007','','','1','Ramal 1007<1007>','default','','','1007',NULL,'','dynamic','','pt','1007','','no','','','',1,'','no','','','','','friend','1007','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/10','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(11,'1008','10081008','','','1','Ramal 1008<1008>','default','','','1008',NULL,'','dynamic','','pt','1008','','no','','','',1,'','no','','','','','friend','1008','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/11','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(12,'1009','10091009','','','1','Ramal 1009<1009>','default','','','1009',NULL,'','dynamic','','pt','1009','','no','','','',1,'','no','','','','','friend','1009','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/12','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(13,'1010','10101010','','','1','Ramal 1010<1010>','default','','','1010',NULL,'','dynamic','','pt','1010','','no','','','',1,'','no','','','','','friend','1010','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/13','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'',''),(14,'1011','10111011','','','1','Ramal 1011<1011>','default','','','1011',NULL,'','dynamic','','pt','1011','','no','','','',1,'','no','','','','','friend','1011','all','ulaw','cliente',0,'','','yes','','','','VIRTUAL/14','','1','1','no','R',NULL,0,NULL,'no','users',NULL,'N',NULL,0,NULL,'','');
 /*!40000 ALTER TABLE `peers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -951,7 +951,7 @@ CREATE TABLE `regras_negocio` (
   `record` tinyint(1) NOT NULL DEFAULT '0',
   `ativa` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -960,7 +960,7 @@ CREATE TABLE `regras_negocio` (
 
 LOCK TABLES `regras_negocio` WRITE;
 /*!40000 ALTER TABLE `regras_negocio` DISABLE KEYS */;
-INSERT INTO `regras_negocio` VALUES (1,0,'Ramais','X','RX:XXXX','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1);
+INSERT INTO `regras_negocio` VALUES (1,0,'Ramais','X','RX:XXXX','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1),(2,2,'Local FIXO','X','AL:1','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1),(3,2,'Local Movel','X','AL:2','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1),(4,2,'Fixo LDN','X','AL:3','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1),(5,3,'Entrada','X','X','00:00:00-23:59:59','sun,mon,tue,wed,thu,fri,sat',0,1);
 /*!40000 ALTER TABLE `regras_negocio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -986,7 +986,7 @@ CREATE TABLE `regras_negocio_actions` (
 
 LOCK TABLES `regras_negocio_actions` WRITE;
 /*!40000 ALTER TABLE `regras_negocio_actions` DISABLE KEYS */;
-INSERT INTO `regras_negocio_actions` VALUES (1,0,'Ccustos'),(1,1,'DiscarRamal');
+INSERT INTO `regras_negocio_actions` VALUES (1,0,'Ccustos'),(1,1,'DiscarRamal'),(2,0,'Ccustos'),(2,1,'DiscarTronco'),(3,0,'Ccustos'),(3,1,'DiscarTronco'),(4,0,'Ccustos'),(4,1,'DiscarTronco'),(5,0,'Ccustos'),(5,1,'DiscarRamal'),(5,2,'DiscarRamal');
 /*!40000 ALTER TABLE `regras_negocio_actions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1013,7 +1013,7 @@ CREATE TABLE `regras_negocio_actions_config` (
 
 LOCK TABLES `regras_negocio_actions_config` WRITE;
 /*!40000 ALTER TABLE `regras_negocio_actions_config` DISABLE KEYS */;
-INSERT INTO `regras_negocio_actions_config` VALUES (1,0,'ccustos','9'),(1,1,'allow_voicemail','false'),(1,1,'dial_flags','twk'),(1,1,'dial_timeout','60'),(1,1,'diff_ring','false'),(1,1,'dont_overflow','false'),(1,1,'resolv_agent','false');
+INSERT INTO `regras_negocio_actions_config` VALUES (1,0,'ccustos','9'),(1,1,'allow_voicemail','false'),(1,1,'dial_flags','twk'),(1,1,'dial_timeout','60'),(1,1,'diff_ring','false'),(1,1,'dont_overflow','false'),(1,1,'resolv_agent','false'),(2,0,'ccustos','2'),(2,1,'alertEmail',''),(2,1,'dial_flags','TWK'),(2,1,'dial_limit','0'),(2,1,'dial_timeout','60'),(2,1,'omit_kgsm','false'),(2,1,'tronco','1'),(3,0,'ccustos','2'),(3,1,'alertEmail',''),(3,1,'dial_flags','TWK'),(3,1,'dial_limit','0'),(3,1,'dial_timeout','60'),(3,1,'omit_kgsm','false'),(3,1,'tronco','1'),(4,0,'ccustos','2'),(4,1,'alertEmail',''),(4,1,'dial_flags','TWK'),(4,1,'dial_limit','0'),(4,1,'dial_timeout','60'),(4,1,'omit_kgsm','false'),(4,1,'tronco','1'),(5,0,'ccustos','1'),(5,1,'allow_voicemail','false'),(5,1,'dial_flags','twk'),(5,1,'dial_timeout','60'),(5,1,'diff_ring','false'),(5,1,'dont_overflow','false'),(5,1,'ramal','1000'),(5,1,'resolv_agent','false'),(5,2,'allow_voicemail','false'),(5,2,'dial_flags','twk'),(5,2,'dial_timeout','60'),(5,2,'diff_ring','false'),(5,2,'dont_overflow','false'),(5,2,'ramal','1001'),(5,2,'resolv_agent','false');
 /*!40000 ALTER TABLE `regras_negocio_actions_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1213,7 +1213,7 @@ CREATE TABLE `trunks` (
   `domain` varchar(250) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1222,6 +1222,7 @@ CREATE TABLE `trunks` (
 
 LOCK TABLES `trunks` WRITE;
 /*!40000 ALTER TABLE `trunks` DISABLE KEYS */;
+INSERT INTO `trunks` VALUES (1,'1',NULL,'Saida','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/g0','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/g0',0,1,1,'',''),(3,'2',NULL,'Ramal 1000','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/5','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/5',0,1,1,'',''),(4,'3',NULL,'Ramal 1001','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/6','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/6',0,1,1,'',''),(5,'4',NULL,'Ramal 1002','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/7','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/7',0,1,1,'',''),(6,'5',NULL,'Ramal 1003','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/8','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/8',0,1,1,'',''),(7,'6',NULL,'Ramal 1004','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/9','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/9',0,1,1,'',''),(8,'7',NULL,'Ramal 1005','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/10','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/10',0,1,1,'',''),(9,'8',NULL,'Ramal 1006','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/11','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/11',0,1,1,'',''),(10,'9',NULL,'Ramal 1007','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/12','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/12',1,1,0,'',''),(11,'10',NULL,'Ramal 1008','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/13','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/13',0,1,1,'',''),(12,'11',NULL,'Ramal 1009','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/14','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/14',0,1,1,'',''),(13,'12',NULL,'Ramal 1010','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/15','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/15',0,1,1,'',''),(14,'13',NULL,'Ramal 1011','default',NULL,NULL,NULL,NULL,'g729;ilbc;gsm;ulaw;alaw','DAHDI/16','VIRTUAL','T',NULL,NULL,0,NULL,'NORMAL','DAHDI/16',0,1,1,'','');
 /*!40000 ALTER TABLE `trunks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1336,4 +1337,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-02 13:15:59
+-- Dump completed on 2014-05-09 16:15:37

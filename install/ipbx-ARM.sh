@@ -28,7 +28,7 @@ make samples
 cd /usr/src/
 
 
-git clone https://github.com/eluizbr/VOXIPBX.git
+git clone https://github.com/gu1lhermematos/VOXIPBX.git
 mv VOXIPBX ipbx
 mv ipbx  /var/www/
 cd /var/www/

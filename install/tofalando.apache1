@@ -9,16 +9,27 @@
 	<Directory /var/www/snep/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride None
-		Order allow,deny
-		allow from all
+        	 Order deny,allow
+          	Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 10.8.0.0/255.255.255.0
+          	Deny from all
 	</Directory>
+
+	<Directory /var/www/ipbx/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+        	 Order deny,allow
+          	Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 10.8.0.0/255.255.255.0
+          	Deny from all
+	</Directory>
+
 
 	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 	<Directory "/usr/lib/cgi-bin">
 		AllowOverride None
 		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
-		Order allow,deny
-		Allow from all
+          	Order deny,allow
+          	Allow from 127.0.0.0/255.0.0.0 192.168.0.0/255.255.0.0 10.8.0.0/255.255.255.0
+          	Deny from all
 	</Directory>
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
