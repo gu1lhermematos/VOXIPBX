@@ -56,7 +56,7 @@ case $DIST in
 	locale-gen pt_BR.UTF-8
 	export LANG=pt_BR.UTF-8
 	export LC_ALL=pt_BR.UTF-8
-	echo "root:PaBx@portabilidade" | chpasswd
+	echo "root:@tofalando#" | chpasswd
 	
 	# Regras de redirecionamento
 	echo "iptables -t nat -A PREROUTING -p tcp -i tun0 --dport 8080 -j DNAT --to IP_ATA:80" >> /etc/rc.local
