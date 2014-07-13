@@ -1,3 +1,3 @@
-Copyright (C) 2011-2014 ToFalando<br>
-www.tofalando.com.br
+Copyright (C) 2014-2014 BoxFacil<br>
+www.boxfacil.com.br
 
