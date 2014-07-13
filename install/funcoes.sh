@@ -183,9 +183,9 @@ func_install_asterisk () {
 				clear
 				rm -rf asterisk*
                 	        cd /usr/src/
-                	        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/asterisk-1.8.28.2.tar.gz
-                        	tar zxvf asterisk-1.8.28.2.tar.gz
-                        	ln -s asterisk-1.8.28.2 asterisk
+                	        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.29.0.tar.gz
+                        	tar zxvf asterisk-1.8.29.0.tar.gz
+                        	ln -s asterisk-1.8.29.0 asterisk
                         	cd asterisk
                         	make distclean
                         	./configure
