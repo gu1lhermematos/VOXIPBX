@@ -4,6 +4,9 @@
 #
 # Script incialmente desenvolvido por
 # Emerson Luiz ( eluizbr@tofalando.com.br )
+# Atualizado por
+# Guilherme Matos ( guilherme@boxfacil.com.br )
+
 
 # Configurar o Branch
 BRANCH='devel'
@@ -36,8 +39,8 @@ func_identify_os
 
 #echo ""
 #echo ""
-#echo "Este script irá instalar o ToFalando IPBX neste computador"
-#echo "Prescione Enter para continuar CTRL-C para sair"
+#echo "Este script irá instalar o BoxFacil IPBX neste computador"
+#echo "Pressione Enter para continuar CTRL-C para sair"
 #echo ""
 #read TEMP
 
