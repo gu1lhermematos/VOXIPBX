@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-23 17:41-0300\n"
+"POT-Creation-Date: 2014-07-14 14:13-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,8 @@ msgid ""
 "There were a previous call attempt"
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:797
 #: ../modules/default/views/scripts/systemstatus/index.phtml:140
+#: ../modules/default/controllers/CallsReportController.php:797
 msgid " - "
 msgstr ""
 
@@ -58,16 +58,16 @@ msgstr ""
 msgid " Subfolders not found "
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:1316
-#: ../modules/default/controllers/CallsReportController.php:1397
-#: ../modules/default/controllers/CallsReportController.php:1475
-#: ../modules/default/controllers/ContactsController.php:295
 #: ../modules/default/controllers/RankingReportController.php:622
 #: ../modules/default/controllers/RankingReportController.php:701
 #: ../modules/default/controllers/RankingReportController.php:811
 #: ../modules/default/controllers/ServicesReportController.php:316
 #: ../modules/default/controllers/ServicesReportController.php:346
 #: ../modules/default/controllers/ServicesReportController.php:402
+#: ../modules/default/controllers/CallsReportController.php:1316
+#: ../modules/default/controllers/CallsReportController.php:1397
+#: ../modules/default/controllers/CallsReportController.php:1475
+#: ../modules/default/controllers/ContactsController.php:295
 msgid " dd-MM-yyyy_hh'h'mm'm' "
 msgstr ""
 
@@ -75,15 +75,15 @@ msgstr ""
 msgid " does not exist. "
 msgstr ""
 
-#: ../inspectors/Permissions.php:74 ../inspectors/AGI.php:73
+#: ../inspectors/AGI.php:73 ../inspectors/Permissions.php:74
 msgid " does not exists. "
 msgstr ""
 
-#: ../inspectors/Permissions.php:85 ../inspectors/AGI.php:84
+#: ../inspectors/AGI.php:84 ../inspectors/Permissions.php:85
 msgid " does not have permition to be modified. "
 msgstr ""
 
-#: ../inspectors/Permissions.php:96 ../inspectors/AGI.php:94
+#: ../inspectors/AGI.php:94 ../inspectors/Permissions.php:96
 msgid " does not have permition to be viewed. "
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid " records. Do you really want to remove them?"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "' '"
 msgstr ""
 
@@ -123,15 +123,15 @@ msgstr ""
 msgid "(GSM)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "(depends on: /op-panel/ index1.php)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "(depends on: /op-panel/ index2.php)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "(depends on: /op-panel/ index3.php)"
 msgstr ""
 
@@ -143,138 +143,138 @@ msgstr ""
 msgid ". Source: "
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "/(\\d{4}-\\d{4}[;]?)$/i"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "/(\\d{4}[;]?)$/i"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "/-DND-/"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "/-Disabled-/"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "/-FOLLOW ME-/"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "/[[:digit:]]/i"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "/^(([0-9]\\.?)+)$/"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "/var/lib/asterisk/moh/"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "0"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "1"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "10"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "100"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "2"
 msgstr ""
 
-#: /var/www/snep2/modules/default/info.xml
+#: /var/www/ipbx/modules/default/info.xml
 msgid "2.0"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "200"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "3"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/expression_alias.xml
+#: /var/www/ipbx/modules/default/forms/expression_alias.xml
 msgid "30"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "4"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "5"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "6"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "60"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "7"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "8"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "9"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "AND"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Abbreviations only. EX: SC"
 msgstr ""
 
@@ -286,23 +286,23 @@ msgstr ""
 msgid "Action index:"
 msgstr ""
 
+#: ../modules/default/views/scripts/contacts/index.phtml:25
 #: ../modules/default/views/scripts/route/index.phtml:39
 #: ../modules/default/views/scripts/route/elements/actions.phtml:23
-#: ../modules/default/views/scripts/trunks/index.phtml:19
-#: ../modules/default/views/scripts/extensions/index.phtml:32
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:25
-#: ../modules/default/views/scripts/music-on-hold/index.phtml:20
-#: ../modules/default/views/scripts/extensions-groups/index.phtml:19
 #: ../modules/default/views/scripts/billing/index.phtml:44
-#: ../modules/default/views/scripts/cost-center/index.phtml:20
-#: ../modules/default/views/scripts/sound-files/index.phtml:26
-#: ../modules/default/views/scripts/expression-alias/index.phtml:14
 #: ../modules/default/views/scripts/action-configs/index.phtml:15
+#: ../modules/default/views/scripts/cost-center/index.phtml:20
+#: ../modules/default/views/scripts/extensions/index.phtml:32
+#: ../modules/default/views/scripts/sound-files/index.phtml:26
 #: ../modules/default/views/scripts/carrier/index.phtml:22
-#: ../modules/default/views/scripts/maintenance/index.phtml:69
+#: ../modules/default/views/scripts/trunks/index.phtml:19
 #: ../modules/default/views/scripts/pickup-groups/index.phtml:16
+#: ../modules/default/views/scripts/extensions-groups/index.phtml:19
+#: ../modules/default/views/scripts/maintenance/index.phtml:69
+#: ../modules/default/views/scripts/expression-alias/index.phtml:14
+#: ../modules/default/views/scripts/music-on-hold/index.phtml:20
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:25
 #: ../modules/default/views/scripts/queues/index.phtml:22
-#: ../modules/default/views/scripts/contacts/index.phtml:25
 #: ../modules/default/views/scripts/contact-groups/index.phtml:23
 msgid "Actions"
 msgstr ""
@@ -311,12 +311,12 @@ msgstr ""
 msgid "Actions to execute"
 msgstr ""
 
+#: ../modules/default/controllers/ServicesReportController.php:233
 #: ../modules/default/controllers/KhompLinksController.php:61
 #: ../modules/default/controllers/KhompLinksController.php:62
 #: ../modules/default/controllers/KhompLinksController.php:174
 #: ../modules/default/controllers/KhompLinksController.php:175
-#: ../modules/default/controllers/ServicesReportController.php:233
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "Activated"
 msgstr ""
 
@@ -325,12 +325,12 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
+#: ../modules/default/views/scripts/billing/edit.phtml:75
+#: ../modules/default/controllers/ContactGroupsController.php:82
 #: ../modules/default/controllers/CarrierController.php:85
 #: ../modules/default/controllers/SoundFilesController.php:100
-#: ../modules/default/controllers/ContactGroupsController.php:82
-#: ../modules/default/views/scripts/billing/edit.phtml:75
-#: /var/www/snep2/configs/dashboard.xml
-#: /var/www/snep2/configs/titleOptions.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/titleOptions.xml /var/www/ipbx/configs/subMenu.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Add"
 msgstr ""
 
@@ -380,7 +380,7 @@ msgstr ""
 msgid "Add Member"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Add Multiple"
 msgstr ""
 
@@ -414,11 +414,11 @@ msgstr ""
 msgid "Add Trunk"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Add multiple"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Add page to Dashboard"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgid "Additional filters"
 msgstr ""
 
 #: ../modules/default/controllers/ContactsController.php:368
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Address"
 msgstr ""
 
@@ -442,14 +442,14 @@ msgstr ""
 msgid "Administrator"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:45
-#: ../modules/default/controllers/CallsReportController.php:126
 #: ../modules/default/controllers/ServicesReportController.php:97
+#: ../modules/default/controllers/CallsReportController.php:126
+#: ../modules/default/controllers/ExtensionsGroupsController.php:45
 msgid "Administrators"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsController.php:730
 #: ../modules/default/controllers/TrunksController.php:246
+#: ../modules/default/controllers/ExtensionsController.php:730
 msgid "Advanced"
 msgstr ""
 
@@ -458,11 +458,11 @@ msgstr ""
 msgid "Advanced Configuration"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Agent of queue"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Agent who answered in queue"
 msgstr ""
 
@@ -482,11 +482,11 @@ msgstr ""
 msgid "Alert sound"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:48
-#: ../modules/default/controllers/CallsReportController.php:132
-#: ../modules/default/controllers/RouteController.php:214
 #: ../modules/default/controllers/ServicesReportController.php:103
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: ../modules/default/controllers/CallsReportController.php:132
+#: ../modules/default/controllers/ExtensionsGroupsController.php:48
+#: ../modules/default/controllers/RouteController.php:214
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "All"
 msgstr ""
 
@@ -499,40 +499,40 @@ msgstr ""
 msgid "Allow voicemail"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/extensions_groups.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/pickupGroup.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/contact_groups.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/pickupGroup.xml
+#: /var/www/ipbx/modules/default/forms/extensions_groups.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups.xml
 msgid "Alnum"
 msgstr ""
 
 #: ../inspectors/AGI.php:110
-msgid "Ambiente AGI ToFalando"
+msgid "Ambiente AGI BoxFacil"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Analytic"
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:884
-#: ../modules/default/controllers/CallsReportController.php:1042
 #: ../modules/default/views/scripts/ranking-report/view.phtml:61
 #: ../modules/default/views/scripts/ranking-report/view.phtml:64
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: ../modules/default/controllers/CallsReportController.php:884
+#: ../modules/default/controllers/CallsReportController.php:1042
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Answered"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Anually"
 msgstr ""
 
+#: ../modules/default/views/scripts/route/add_edit.phtml:165
 #: ../modules/default/controllers/CallsReportController.php:944
 #: ../modules/default/controllers/RouteController.php:64
-#: ../modules/default/views/scripts/route/add_edit.phtml:165
 msgid "Any"
 msgstr ""
 
@@ -540,11 +540,11 @@ msgstr ""
 msgid "Application"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Application responsable of call recording"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Application responsable of the conference rooms on Snep."
 msgstr ""
 
@@ -569,13 +569,9 @@ msgstr ""
 msgid "Are you sure you want to delete this record?"
 msgstr ""
 
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:88
 #: ../modules/default/views/scripts/music-on-hold/index.phtml:46
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:88
 msgid "Are you sure you want to remove this record?"
-msgstr ""
-
-#: ../modules/default/views/scripts/systemstatus/index.phtml:124
-msgid "Asterisk"
 msgstr ""
 
 #: ../modules/default/controllers/InstallerController.php:203
@@ -587,15 +583,15 @@ msgstr ""
 msgid "Asterisk Default"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Asterisk Socket IP"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Asterisk Socket IP password"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Asterisk Socket IP username"
 msgstr ""
 
@@ -616,58 +612,58 @@ msgstr ""
 msgid "Audio Class"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Audio Files Format"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Audio: Number of calls waiting"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Audio: Thanks for waiting"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Audio: You're Here"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Audio: You're next"
 msgstr ""
 
+#: ../modules/default/views/scripts/contacts/csv.phtml:21
+#: ../modules/default/views/scripts/permission/error-unset.phtml:10
+#: ../modules/default/views/scripts/permission/error.phtml:10
+#: ../modules/default/controllers/RankingReportController.php:552
+#: ../modules/default/controllers/RankingReportController.php:630
+#: ../modules/default/controllers/ServicesReportController.php:179
+#: ../modules/default/controllers/ServicesReportController.php:295
 #: ../modules/default/controllers/MusicOnHoldController.php:286
+#: ../modules/default/controllers/CallsReportController.php:302
+#: ../modules/default/controllers/CallsReportController.php:895
+#: ../modules/default/controllers/SimulatorController.php:65
+#: ../modules/default/controllers/SimulatorController.php:100
 #: ../modules/default/controllers/ExtensionsController.php:566
 #: ../modules/default/controllers/ExtensionsController.php:604
 #: ../modules/default/controllers/ExtensionsController.php:612
-#: ../modules/default/controllers/CallsReportController.php:302
-#: ../modules/default/controllers/CallsReportController.php:895
-#: ../modules/default/controllers/RankingReportController.php:552
-#: ../modules/default/controllers/RankingReportController.php:630
 #: ../modules/default/controllers/LogsController.php:94
-#: ../modules/default/controllers/SimulatorController.php:65
-#: ../modules/default/controllers/SimulatorController.php:100
-#: ../modules/default/controllers/ServicesReportController.php:179
-#: ../modules/default/controllers/ServicesReportController.php:295
-#: ../modules/default/views/scripts/permission/error.phtml:10
-#: ../modules/default/views/scripts/permission/error-unset.phtml:10
-#: ../modules/default/views/scripts/contacts/csv.phtml:21
 msgid "Back"
 msgstr ""
 
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:24
 #: ../modules/default/views/scripts/sound-files/index.phtml:25
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:24
 msgid "Backup"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Backup Files Path"
 msgstr ""
 
 #: ../modules/default/controllers/BillingController.php:70
 #: ../modules/default/controllers/BillingController.php:294
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Billing"
 msgstr ""
 
@@ -676,9 +672,9 @@ msgid "Block the execution of the action until password is given."
 msgstr ""
 
 #: ../modules/default/controllers/TrunksController.php:225
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Board"
 msgstr ""
 
@@ -687,7 +683,7 @@ msgstr ""
 msgid "Board : "
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
 msgid "Boards"
 msgstr ""
 
@@ -695,10 +691,12 @@ msgstr ""
 msgid "Buffers"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Business phone"
 msgstr ""
 
+#: ../modules/default/controllers/CallsReportController.php:886
+#: ../modules/default/controllers/CallsReportController.php:1051
 #: ../modules/default/controllers/KhompLinksController.php:77
 #: ../modules/default/controllers/KhompLinksController.php:87
 #: ../modules/default/controllers/KhompLinksController.php:91
@@ -709,9 +707,7 @@ msgstr ""
 #: ../modules/default/controllers/KhompLinksController.php:205
 #: ../modules/default/controllers/KhompLinksController.php:219
 #: ../modules/default/controllers/KhompLinksController.php:230
-#: ../modules/default/controllers/CallsReportController.php:886
-#: ../modules/default/controllers/CallsReportController.php:1051
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Busy"
 msgstr ""
 
@@ -727,7 +723,7 @@ msgstr ""
 msgid "Busy Outgoing"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "CNL"
 msgstr ""
 
@@ -735,7 +731,7 @@ msgstr ""
 msgid "CNL File"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "CNL Update"
 msgstr ""
 
@@ -759,8 +755,8 @@ msgstr ""
 #: ../modules/default/controllers/RankingReportController.php:34
 #: ../modules/default/controllers/RankingReportController.php:516
 #: ../modules/default/controllers/RankingReportController.php:738
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Call Ranking"
 msgstr ""
 
@@ -772,11 +768,11 @@ msgstr ""
 msgid "Call Time"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Call Type"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Call distribution strategy"
 msgstr ""
 
@@ -801,20 +797,20 @@ msgstr ""
 #: ../modules/default/controllers/CallsReportController.php:879
 #: ../modules/default/controllers/CallsReportController.php:899
 #: ../modules/default/controllers/CallsReportController.php:1438
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Calls"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Can users join this queue even if there's no agents online?"
 msgstr ""
 
 #: ../lib/Snep/Form/Filter.php:70 ../lib/Snep/Form/Element/Submit.php:77
-#: ../modules/default/views/scripts/simulator/index.phtml:59
 #: ../modules/default/views/scripts/installer/diagnostic.phtml:29
 #: ../modules/default/views/scripts/installer/diagnostic.phtml:32
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: ../modules/default/views/scripts/simulator/index.phtml:59
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Cancel"
 msgstr ""
 
@@ -842,17 +838,17 @@ msgstr ""
 msgid "Cannot remove. The following routes are using this trunk: "
 msgstr ""
 
+#: ../modules/default/views/scripts/billing/index.phtml:17
+#: ../modules/default/views/scripts/khomp-links/view.phtml:66
 #: ../modules/default/controllers/CarrierController.php:37
 #: ../modules/default/controllers/CarrierController.php:38
 #: ../modules/default/controllers/CarrierController.php:62
 #: ../modules/default/controllers/CarrierController.php:84
 #: ../modules/default/controllers/CarrierController.php:126
 #: ../modules/default/controllers/CarrierController.php:193
-#: ../modules/default/views/scripts/billing/index.phtml:17
-#: ../modules/default/views/scripts/khomp-links/view.phtml:66
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Carrier"
 msgstr ""
 
@@ -861,11 +857,11 @@ msgid "Carrier not selected "
 msgstr ""
 
 #: ../modules/default/controllers/ContactsController.php:373
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Cellphone"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Cellular"
 msgstr ""
 
@@ -874,16 +870,16 @@ msgid "Celular"
 msgstr ""
 
 #: ../lib/Snep/Form/Filter.php:62
-#: ../modules/default/controllers/CallsReportController.php:1428
 #: ../modules/default/controllers/RankingReportController.php:725
 #: ../modules/default/controllers/ServicesReportController.php:370
+#: ../modules/default/controllers/CallsReportController.php:1428
 msgid "Change"
 msgstr ""
 
-#: ../modules/default/controllers/TrunksController.php:232
 #: ../modules/default/views/scripts/extensions/index.phtml:30
 #: ../modules/default/views/scripts/khomp-links/view.phtml:58
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: ../modules/default/controllers/TrunksController.php:232
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Channel"
 msgstr ""
 
@@ -897,7 +893,7 @@ msgstr ""
 msgid "Channel Free"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Channel Limit"
 msgstr ""
 
@@ -910,7 +906,7 @@ msgstr ""
 msgid "Channel Status Summary"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Channel Technology"
 msgstr ""
 
@@ -919,27 +915,27 @@ msgstr ""
 msgid "Charging"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Checkbox"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "Choose the services"
 msgstr ""
 
+#: ../modules/default/views/scripts/billing/index.phtml:26
 #: ../modules/default/controllers/CallsReportController.php:875
 #: ../modules/default/controllers/ContactsController.php:280
 #: ../modules/default/controllers/ContactsController.php:369
-#: ../modules/default/views/scripts/billing/index.phtml:26
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "City"
 msgstr ""
 
 #: ../modules/default/views/scripts/billing/index.phtml:29
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "City Code"
 msgstr ""
 
@@ -951,7 +947,7 @@ msgstr ""
 msgid "Class"
 msgstr ""
 
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Cnl Update"
 msgstr ""
 
@@ -960,11 +956,11 @@ msgstr ""
 msgid "Cnl Updated successfully."
 msgstr ""
 
-#: ../modules/default/views/scripts/conference-rooms/index.phtml:43
-#: ../modules/default/views/scripts/expression-alias/index.phtml:12
 #: ../modules/default/views/scripts/ip-status/index.phtml:83
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: ../modules/default/views/scripts/expression-alias/index.phtml:12
+#: ../modules/default/views/scripts/conference-rooms/index.phtml:43
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Code"
 msgstr ""
 
@@ -976,33 +972,33 @@ msgstr ""
 msgid "Code already exists."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Codec 1"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Codec 2"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Codec 3"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Codec 4"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Codec 5"
 msgstr ""
 
@@ -1019,7 +1015,7 @@ msgstr ""
 msgid "Compact and Remove"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Company Name"
 msgstr ""
 
@@ -1031,52 +1027,52 @@ msgstr ""
 msgid "Compression of sound files"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Conference"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Conference Application"
 msgstr ""
 
 #: ../modules/default/views/scripts/conference-rooms/index.phtml:8
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Conference Rooms"
 msgstr ""
 
-#: ../modules/default/controllers/MusicOnHoldController.php:41
 #: ../modules/default/controllers/InspectorController.php:32
 #: ../modules/default/controllers/ParametersController.php:31
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/controllers/MusicOnHoldController.php:41
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Configure"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "Confirm Password"
 msgstr ""
 
+#: ../modules/default/views/scripts/route/add_edit.phtml:168
+#: ../modules/default/views/scripts/contact-groups/migration.phtml:6
 #: ../modules/default/controllers/ContactGroupsController.php:36
 #: ../modules/default/controllers/ContactGroupsController.php:81
 #: ../modules/default/controllers/ContactGroupsController.php:127
 #: ../modules/default/controllers/ContactGroupsController.php:183
 #: ../modules/default/controllers/ContactGroupsController.php:229
-#: ../modules/default/views/scripts/route/add_edit.phtml:168
-#: ../modules/default/views/scripts/contact-groups/migration.phtml:6
 msgid "Contact Group"
 msgstr ""
 
 #: ../modules/default/views/scripts/contact-groups/add.phtml:16
 #: ../modules/default/views/scripts/contact-groups/edit.phtml:16
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Contact Groups"
 msgstr ""
 
 #: ../modules/default/controllers/ContactGroupsController.php:101
 #: ../modules/default/controllers/ContactGroupsController.php:152
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Contacts"
 msgstr ""
 
@@ -1100,7 +1096,7 @@ msgstr ""
 msgid "Contrast"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Control Type"
 msgstr ""
 
@@ -1110,7 +1106,7 @@ msgstr ""
 msgid "Conversation"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "Convert to GSM"
 msgstr ""
 
@@ -1120,26 +1116,26 @@ msgid "Copy of %s"
 msgstr ""
 
 #: ../lib/PBX/Rule/ActionConfig.php:244
+#: ../modules/default/views/scripts/conference-rooms/index.phtml:46
 #: ../modules/default/controllers/CarrierController.php:99
 #: ../modules/default/controllers/CarrierController.php:158
-#: ../modules/default/controllers/CostCenterController.php:68
-#: ../modules/default/controllers/CostCenterController.php:173
 #: ../modules/default/controllers/CallsReportController.php:874
 #: ../modules/default/controllers/CallsReportController.php:1350
 #: ../modules/default/controllers/CallsReportController.php:1639
-#: ../modules/default/views/scripts/conference-rooms/index.phtml:46
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: ../modules/default/controllers/CostCenterController.php:68
+#: ../modules/default/controllers/CostCenterController.php:173
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Cost Center"
 msgstr ""
 
 #: ../modules/default/views/scripts/billing/index.phtml:20
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Country"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Country Code"
 msgstr ""
 
@@ -1147,7 +1143,7 @@ msgstr ""
 msgid "Country Code not numeric"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Critical"
 msgstr ""
 
@@ -1156,7 +1152,7 @@ msgid "Custom Dashboards"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:53
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Custom application"
 msgstr ""
 
@@ -1177,25 +1173,25 @@ msgstr ""
 msgid "DESTINATION"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "DTMF Mode"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "DTML dial mode"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "DTML dial mode number"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Daily"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Dashboard"
 msgstr ""
 
@@ -1203,7 +1199,7 @@ msgstr ""
 msgid "Data Integrator"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "Database"
 msgstr ""
 
@@ -1229,17 +1225,17 @@ msgstr ""
 msgid "Date and Time"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Day"
 msgstr ""
 
+#: ../modules/default/controllers/ServicesReportController.php:235
 #: ../modules/default/controllers/KhompLinksController.php:66
 #: ../modules/default/controllers/KhompLinksController.php:179
-#: ../modules/default/controllers/ServicesReportController.php:235
 msgid "Deactivated"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Debug"
 msgstr ""
 
@@ -1247,11 +1243,11 @@ msgstr ""
 msgid "Decode"
 msgstr ""
 
-#: /var/www/snep2/modules/default/info.xml
+#: /var/www/ipbx/modules/default/info.xml
 msgid "Default"
 msgstr ""
 
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Default Config"
 msgstr ""
 
@@ -1260,27 +1256,27 @@ msgstr ""
 msgid "Default Configs"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Default E-mail"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Default Settings"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Default e-mail where the alerts will be sent to"
 msgstr ""
 
-#: /var/www/snep2/modules/default/info.xml
+#: /var/www/ipbx/modules/default/info.xml
 msgid "Default module"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Default path"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Default value for Qualify"
 msgstr ""
 
@@ -1296,26 +1292,26 @@ msgstr ""
 msgid "Define administrator password"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Defines how many lines you want per page of report"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid ""
 "Defines what destinations will be excluded from reports (Sintax: nono ; "
 "nonono ; nono)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Delay Qualification"
 msgstr ""
 
+#: ../modules/default/controllers/ContactGroupsController.php:184
 #: ../modules/default/controllers/CarrierController.php:194
 #: ../modules/default/controllers/BillingController.php:295
-#: ../modules/default/controllers/SoundFilesController.php:352
-#: ../modules/default/controllers/ContactGroupsController.php:184
 #: ../modules/default/controllers/QueuesController.php:343
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: ../modules/default/controllers/SoundFilesController.php:352
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Delete"
 msgstr ""
 
@@ -1323,40 +1319,40 @@ msgstr ""
 msgid "Delete Sound Files?"
 msgstr ""
 
-#: ../modules/default/controllers/SoundFilesController.php:305
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:20
-#: ../modules/default/views/scripts/sound-files/index.phtml:21
 #: ../modules/default/views/scripts/action-configs/index.phtml:14
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
+#: ../modules/default/views/scripts/sound-files/index.phtml:21
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:20
+#: ../modules/default/controllers/SoundFilesController.php:305
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "Description"
 msgstr ""
 
+#: ../modules/default/views/scripts/ranking-report/view.phtml:44
+#: ../modules/default/actions/DiscarTronco.php:301
 #: ../modules/default/controllers/CallsReportController.php:87
 #: ../modules/default/controllers/CallsReportController.php:869
 #: ../modules/default/controllers/CallsReportController.php:1345
-#: ../modules/default/views/scripts/ranking-report/view.phtml:44
-#: ../modules/default/actions/DiscarTronco.php:301
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Destination"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Destination Exceptions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Destination Extensions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Destination Group"
 msgstr ""
 
-#: ../modules/default/controllers/RouteController.php:196
 #: ../modules/default/views/scripts/simulator/index.phtml:50
 #: ../modules/default/views/scripts/simulator/index.phtml:67
+#: ../modules/default/controllers/RouteController.php:196
 msgid "Destiny"
 msgstr ""
 
@@ -1369,17 +1365,17 @@ msgstr ""
 msgid "Dial Extension"
 msgstr ""
 
-#: ../modules/default/actions/DiscarRamal.php:182
 #: ../modules/default/actions/DiscarTronco.php:134
+#: ../modules/default/actions/DiscarRamal.php:182
 msgid "Dial Flags"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Dial Method"
 msgstr ""
 
-#: ../modules/default/actions/DiscarRamal.php:180
 #: ../modules/default/actions/DiscarTronco.php:131
+#: ../modules/default/actions/DiscarRamal.php:180
 msgid "Dial Timeout"
 msgstr ""
 
@@ -1415,8 +1411,8 @@ msgstr ""
 msgid "Differ ring"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Direct Media"
 msgstr ""
 
@@ -1426,7 +1422,7 @@ msgid "Direct to queue %s"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:48
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Directory"
 msgstr ""
 
@@ -1477,11 +1473,11 @@ msgstr ""
 msgid "Does a loop in actions."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Domain"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Domain of origin"
 msgstr ""
 
@@ -1496,18 +1492,18 @@ msgstr ""
 msgid "Duration"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "E-Mail"
 msgstr ""
 
-#: ../modules/default/controllers/CarrierController.php:127
-#: ../modules/default/controllers/CostCenterController.php:174
-#: ../modules/default/controllers/MusicOnHoldController.php:133
-#: ../modules/default/controllers/SoundFilesController.php:277
-#: ../modules/default/controllers/ContactGroupsController.php:128
 #: ../modules/default/views/scripts/billing/edit.phtml:41
-#: /var/www/snep2/configs/dashboard.xml
-#: /var/www/snep2/configs/titleOptions.xml /var/www/snep2/configs/subMenu.xml
+#: ../modules/default/controllers/ContactGroupsController.php:128
+#: ../modules/default/controllers/CarrierController.php:127
+#: ../modules/default/controllers/MusicOnHoldController.php:133
+#: ../modules/default/controllers/CostCenterController.php:174
+#: ../modules/default/controllers/SoundFilesController.php:277
+#: /var/www/ipbx/configs/titleOptions.xml /var/www/ipbx/configs/subMenu.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Edit"
 msgstr ""
 
@@ -1523,8 +1519,8 @@ msgstr ""
 msgid "Edit Extension Groups"
 msgstr ""
 
-#: ../modules/default/views/scripts/extensions-groups/edit.phtml:16
 #: ../modules/default/views/scripts/pickup-groups/edit.phtml:16
+#: ../modules/default/views/scripts/extensions-groups/edit.phtml:16
 #: ../modules/default/views/scripts/contact-groups/edit.phtml:16
 msgid "Edit Group"
 msgstr ""
@@ -1558,16 +1554,16 @@ msgstr ""
 msgid "Edit cost center"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Email"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "EmailAddress"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Enable recording"
 msgstr ""
 
@@ -1577,7 +1573,7 @@ msgstr ""
 
 #: ../modules/default/controllers/KhompLinksController.php:96
 #: ../modules/default/controllers/KhompLinksController.php:209
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Enabled"
 msgstr ""
 
@@ -1591,7 +1587,7 @@ msgid "Entail"
 msgstr ""
 
 #: ../modules/default/views/scripts/extensions/index.phtml:2
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Entries"
 msgstr ""
 
@@ -1600,12 +1596,12 @@ msgstr ""
 msgid "Equally (rrmemory)"
 msgstr ""
 
+#: ../modules/default/views/scripts/permission/error-unset.phtml:7
+#: ../modules/default/views/scripts/permission/error.phtml:7
+#: ../modules/default/views/scripts/installer/error.phtml:3
 #: ../modules/default/controllers/CallsReportController.php:704
 #: ../modules/default/controllers/ErrorController.php:38
-#: ../modules/default/views/scripts/permission/error.phtml:7
-#: ../modules/default/views/scripts/permission/error-unset.phtml:7
-#: ../modules/default/views/scripts/installer/error.phtml:3
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Error"
 msgstr ""
 
@@ -1621,23 +1617,23 @@ msgstr ""
 msgid "Error when running script ler_queues"
 msgstr ""
 
-#: ../includes/mysql_error.php:74
-#: ../modules/default/views/scripts/trunks/asterisk-error.phtml:20
 #: ../modules/default/views/scripts/extensions/asterisk-error.phtml:20
 #: ../modules/default/views/scripts/errors-khomp/asterisk-error.phtml:20
-#: ../modules/default/views/scripts/khomp-links/asterisk-error.phtml:20
+#: ../modules/default/views/scripts/trunks/asterisk-error.phtml:20
 #: ../modules/default/views/scripts/ip-status/asterisk-error.phtml:20
+#: ../modules/default/views/scripts/khomp-links/asterisk-error.phtml:20
+#: ../includes/mysql_error.php:74
 msgid "Error!"
 msgstr ""
 
 #: ../modules/default/views/scripts/extensions/multiadd.phtml:68
-#: ../modules/default/views/scripts/extensions/add_edit.phtml:88
 #: ../modules/default/views/scripts/extensions/index.phtml:15
+#: ../modules/default/views/scripts/extensions/add_edit.phtml:88
 msgid "Error: The following files are not writable by the system:"
 msgstr ""
 
 #: ../modules/default/controllers/ErrorsKhompController.php:44
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Errors Links"
 msgstr ""
 
@@ -1649,8 +1645,8 @@ msgstr ""
 msgid "Errors were detected in the configuration of SNEP, click "
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensionsMultiRemove.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMultiRemove.xml
 msgid "Ex: 1000-1050;1060;1063;1070-1100"
 msgstr ""
 
@@ -1666,26 +1662,26 @@ msgstr ""
 msgid "Exibition mode:"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Export"
 msgstr ""
 
 #: ../modules/default/views/scripts/contacts/export.phtml:5
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Export CSV"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Export PDF"
 msgstr ""
 
 #: ../modules/default/views/scripts/route/add_edit.phtml:173
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Expression Alias"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Expression Aliases"
 msgstr ""
 
@@ -1694,34 +1690,34 @@ msgid "Expressions"
 msgstr ""
 
 #: ../lib/PBX/Rule/ActionConfig.php:158
+#: ../modules/default/views/scripts/route/add_edit.phtml:170
+#: ../modules/default/views/scripts/ip-status/index.phtml:15
+#: ../modules/default/views/scripts/simulator/index.phtml:37
 #: ../modules/default/controllers/ExtensionsController.php:105
 #: ../modules/default/controllers/ExtensionsController.php:690
 #: ../modules/default/controllers/ExtensionsController.php:745
 #: ../modules/default/controllers/RouteController.php:67
-#: ../modules/default/views/scripts/route/add_edit.phtml:170
-#: ../modules/default/views/scripts/simulator/index.phtml:37
-#: ../modules/default/views/scripts/ip-status/index.phtml:15
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Extension"
 msgstr ""
 
 #: ../modules/default/views/scripts/route/add_edit.phtml:167
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Extension Group"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:187
-#: ../modules/default/views/scripts/extensions-groups/permission.phtml:14
 #: ../modules/default/views/scripts/extensions-groups/add.phtml:16
-#: ../modules/default/views/scripts/extensions-groups/migration.phtml:6
+#: ../modules/default/views/scripts/extensions-groups/permission.phtml:14
 #: ../modules/default/views/scripts/extensions-groups/edit.phtml:16
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/views/scripts/extensions-groups/migration.phtml:6
+#: ../modules/default/controllers/ExtensionsGroupsController.php:187
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Extension Groups"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Extension Mapping"
 msgstr ""
 
@@ -1733,21 +1729,21 @@ msgstr ""
 msgid "Extension:"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "ExtensionGroup"
 msgstr ""
 
+#: ../modules/default/controllers/ServicesReportController.php:88
 #: ../modules/default/controllers/PickupGroupsController.php:115
 #: ../modules/default/controllers/PickupGroupsController.php:190
 #: ../modules/default/controllers/ExtensionsGroupsController.php:130
 #: ../modules/default/controllers/ExtensionsGroupsController.php:237
-#: ../modules/default/controllers/ServicesReportController.php:88
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensionsMultiRemove.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMultiRemove.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Extensions"
 msgstr ""
 
@@ -1755,11 +1751,11 @@ msgstr ""
 msgid "Extensions Configurations"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Extensions Range"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Extensions, IP Trunks, Queues"
 msgstr ""
 
@@ -1772,7 +1768,7 @@ msgstr ""
 
 #: ../modules/default/controllers/CallsReportController.php:887
 #: ../modules/default/controllers/CallsReportController.php:1048
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Failed"
 msgstr ""
 
@@ -1798,8 +1794,8 @@ msgstr ""
 msgid "Failure on trial to dial extension %: non existent extension"
 msgstr ""
 
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:23
 #: ../modules/default/views/scripts/sound-files/index.phtml:24
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:23
 msgid "File"
 msgstr ""
 
@@ -1807,7 +1803,7 @@ msgstr ""
 msgid "File Permissions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "File Type"
 msgstr ""
 
@@ -1833,7 +1829,7 @@ msgstr ""
 
 #: ../modules/default/views/scripts/sound-files/index.phtml:20
 #: ../modules/default/views/scripts/maintenance/index.phtml:66
-#: /var/www/snep2/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "Filename"
 msgstr ""
 
@@ -1846,7 +1842,7 @@ msgstr ""
 msgid "Fisical Memory"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Fixed phone"
 msgstr ""
 
@@ -1872,44 +1868,44 @@ msgstr ""
 msgid "For the agent that answered less calls (fewestcalls)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Force reverse authentication"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Format witch the recorded files will be stored"
 msgstr ""
 
 #: ../modules/default/views/scripts/carrier/index.phtml:19
-#: /var/www/snep2/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
 msgid "Fragmentation Time"
 msgstr ""
 
+#: ../modules/default/views/scripts/systemstatus/index.phtml:292
+#: ../modules/default/views/scripts/systemstatus/index.phtml:438
 #: ../modules/default/controllers/KhompLinksController.php:76
 #: ../modules/default/controllers/KhompLinksController.php:86
 #: ../modules/default/controllers/KhompLinksController.php:90
 #: ../modules/default/controllers/KhompLinksController.php:189
 #: ../modules/default/controllers/KhompLinksController.php:199
 #: ../modules/default/controllers/KhompLinksController.php:203
-#: ../modules/default/views/scripts/systemstatus/index.phtml:292
-#: ../modules/default/views/scripts/systemstatus/index.phtml:438
 msgid "Free"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Friday"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Friend"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "From"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "From:"
 msgstr ""
 
@@ -1919,12 +1915,11 @@ msgstr ""
 msgid "General Configuration"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Generate report"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Generate route"
 msgstr ""
 
@@ -1940,7 +1935,7 @@ msgstr ""
 msgid "Go back to the last page"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Go to Context"
 msgstr ""
 
@@ -1952,20 +1947,20 @@ msgstr ""
 msgid "Go to a Context"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Graphic"
 msgstr ""
 
+#: ../modules/default/views/scripts/contacts/csv.phtml:59
 #: ../modules/default/controllers/ContactsController.php:220
 #: ../modules/default/controllers/ContactsController.php:285
 #: ../modules/default/controllers/RouteController.php:62
-#: ../modules/default/views/scripts/contacts/csv.phtml:59
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Group"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
 msgid "Group contacts"
 msgstr ""
 
@@ -1973,12 +1968,12 @@ msgstr ""
 msgid "Hanging Up"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "Host"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "Hostname"
 msgstr ""
 
@@ -1986,13 +1981,13 @@ msgstr ""
 msgid "IAX 2 Extensions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "IAX2"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "IAX2 Trunking"
 msgstr ""
 
@@ -2000,7 +1995,7 @@ msgstr ""
 msgid "IAX2 Trunks"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "ID Regular Expression"
 msgstr ""
 
@@ -2018,19 +2013,19 @@ msgstr ""
 msgid "IP Extensions"
 msgstr ""
 
-#: ../modules/default/controllers/IpStatusController.php:45
 #: ../modules/default/views/scripts/systemstatus/index.phtml:241
-#: /var/www/snep2/configs/dashboard.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/controllers/IpStatusController.php:45
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "IP Status"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Identifier"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Import"
 msgstr ""
 
@@ -2042,20 +2037,20 @@ msgstr ""
 msgid "In Use"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
 msgid "In seconds"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Inband"
 msgstr ""
 
 #: ../modules/default/controllers/CostCenterController.php:46
 #: ../modules/default/controllers/KhompLinksController.php:79
 #: ../modules/default/controllers/KhompLinksController.php:192
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "Incoming"
 msgstr ""
 
@@ -2064,19 +2059,19 @@ msgstr ""
 msgid "Incoming Call"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Info"
 msgstr ""
 
-#: ../modules/default/views/scripts/ip-status/index.phtml:4
 #: ../modules/default/views/scripts/ip-status/asterisk-error.phtml:4
+#: ../modules/default/views/scripts/ip-status/index.phtml:4
 msgid "Information of System"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Insecure"
 msgstr ""
 
@@ -2100,9 +2095,9 @@ msgstr ""
 msgid "Installer » Diagnostic"
 msgstr ""
 
+#: ../modules/default/controllers/TrunksController.php:178
 #: ../modules/default/controllers/ExtensionsController.php:691
 #: ../modules/default/controllers/ExtensionsController.php:746
-#: ../modules/default/controllers/TrunksController.php:178
 msgid "Interface Technology"
 msgstr ""
 
@@ -2110,7 +2105,7 @@ msgstr ""
 msgid "Interface Type"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Interface acess and peer lock (just numbers)"
 msgstr ""
 
@@ -2145,7 +2140,7 @@ msgid "Just  Compact (backup)"
 msgstr ""
 
 #: ../modules/default/views/scripts/conference-rooms/index.phtml:79
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Just numbers"
 msgstr ""
 
@@ -2153,22 +2148,22 @@ msgstr ""
 msgid "Kernel"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Khomp"
 msgstr ""
 
 #: ../modules/default/controllers/KhompLinksController.php:369
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Khomp Links"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Khomp Links Errors"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Krecord"
 msgstr ""
 
@@ -2199,8 +2194,8 @@ msgstr ""
 msgid "Line numbers"
 msgstr ""
 
-#: ../modules/default/controllers/TrunksController.php:229
 #: ../modules/default/views/scripts/khomp-links/view.phtml:39
+#: ../modules/default/controllers/TrunksController.php:229
 msgid "Link"
 msgstr ""
 
@@ -2209,7 +2204,7 @@ msgid "Link Status"
 msgstr ""
 
 #: ../modules/default/controllers/KhompLinksController.php:47
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Links"
 msgstr ""
 
@@ -2248,11 +2243,11 @@ msgstr ""
 msgid "Login"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Logout"
 msgstr ""
 
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Logs"
 msgstr ""
 
@@ -2265,7 +2260,7 @@ msgid "MP3"
 msgstr ""
 
 #: ../modules/default/views/scripts/maintenance/index.phtml:13
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Maintenance"
 msgstr ""
 
@@ -2273,22 +2268,22 @@ msgstr ""
 msgid "Maintenance of System"
 msgstr ""
 
-#: ../modules/default/controllers/PickupGroupsController.php:154
-#: ../modules/default/controllers/CostCenterController.php:172
-#: ../modules/default/controllers/ExtensionsGroupsController.php:186
 #: ../modules/default/controllers/ContactGroupsController.php:35
 #: ../modules/default/controllers/ContactGroupsController.php:80
 #: ../modules/default/controllers/ContactGroupsController.php:126
 #: ../modules/default/controllers/ContactGroupsController.php:182
 #: ../modules/default/controllers/ContactGroupsController.php:228
+#: ../modules/default/controllers/PickupGroupsController.php:154
+#: ../modules/default/controllers/CostCenterController.php:172
+#: ../modules/default/controllers/ExtensionsGroupsController.php:186
 #: ../modules/default/controllers/QueuesController.php:210
 #: ../modules/default/controllers/QueuesController.php:341
 #: ../modules/default/controllers/QueuesController.php:470
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Manage"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Manual"
 msgstr ""
 
@@ -2296,11 +2291,11 @@ msgstr ""
 msgid "Marks the call with a cost center."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Maximum number of calls waiting in the queue"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Meetme"
 msgstr ""
 
@@ -2317,35 +2312,35 @@ msgstr ""
 msgid "Migrate Contacts"
 msgstr ""
 
-#: ../modules/default/views/scripts/extensions-groups/migration.phtml:6
 #: ../modules/default/views/scripts/pickup-groups/migration.phtml:6
+#: ../modules/default/views/scripts/extensions-groups/migration.phtml:6
 #: ../modules/default/views/scripts/contact-groups/migration.phtml:6
 msgid "Migration of Group Members"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Minute Control"
 msgstr ""
 
 #: ../modules/default/views/scripts/billing/index.phtml:38
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Minute Fee for Mobile"
 msgstr ""
 
 #: ../modules/default/views/scripts/billing/index.phtml:41
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Minute Fee for Residencial"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Minutes"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "MixMonitor"
 msgstr ""
 
@@ -2353,7 +2348,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Mode"
 msgstr ""
 
@@ -2373,50 +2368,50 @@ msgstr ""
 msgid "Modules"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Monday"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Monitor"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Month"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Monthly"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Mp3"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "MultiCheckbox"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Music On Hold"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Music On Hold Class"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Music on Hold"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:42
 #: ../modules/default/controllers/MusicOnHoldController.php:132
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Music on Hold Sessions"
 msgstr ""
 
@@ -2428,7 +2423,7 @@ msgstr ""
 msgid "Music on hold class already exists"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Music on hold loop timer"
 msgstr ""
 
@@ -2448,42 +2443,42 @@ msgstr ""
 msgid "N/A"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "NAT"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "NAT Optimization"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "NAT optimization"
 msgstr ""
 
+#: ../modules/default/views/scripts/action-configs/index.phtml:13
+#: ../modules/default/views/scripts/carrier/index.phtml:17
+#: ../modules/default/views/scripts/trunks/index.phtml:15
+#: ../modules/default/views/scripts/ip-status/index.phtml:113
+#: ../modules/default/views/scripts/ip-status/index.phtml:150
+#: ../modules/default/views/scripts/expression-alias/index.phtml:13
+#: ../modules/default/views/scripts/music-on-hold/index.phtml:17
+#: ../modules/default/views/scripts/music-on-hold/file.phtml:19
+#: ../modules/default/views/scripts/queues/index.phtml:17
 #: ../modules/default/controllers/PickupGroupsController.php:98
 #: ../modules/default/controllers/PickupGroupsController.php:169
 #: ../modules/default/controllers/ExtensionsGroupsController.php:105
 #: ../modules/default/controllers/ExtensionsGroupsController.php:209
 #: ../modules/default/controllers/ContactsController.php:279
 #: ../modules/default/controllers/ContactsController.php:367
-#: ../modules/default/views/scripts/trunks/index.phtml:15
-#: ../modules/default/views/scripts/music-on-hold/file.phtml:19
-#: ../modules/default/views/scripts/music-on-hold/index.phtml:17
-#: ../modules/default/views/scripts/expression-alias/index.phtml:13
-#: ../modules/default/views/scripts/ip-status/index.phtml:113
-#: ../modules/default/views/scripts/ip-status/index.phtml:150
-#: ../modules/default/views/scripts/action-configs/index.phtml:13
-#: ../modules/default/views/scripts/carrier/index.phtml:17
-#: ../modules/default/views/scripts/queues/index.phtml:17
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/expression_alias.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
-#: /var/www/snep2/modules/default/forms/contact_groups.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/expression_alias.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups.xml
 msgid "Name"
 msgstr ""
 
@@ -2491,13 +2486,13 @@ msgstr ""
 msgid "New Adjustment"
 msgstr ""
 
+#: ../modules/default/views/scripts/pickup-groups/add.phtml:16
+#: ../modules/default/views/scripts/extensions-groups/add.phtml:16
+#: ../modules/default/views/scripts/contact-groups/add.phtml:16
 #: ../modules/default/controllers/PickupGroupsController.php:269
 #: ../modules/default/controllers/PickupGroupsController.php:284
 #: ../modules/default/controllers/ExtensionsGroupsController.php:360
 #: ../modules/default/controllers/ExtensionsGroupsController.php:375
-#: ../modules/default/views/scripts/extensions-groups/add.phtml:16
-#: ../modules/default/views/scripts/pickup-groups/add.phtml:16
-#: ../modules/default/views/scripts/contact-groups/add.phtml:16
 msgid "New Group"
 msgstr ""
 
@@ -2517,14 +2512,14 @@ msgstr ""
 #: ../modules/default/controllers/QueuesController.php:142
 #: ../modules/default/controllers/QueuesController.php:277
 #: ../modules/default/controllers/QueuesController.php:287
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "No"
 msgstr ""
 
-#: ../modules/default/controllers/RouteController.php:63
 #: ../modules/default/views/scripts/route/add_edit.phtml:172
+#: ../modules/default/controllers/RouteController.php:63
 msgid "No Destiny"
 msgstr ""
 
@@ -2553,8 +2548,8 @@ msgstr ""
 msgid "No group selected"
 msgstr ""
 
-#: ../modules/default/views/scripts/systemstatus/index.phtml:207
 #: ../modules/default/views/layouts/layout.phtml:39
+#: ../modules/default/views/scripts/systemstatus/index.phtml:207
 msgid "No modules instaled."
 msgstr ""
 
@@ -2569,23 +2564,23 @@ msgstr ""
 msgid "No rule found."
 msgstr ""
 
-#: ../modules/default/controllers/KhompLinksController.php:222
 #: ../modules/default/controllers/ExtensionsGroupsController.php:47
 #: ../modules/default/controllers/ExtensionsGroupsController.php:112
 #: ../modules/default/controllers/ExtensionsGroupsController.php:217
+#: ../modules/default/controllers/KhompLinksController.php:222
 msgid "None"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:50
 #: ../modules/default/controllers/LogsController.php:96
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Normal"
 msgstr ""
 
 #: ../modules/default/controllers/CallsReportController.php:885
 #: ../modules/default/controllers/CallsReportController.php:1045
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Not Answered"
 msgstr ""
 
@@ -2603,19 +2598,19 @@ msgstr ""
 msgid "Not configured"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Number of Lines"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Numbers Only"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Numbers only"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "Numbers separated by ( . ). EX: 5.04"
 msgstr ""
 
@@ -2627,7 +2622,7 @@ msgstr ""
 msgid "Ommit origin (only for Khomp KGSM)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "On / Off"
 msgstr ""
 
@@ -2646,7 +2641,7 @@ msgstr ""
 msgid "Operator"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Options to the recording application"
 msgstr ""
 
@@ -2662,12 +2657,12 @@ msgstr ""
 msgid "Original Source"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Originated"
 msgstr ""
 
 #: ../modules/default/controllers/CallsReportController.php:888
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "Other"
 msgstr ""
 
@@ -2675,17 +2670,17 @@ msgstr ""
 msgid "Other Options"
 msgstr ""
 
-#: ../modules/default/controllers/CostCenterController.php:48
 #: ../modules/default/controllers/CallsReportController.php:88
 #: ../modules/default/controllers/CallsReportController.php:1054
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: ../modules/default/controllers/CostCenterController.php:48
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Others"
 msgstr ""
 
 #: ../modules/default/controllers/CostCenterController.php:47
 #: ../modules/default/controllers/KhompLinksController.php:78
 #: ../modules/default/controllers/KhompLinksController.php:191
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "Outgoing"
 msgstr ""
 
@@ -2694,29 +2689,33 @@ msgstr ""
 msgid "Outgoing Call"
 msgstr ""
 
+#: ../modules/default/views/scripts/systemstatus/index.phtml:124
+msgid "PABX"
+msgstr ""
+
 #: ../inspectors/PHPExtensions.php:76
 msgid "PHP Extensions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Padlock"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Panel 1 Tab"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Panel 2 Tab"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Panel 3 Tab"
 msgstr ""
 
 #: ../modules/default/controllers/ParametersController.php:32
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Parameters"
 msgstr ""
 
@@ -2724,13 +2723,13 @@ msgstr ""
 msgid "Partition"
 msgstr ""
 
-#: ../modules/default/views/scripts/auth/login.phtml:17
 #: ../modules/default/views/scripts/installer/installed.phtml:16
+#: ../modules/default/views/scripts/auth/login.phtml:17
 #: ../modules/default/views/scripts/conference-rooms/index.phtml:45
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Password"
 msgstr ""
 
@@ -2742,11 +2741,11 @@ msgstr ""
 msgid "Path"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Path where to store the audio files"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Path where to store the backup audio files"
 msgstr ""
 
@@ -2754,11 +2753,11 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Peer"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Peer Type"
 msgstr ""
 
@@ -2766,47 +2765,47 @@ msgstr ""
 msgid "Peers group"
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:72
-#: ../modules/default/controllers/RankingReportController.php:92
-#: ../modules/default/controllers/ServicesReportController.php:64
 #: ../modules/default/views/scripts/maintenance/index.phtml:32
 #: ../modules/default/views/scripts/maintenance/index.phtml:99
+#: ../modules/default/controllers/RankingReportController.php:92
+#: ../modules/default/controllers/ServicesReportController.php:64
+#: ../modules/default/controllers/CallsReportController.php:72
 msgid "Period"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "Period from:"
 msgstr ""
 
+#: ../modules/default/views/scripts/extensions-groups/permission.phtml:14
 #: ../modules/default/controllers/PickupGroupsController.php:394
 #: ../modules/default/controllers/ExtensionsGroupsController.php:584
-#: ../modules/default/views/scripts/extensions-groups/permission.phtml:14
 msgid "Permission"
 msgstr ""
 
 #: ../modules/default/controllers/ContactsController.php:283
 #: ../modules/default/controllers/ContactsController.php:372
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Phone"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Pickup Group"
 msgstr ""
 
-#: ../modules/default/controllers/PickupGroupsController.php:155
 #: ../modules/default/views/scripts/pickup-groups/add.phtml:16
-#: ../modules/default/views/scripts/pickup-groups/migration.phtml:6
 #: ../modules/default/views/scripts/pickup-groups/edit.phtml:16
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/views/scripts/pickup-groups/migration.phtml:6
+#: ../modules/default/controllers/PickupGroupsController.php:155
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Pickup Groups"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "PickupGroup"
 msgstr ""
 
@@ -2826,12 +2825,12 @@ msgstr ""
 msgid "Please insert a username"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Port"
 msgstr ""
 
 #: ../modules/default/views/scripts/billing/index.phtml:32
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Prefix"
 msgstr ""
 
@@ -2839,29 +2838,29 @@ msgstr ""
 msgid "Prefix not numeric"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Prioritary"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Priority"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Qualification time"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Qualify"
 msgstr ""
 
 #: ../modules/default/views/scripts/ranking-report/view.phtml:48
 #: ../modules/default/views/scripts/ranking-report/view.phtml:54
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Quantity"
 msgstr ""
 
@@ -2874,37 +2873,37 @@ msgstr ""
 msgid "Queue Alert"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Queue Name"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Queue Priority"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Queue Service Level Agreement (Used for statistics and monitoring)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Queue notice audio"
 msgstr ""
 
+#: ../modules/default/views/scripts/ip-status/index.phtml:47
+#: ../modules/default/views/scripts/queues/members.phtml:16
+#: ../modules/default/views/scripts/queues/add.phtml:6
+#: ../modules/default/views/scripts/queues/edit.phtml:6
 #: ../modules/default/controllers/QueuesController.php:211
 #: ../modules/default/controllers/QueuesController.php:342
 #: ../modules/default/controllers/QueuesController.php:471
-#: ../modules/default/views/scripts/ip-status/index.phtml:47
-#: ../modules/default/views/scripts/queues/add.phtml:6
-#: ../modules/default/views/scripts/queues/members.phtml:16
-#: ../modules/default/views/scripts/queues/edit.phtml:6
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Queues"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "RFC-2833"
 msgstr ""
 
@@ -2913,7 +2912,7 @@ msgstr ""
 msgid "Randomly (random)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Range of Agents"
 msgstr ""
 
@@ -2921,15 +2920,15 @@ msgstr ""
 msgid "Ranking Options"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Ranking Type"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "Read only. Autogenerated code"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Real time"
 msgstr ""
 
@@ -2937,28 +2936,28 @@ msgstr ""
 msgid "Really want to remove this alias?"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Received"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Recharge the page"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Recorded Files Path"
 msgstr ""
 
 #: ../modules/default/views/scripts/conference-rooms/index.phtml:48
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Recording"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Recording Application"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Recording Parameters"
 msgstr ""
 
@@ -2980,7 +2979,7 @@ msgstr ""
 msgid "Regular Expression"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Remote Host"
 msgstr ""
 
@@ -2988,7 +2987,7 @@ msgstr ""
 msgid "Remove All"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Remove Multiple"
 msgstr ""
 
@@ -3008,19 +3007,19 @@ msgstr ""
 msgid "Replace source extension with requested"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Report"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Report Type"
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:29
 #: ../modules/default/controllers/RankingReportController.php:33
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/controllers/CallsReportController.php:29
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Reports"
 msgstr ""
 
@@ -3043,7 +3042,7 @@ msgstr ""
 msgid "Reset Counters"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Rest time for agent in between calls"
 msgstr ""
 
@@ -3096,7 +3095,7 @@ msgstr ""
 msgid "Rewriting source to %s"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Ring time per agent"
 msgstr ""
 
@@ -3113,23 +3112,23 @@ msgstr ""
 msgid "Ringing"
 msgstr ""
 
+#: ../modules/default/controllers/SimulatorController.php:37
 #: ../modules/default/controllers/RouteController.php:265
 #: ../modules/default/controllers/RouteController.php:332
 #: ../modules/default/controllers/RouteController.php:400
-#: ../modules/default/controllers/SimulatorController.php:37
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Routes"
 msgstr ""
 
-#: ../modules/default/controllers/RouteController.php:264
-#: ../modules/default/controllers/RouteController.php:331
-#: ../modules/default/controllers/RouteController.php:399
 #: ../modules/default/controllers/ActionConfigsController.php:24
 #: ../modules/default/controllers/ActionConfigsController.php:81
 #: ../modules/default/controllers/SimulatorController.php:36
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/controllers/RouteController.php:264
+#: ../modules/default/controllers/RouteController.php:331
+#: ../modules/default/controllers/RouteController.php:399
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Routing"
 msgstr ""
 
@@ -3159,9 +3158,9 @@ msgstr ""
 msgid "SEQ"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "SIP"
 msgstr ""
 
@@ -3203,15 +3202,15 @@ msgstr ""
 msgid "SOURCE"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Same on both servers"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Saturday"
 msgstr ""
 
-#: ../lib/Snep/Form.php:52 /var/www/snep2/configs/buttonsOptions.xml
+#: ../lib/Snep/Form.php:52 /var/www/ipbx/configs/buttonsOptions.xml
 msgid "Save"
 msgstr ""
 
@@ -3233,12 +3232,12 @@ msgstr ""
 msgid "Seconds left to alert"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Select"
 msgstr ""
 
@@ -3283,11 +3282,11 @@ msgstr ""
 msgid "Sending SMS"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "Separate with ;"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Separated by a comma"
 msgstr ""
 
@@ -3300,34 +3299,34 @@ msgid "Service - Activated/Deactivated"
 msgstr ""
 
 #: ../modules/default/views/scripts/services-report/view.phtml:20
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "Service Status"
 msgstr ""
 
-#: ../modules/default/controllers/ServicesReportController.php:121
 #: ../modules/default/views/scripts/systemstatus/index.phtml:4
+#: ../modules/default/controllers/ServicesReportController.php:121
 msgid "Services"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Services Report"
 msgstr ""
 
 #: ../modules/default/controllers/ServicesReportController.php:385
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "Services Use"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Services Used"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Session"
 msgstr ""
 
 #: ../modules/default/controllers/MaintenanceController.php:31
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Settings"
 msgstr ""
 
@@ -3335,26 +3334,26 @@ msgstr ""
 msgid "Settings » Update CNL"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Should calls be ejected from queue if all agents logout?"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Show 'n' source ranking"
 msgstr ""
 
-#: ../modules/default/controllers/KhompLinksController.php:50
-#: ../modules/default/controllers/CallsReportController.php:187
 #: ../modules/default/controllers/RankingReportController.php:123
 #: ../modules/default/controllers/ServicesReportController.php:125
+#: ../modules/default/controllers/CallsReportController.php:187
+#: ../modules/default/controllers/KhompLinksController.php:50
 msgid "Show Report"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Show TOP 'n' by source"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Show error message events if activated"
 msgstr ""
 
@@ -3381,7 +3380,7 @@ msgstr ""
 msgid "Signal Strength"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Silent time before connecting the agent to a caller"
 msgstr ""
 
@@ -3390,22 +3389,22 @@ msgid "Simulate"
 msgstr ""
 
 #: ../modules/default/controllers/SimulatorController.php:38
-#: /var/www/snep2/configs/dashboard.xml
-#: /var/www/snep2/configs/titleOptions.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/titleOptions.xml /var/www/ipbx/configs/subMenu.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "Simulator"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Simultaneous Call Limit"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid ""
 "Sintax: ramal_inicial-ramal_final ; ramal_inicial-ramal_final\n"
 "                        Example: 300-312 ; 333-335 ; ..."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid ""
 "Sintax:Init_Exten-Final_Exten ; Init_Exten-Final_Exten\n"
 "                        Example: 3000-3012 ; 3033-3035"
@@ -3418,18 +3417,6 @@ msgstr ""
 
 #: ../modules/default/views/scripts/systemstatus/index.phtml:141
 msgid "Size number: "
-msgstr ""
-
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-msgid "Snep Debug"
-msgstr ""
-
-#: /var/www/snep2/modules/default/forms/trunks.xml
-msgid "Snep IAX2"
-msgstr ""
-
-#: /var/www/snep2/modules/default/forms/trunks.xml
-msgid "Snep SIP"
 msgstr ""
 
 #: ../modules/default/controllers/KhompLinksController.php:103
@@ -3461,27 +3448,27 @@ msgstr ""
 #: ../modules/default/controllers/SoundFilesController.php:276
 #: ../modules/default/controllers/SoundFilesController.php:288
 #: ../modules/default/controllers/SoundFilesController.php:351
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Sound Files"
 msgstr ""
 
+#: ../modules/default/views/scripts/simulator/index.phtml:35
+#: ../modules/default/views/scripts/simulator/index.phtml:66
+#: ../modules/default/actions/DiscarTronco.php:300
 #: ../modules/default/controllers/CallsReportController.php:89
 #: ../modules/default/controllers/CallsReportController.php:868
 #: ../modules/default/controllers/CallsReportController.php:1344
 #: ../modules/default/controllers/RouteController.php:191
-#: ../modules/default/views/scripts/simulator/index.phtml:35
-#: ../modules/default/views/scripts/simulator/index.phtml:66
-#: ../modules/default/actions/DiscarTronco.php:300
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Source"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Source Extensions"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Source Group"
 msgstr ""
 
@@ -3490,11 +3477,11 @@ msgstr ""
 msgid "Source: %s"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Specify"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Specify user of origin"
 msgstr ""
 
@@ -3506,7 +3493,7 @@ msgstr ""
 msgid "Start Script ler_queues."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
 msgid "Start charging Time"
 msgstr ""
 
@@ -3518,13 +3505,13 @@ msgstr ""
 msgid "Startup Time"
 msgstr ""
 
+#: ../modules/default/views/scripts/billing/index.phtml:23
 #: ../modules/default/controllers/CallsReportController.php:876
 #: ../modules/default/controllers/ContactsController.php:281
 #: ../modules/default/controllers/ContactsController.php:370
-#: ../modules/default/views/scripts/billing/index.phtml:23
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "State"
 msgstr ""
 
@@ -3532,23 +3519,23 @@ msgstr ""
 msgid "Static Password:"
 msgstr ""
 
-#: ../modules/default/controllers/KhompLinksController.php:46
-#: ../modules/default/controllers/KhompLinksController.php:368
+#: ../modules/default/views/scripts/ip-status/index.phtml:54
+#: ../modules/default/views/scripts/ip-status/index.phtml:116
+#: ../modules/default/views/scripts/ip-status/index.phtml:152
 #: ../modules/default/controllers/IpStatusController.php:44
 #: ../modules/default/controllers/CallsReportController.php:871
 #: ../modules/default/controllers/CallsReportController.php:1347
 #: ../modules/default/controllers/CallsReportController.php:1636
 #: ../modules/default/controllers/InstaladorController.php:31
+#: ../modules/default/controllers/KhompLinksController.php:46
+#: ../modules/default/controllers/KhompLinksController.php:368
 #: ../modules/default/controllers/LogsController.php:30
 #: ../modules/default/controllers/LogsController.php:90
 #: ../modules/default/controllers/ErrorsKhompController.php:43
-#: ../modules/default/views/scripts/ip-status/index.phtml:54
-#: ../modules/default/views/scripts/ip-status/index.phtml:116
-#: ../modules/default/views/scripts/ip-status/index.phtml:152
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "Status"
 msgstr ""
 
@@ -3560,9 +3547,9 @@ msgstr ""
 msgid "Strategy"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "StringLength"
 msgstr ""
 
@@ -3578,7 +3565,7 @@ msgstr ""
 msgid "Suffix"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Sunday"
 msgstr ""
 
@@ -3586,28 +3573,24 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: ../modules/default/views/layouts/login.phtml:31
-msgid "Support ToFalando"
-msgstr ""
-
 #: ../modules/default/views/scripts/systemstatus/index.phtml:400
 msgid "Swap Memory"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "Synthetic"
 msgstr ""
 
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "System"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "System  Diagnosis"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "System Diagnosis"
 msgstr ""
 
@@ -3615,22 +3598,22 @@ msgstr ""
 msgid "System Diagnosis."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "System Language"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "System Locale"
 msgstr ""
 
 #: ../modules/default/controllers/LogsController.php:31
 #: ../modules/default/controllers/LogsController.php:91
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "System Logs"
 msgstr ""
 
 #: ../modules/default/controllers/InspectorController.php:33
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "System Status"
 msgstr ""
 
@@ -3638,9 +3621,9 @@ msgstr ""
 msgid "System diagnostic"
 msgstr ""
 
+#: ../modules/default/views/scripts/logs/view.phtml:4
 #: ../modules/default/views/scripts/logs/index.phtml:12
 #: ../modules/default/views/scripts/logs/error.phtml:4
-#: ../modules/default/views/scripts/logs/view.phtml:4
 msgid "System logs"
 msgstr ""
 
@@ -3648,7 +3631,7 @@ msgstr ""
 msgid "TDM"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "TDM/Virtual"
 msgstr ""
 
@@ -3683,16 +3666,16 @@ msgid "Terminal"
 msgstr ""
 
 #: ../modules/default/views/scripts/installer/diagnostic.phtml:27
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "Test Again"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensionsMultiRemove.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/expression_alias.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMultiRemove.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/expression_alias.xml
 msgid "Text"
 msgstr ""
 
@@ -3720,7 +3703,7 @@ msgstr ""
 msgid "The extension group will be deleted. Are you sure?."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid ""
 "The extension list must follow the format from this example. EX: 8000;8001"
 msgstr ""
@@ -3754,7 +3737,7 @@ msgstr ""
 msgid "The group will be removed. After that you can't go back."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid ""
 "The informed user must have permission to create tables\n"
 "                        on the Database informed."
@@ -3793,15 +3776,15 @@ msgstr ""
 msgid "This bill is already set"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "This field shoud contain only numbers"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "This field should contain numbers only"
 msgstr ""
 
@@ -3824,14 +3807,14 @@ msgid ""
 "these extensions to a new group."
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Thursday"
 msgstr ""
 
-#: ../modules/default/controllers/CallsReportController.php:1642
 #: ../modules/default/views/scripts/simulator/index.phtml:52
 #: ../modules/default/views/scripts/simulator/index.phtml:68
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: ../modules/default/controllers/CallsReportController.php:1642
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "Time"
 msgstr ""
 
@@ -3839,7 +3822,7 @@ msgstr ""
 msgid "Time Credit (min:sec)"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Time Total"
 msgstr ""
 
@@ -3851,15 +3834,15 @@ msgstr ""
 msgid "Times"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "Timezone"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "To"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
 msgid "To group"
 msgstr ""
 
@@ -3867,30 +3850,38 @@ msgstr ""
 msgid "To mantain this data accurate, this page is automatically refreshed"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid ""
 "To witch context the call must go when the caller dial any number while "
 "waiting"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "To:"
 msgstr ""
 
-#: /var/www/snep2/modules/default/info.xml
+#: /var/www/ipbx/modules/default/info.xml
 msgid "ToFalando"
 msgstr ""
 
-#: ../modules/default/views/scripts/systemstatus/index.phtml:72
-msgid "ToFalando Versão"
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+msgid "ToFalando Debug"
 msgstr ""
 
-#: ../modules/default/views/scripts/systemstatus/index.phtml:291
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+msgid "ToFalando IAX2"
+msgstr ""
+
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+msgid "ToFalando SIP"
+msgstr ""
+
 #: ../modules/default/views/scripts/ranking-report/view.phtml:63
 #: ../modules/default/views/scripts/ranking-report/view.phtml:66
+#: ../modules/default/views/scripts/systemstatus/index.phtml:291
 msgid "Total"
 msgstr ""
 
@@ -3909,28 +3900,28 @@ msgstr ""
 msgid "Totals"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "True"
 msgstr ""
 
 #: ../lib/PBX/Rule/ActionConfig.php:173
-#: ../modules/default/controllers/RouteController.php:65
-#: ../modules/default/controllers/TrunksController.php:176
 #: ../modules/default/views/scripts/route/add_edit.phtml:171
 #: ../modules/default/views/scripts/simulator/index.phtml:38
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: ../modules/default/controllers/TrunksController.php:176
+#: ../modules/default/controllers/RouteController.php:65
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Trunk"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Trunk type"
 msgstr ""
 
-#: ../modules/default/controllers/TrunksController.php:149
 #: ../modules/default/views/scripts/trunks/import-export.phtml:8
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/modules/default/resources.xml
+#: ../modules/default/controllers/TrunksController.php:149
+#: /var/www/ipbx/modules/default/resources.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "Trunks"
 msgstr ""
 
@@ -3938,20 +3929,20 @@ msgstr ""
 msgid "Trunks Configuration"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Tuesday"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:109
-#: ../modules/default/controllers/ExtensionsGroupsController.php:214
+#: ../modules/default/views/scripts/sound-files/index.phtml:22
 #: ../modules/default/views/scripts/trunks/index.phtml:16
+#: ../modules/default/views/scripts/ip-status/index.phtml:16
 #: ../modules/default/views/scripts/systemstatus/index.phtml:290
 #: ../modules/default/views/scripts/music-on-hold/index.phtml:19
-#: ../modules/default/views/scripts/sound-files/index.phtml:22
-#: ../modules/default/views/scripts/ip-status/index.phtml:16
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: ../modules/default/controllers/ExtensionsGroupsController.php:109
+#: ../modules/default/controllers/ExtensionsGroupsController.php:214
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "Type"
 msgstr ""
 
@@ -3959,7 +3950,7 @@ msgstr ""
 msgid "Type of archive"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Type of control"
 msgstr ""
 
@@ -3968,11 +3959,11 @@ msgstr ""
 msgid "U.R.A"
 msgstr ""
 
-#: ../modules/default/views/scripts/trunks/asterisk-error.phtml:22
 #: ../modules/default/views/scripts/extensions/asterisk-error.phtml:22
 #: ../modules/default/views/scripts/errors-khomp/asterisk-error.phtml:22
-#: ../modules/default/views/scripts/khomp-links/asterisk-error.phtml:22
+#: ../modules/default/views/scripts/trunks/asterisk-error.phtml:22
 #: ../modules/default/views/scripts/ip-status/asterisk-error.phtml:22
+#: ../modules/default/views/scripts/khomp-links/asterisk-error.phtml:22
 msgid "Unable to connect to Asterisk. Please contact system administrator"
 msgstr ""
 
@@ -4003,9 +3994,9 @@ msgstr ""
 msgid "Unavailable"
 msgstr ""
 
+#: ../modules/default/views/scripts/simulator/index.phtml:39
 #: ../modules/default/controllers/IpStatusController.php:314
 #: ../modules/default/controllers/IpStatusController.php:323
-#: ../modules/default/views/scripts/simulator/index.phtml:39
 msgid "Undefined"
 msgstr ""
 
@@ -4013,11 +4004,11 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
+#: ../modules/default/controllers/IpStatusController.php:132
 #: ../modules/default/controllers/KhompLinksController.php:70
 #: ../modules/default/controllers/KhompLinksController.php:183
 #: ../modules/default/controllers/KhompLinksController.php:214
 #: ../modules/default/controllers/KhompLinksController.php:225
-#: ../modules/default/controllers/IpStatusController.php:132
 msgid "Unused"
 msgstr ""
 
@@ -4043,7 +4034,7 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "Use dot for decimal"
 msgstr ""
 
@@ -4052,11 +4043,11 @@ msgstr ""
 msgid "Used"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:111
-#: ../modules/default/controllers/ExtensionsGroupsController.php:216
 #: ../modules/default/views/scripts/installer/installed.phtml:15
 #: ../modules/default/views/scripts/ip-status/index.phtml:114
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: ../modules/default/controllers/ExtensionsGroupsController.php:111
+#: ../modules/default/controllers/ExtensionsGroupsController.php:216
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "User"
 msgstr ""
 
@@ -4068,7 +4059,7 @@ msgstr ""
 msgid "User or password invalid"
 msgstr ""
 
-#: /var/www/snep2/modules/default/resources.xml
+#: /var/www/ipbx/modules/default/resources.xml
 msgid "User tracking log"
 msgstr ""
 
@@ -4076,15 +4067,15 @@ msgstr ""
 msgid "User/Extension"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Username"
 msgstr ""
 
-#: ../modules/default/controllers/ExtensionsGroupsController.php:46
-#: ../modules/default/controllers/CallsReportController.php:129
-#: ../modules/default/controllers/RouteController.php:220
 #: ../modules/default/controllers/ServicesReportController.php:100
+#: ../modules/default/controllers/CallsReportController.php:129
+#: ../modules/default/controllers/ExtensionsGroupsController.php:46
+#: ../modules/default/controllers/RouteController.php:220
 msgid "Users"
 msgstr ""
 
@@ -4097,24 +4088,24 @@ msgstr ""
 msgid "Validity: %s"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "View"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "View Charging"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "View recording files"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
 msgid "View status of the channel?"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Virtual"
 msgstr ""
 
@@ -4122,11 +4113,11 @@ msgstr ""
 msgid "Voice File"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "Voicemail"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Wait time until ringing all agents again"
 msgstr ""
 
@@ -4134,19 +4125,19 @@ msgstr ""
 msgid "Waiting"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "Warn agent the time that call waited in queue"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
 msgid "Warning"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Wednesday"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "Week Days"
 msgstr ""
 
@@ -4163,21 +4154,21 @@ msgstr ""
 msgid "Were found: "
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Without Authentication"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:51
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Without buffer"
 msgstr ""
 
 #: ../modules/default/controllers/MusicOnHoldController.php:52
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
 msgid "Without buffer quiet"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Year"
 msgstr ""
 
@@ -4185,9 +4176,9 @@ msgstr ""
 #: ../modules/default/controllers/QueuesController.php:141
 #: ../modules/default/controllers/QueuesController.php:276
 #: ../modules/default/controllers/QueuesController.php:286
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "Yes"
 msgstr ""
 
@@ -4223,8 +4214,8 @@ msgid "You will be redirected to the SNEP Installer"
 msgstr ""
 
 #: ../modules/default/controllers/ContactsController.php:371
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
 msgid "Zip Code"
 msgstr ""
 
@@ -4240,11 +4231,11 @@ msgstr ""
 msgid "]["
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "action-configs"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "action-configs/index"
 msgstr ""
 
@@ -4256,13 +4247,13 @@ msgstr ""
 msgid "add extension"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "alaw"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "alias_regular_expression"
 msgstr ""
 
@@ -4270,31 +4261,31 @@ msgstr ""
 msgid "all"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
 msgid "analitic"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "billing"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "billing/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "billing/index"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "branch_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "calls-report"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "calls-report/index"
 msgstr ""
 
@@ -4310,15 +4301,15 @@ msgstr ""
 msgid "calls_report_pdf_"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "carrier"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "carrier/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "carrier/index"
 msgstr ""
 
@@ -4334,74 +4325,74 @@ msgstr ""
 msgid "change tariff"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "chart_view_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "checkbox"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "checked"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "cnl"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "cnl/index"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "cnl_atualization"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "codec"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "conference-rooms"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "contact-groups"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "contact-groups/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "contact-groups/index"
 msgstr ""
 
-#: ../modules/default/controllers/ContactsController.php:66
 #: ../modules/default/views/scripts/contacts/edit.phtml:8
-#: /var/www/snep2/configs/subMenu.xml
+#: ../modules/default/controllers/ContactsController.php:66
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "contacts"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "contacts/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "contacts/index"
 msgstr ""
 
-#: ../modules/default/views/scripts/contacts/import.phtml:5
-#: ../modules/default/views/scripts/contacts/add.phtml:7
 #: ../modules/default/views/scripts/contacts/export.phtml:5
+#: ../modules/default/views/scripts/contacts/add.phtml:7
+#: ../modules/default/views/scripts/contacts/import.phtml:5
 msgid "contats"
 msgstr ""
 
@@ -4410,48 +4401,48 @@ msgstr ""
 msgid "cost center"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "cost-center"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "cost-center/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "cost-center/index"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "dashboard"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "dd/mm/YYYY hh:mm"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "dd/mm/aaaa"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "dd/mm/aaaa hh:mm"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "default/trunks"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "default/trunks/add"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "default_configs"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "delete_icon.png"
 msgstr ""
 
@@ -4463,11 +4454,11 @@ msgstr ""
 msgid "edit contact"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "edit_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "edit_icon_2.png"
 msgstr ""
 
@@ -4475,39 +4466,39 @@ msgstr ""
 msgid "email"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "errors-khomp"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "errors-khomp/index"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "exit_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "expor_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "export_button.png"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "expression-alias"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "expression-alias/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "expression-alias/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/expression_alias.xml
+#: /var/www/ipbx/modules/default/forms/expression_alias.xml
 msgid "expressionAliasForm"
 msgstr ""
 
@@ -4515,45 +4506,45 @@ msgstr ""
 #: ../modules/default/views/scripts/extensions/multiadd.phtml:5
 #: ../modules/default/views/scripts/extensions/add_edit.phtml:14
 #: ../modules/default/views/scripts/extensions/multi-remove.phtml:5
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "extensions"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "extensions-groups"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "extensions-groups/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "extensions-groups/index"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "extensions/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "extensions/index"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "extensions/multiadd"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "form_cancel_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "g729"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "gsm"
 msgstr ""
 
@@ -4561,24 +4552,24 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions_groups.xml
-#: /var/www/snep2/modules/default/forms/pickupGroup.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/pickupGroup.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/extensions_groups.xml
 msgid "hidden"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "ilbc"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "import_button.png"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "import_icon.png"
 msgstr ""
 
@@ -4588,27 +4579,27 @@ msgid "in milliseconds"
 msgstr ""
 
 #: ../modules/default/actions/DiscarRamal.php:181
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "in seconds"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "in seconds (Depends to set the value for Ring time per agent)"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "inspector"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "inspector/index"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "ip-status"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "ip-status/index"
 msgstr ""
 
@@ -4620,25 +4611,25 @@ msgstr ""
 msgid "items founds"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/filter.xml
+#: /var/www/ipbx/modules/default/forms/filter.xml
 msgid "items per page"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "khomp-links"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "khomp-links/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "lineleft"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "links_icon.png"
 msgstr ""
 
@@ -4646,156 +4637,156 @@ msgstr ""
 msgid "list carriers"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "logs"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "logs/index"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "maintenance"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
 msgid "maskCode"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
 msgid "maskCurrency"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "maskInt"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "maskMinutes"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "maskPhone"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensionsMultiRemove.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMultiRemove.xml
 msgid "maskRange"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_callranking"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_ccustos"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_conference"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_config"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_contacts"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_contacts_groups"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_databaseshow"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_exit"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_extensions"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_extensions_groups"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_groups"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_links"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_links_erros"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_musiconhold"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_params"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_provider"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_queues"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_register"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_rel_callers"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_reports"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_rules"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_sounds"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_status"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_system"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_tariff"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_tariffs"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "menu_trunks"
 msgstr ""
 
@@ -4803,7 +4794,7 @@ msgstr ""
 msgid "migrate contacts to the group"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "milisegundos"
 msgstr ""
 
@@ -4815,7 +4806,7 @@ msgstr ""
 msgid "more"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "mp3"
 msgstr ""
 
@@ -4823,19 +4814,19 @@ msgstr ""
 msgid "multi remove"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "multiselect"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "music-on-hold"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "music-on-hold/index"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "new"
 msgstr ""
 
@@ -4851,28 +4842,27 @@ msgstr ""
 msgid "new tariff"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/buttonsOptions.xml
 msgid "new_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
 msgid "newcheck"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
 msgid "newcheck tolabel"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "no"
 msgstr ""
 
@@ -4897,33 +4887,33 @@ msgstr ""
 msgid "nome"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "normal"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "num"
 msgstr ""
 
-#: /var/www/snep2/nbproject/project.xml
+#: /var/www/ipbx/nbproject/project.xml
 msgid "org.netbeans.modules.php.project"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "parameters"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "parameters/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "password"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "peer"
 msgstr ""
 
@@ -4935,55 +4925,55 @@ msgstr ""
 msgid "phone_2"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "pickup-groups"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "pickup-groups/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "pickup-groups/index"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "queue_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "queues"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "queues/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "queues/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/extensions_groups.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/extensions_groups.xml
 msgid "radio"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "ranking-report"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "ranking-report/index"
 msgstr ""
 
@@ -4991,14 +4981,14 @@ msgstr ""
 msgid "ranking_report_graphic_pdf_"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "regex"
 msgstr ""
 
@@ -5015,79 +5005,78 @@ msgstr ""
 msgid "remove all"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/buttonsOptions.xml
 msgid "report_button.png"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "report_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "report_view_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "rfc2833"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "route"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "route/frame/actionkey/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "route/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
 msgid "routeForm"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "routes"
 msgstr ""
 
-#: /var/www/snep2/configs/buttonsOptions.xml
+#: /var/www/ipbx/configs/buttonsOptions.xml
 msgid "save_form_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
 msgid "seconds"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/filter.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/filter.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
 msgid "select"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "send_to_dashboard_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "services-report"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "services-report/index"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "services_report"
 msgstr ""
 
@@ -5103,35 +5092,35 @@ msgstr ""
 msgid "services_report_pdf_"
 msgstr ""
 
-#: /var/www/snep2/configs/titleOptions.xml
+#: /var/www/ipbx/configs/titleOptions.xml
 msgid "simulador_icon.png"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml /var/www/ipbx/configs/dashboard.xml
 msgid "simulator/index"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
 msgid "snep"
 msgstr ""
 
-#: /var/www/snep2/nbproject/project.xml
+#: /var/www/ipbx/nbproject/project.xml
 msgid "snep 2"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "snep_client.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
 msgid "sound file played for the agent to indicate him about a new call"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "sound-files"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "sound-files/index"
 msgstr ""
 
@@ -5147,29 +5136,29 @@ msgstr ""
 msgid "tariffs"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/extensions_groups.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/filter.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/pickupGroup.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/contact_groups.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/filter.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/pickupGroup.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/extensions_groups.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups.xml
 msgid "text"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
 msgid "textarea"
 msgstr ""
 
@@ -5177,33 +5166,33 @@ msgstr ""
 msgid "times"
 msgstr ""
 
-#: /var/www/snep2/configs/menu.xml
+#: /var/www/ipbx/configs/menu.xml
 msgid "tit_logger"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
-#: /var/www/snep2/modules/default/forms/music_on_hold.xml
-#: /var/www/snep2/modules/default/forms/logs.xml
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
-#: /var/www/snep2/modules/default/forms/cost_center.xml
-#: /var/www/snep2/modules/default/forms/route.xml
-#: /var/www/snep2/modules/default/forms/billing.xml
-#: /var/www/snep2/modules/default/forms/installer.xml
-#: /var/www/snep2/modules/default/forms/services_report.xml
-#: /var/www/snep2/modules/default/forms/extensions_groups.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/khomp_links.xml
-#: /var/www/snep2/modules/default/forms/expression_alias.xml
-#: /var/www/snep2/modules/default/forms/calls_report.xml
-#: /var/www/snep2/modules/default/forms/contacts.xml
-#: /var/www/snep2/modules/default/forms/queues.xml
-#: /var/www/snep2/modules/default/forms/pickupGroup.xml
-#: /var/www/snep2/modules/default/forms/sound_files.xml
-#: /var/www/snep2/modules/default/forms/ranking_report.xml
-#: /var/www/snep2/modules/default/forms/contact_groups_migration.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
-#: /var/www/snep2/modules/default/forms/contact_groups.xml
-#: /var/www/snep2/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/music_on_hold.xml
+#: /var/www/ipbx/modules/default/forms/logs.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups_migration.xml
+#: /var/www/ipbx/modules/default/forms/cost_center.xml
+#: /var/www/ipbx/modules/default/forms/khomp_links.xml
+#: /var/www/ipbx/modules/default/forms/services_report.xml
+#: /var/www/ipbx/modules/default/forms/queues.xml
+#: /var/www/ipbx/modules/default/forms/calls_report.xml
+#: /var/www/ipbx/modules/default/forms/installer.xml
+#: /var/www/ipbx/modules/default/forms/route.xml
+#: /var/www/ipbx/modules/default/forms/contacts.xml
+#: /var/www/ipbx/modules/default/forms/billing.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
+#: /var/www/ipbx/modules/default/forms/ranking_report.xml
+#: /var/www/ipbx/modules/default/forms/pickupGroup.xml
+#: /var/www/ipbx/modules/default/forms/sound_files.xml
+#: /var/www/ipbx/modules/default/forms/extensions_groups.xml
+#: /var/www/ipbx/modules/default/forms/suporte.xml
+#: /var/www/ipbx/modules/default/forms/expression_alias.xml
+#: /var/www/ipbx/modules/default/forms/contact_groups.xml
 msgid "true"
 msgstr ""
 
@@ -5211,53 +5200,53 @@ msgstr ""
 msgid "trunks"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "trunks/add"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "trunks/index"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "trunks_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "ulaw"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/carrier.xml
+#: /var/www/ipbx/modules/default/forms/carrier.xml
 msgid "use dot for decimal"
 msgstr ""
 
 #: ../modules/default/controllers/RouteController.php:103
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
 msgid "users"
 msgstr ""
 
-#: /var/www/snep2/configs/dashboard.xml
+#: /var/www/ipbx/configs/dashboard.xml
 msgid "view"
 msgstr ""
 
-#: /var/www/snep2/configs/subMenu.xml
+#: /var/www/ipbx/configs/subMenu.xml
 msgid "view_icon.png"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/setup.conf.xml
+#: /var/www/ipbx/modules/default/forms/setup.conf.xml
 msgid "wav"
 msgstr ""
 
-#: /var/www/snep2/modules/default/info.xml
+#: /var/www/ipbx/modules/default/info.xml
 msgid "www.tofalando.com.br"
 msgstr ""
 
-#: /var/www/snep2/modules/default/forms/extensionsMulti.xml
-#: /var/www/snep2/modules/default/forms/trunks.xml
-#: /var/www/snep2/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/extensionsMulti.xml
+#: /var/www/ipbx/modules/default/forms/extensions.xml
+#: /var/www/ipbx/modules/default/forms/trunks.xml
 msgid "yes"
 msgstr ""
 
