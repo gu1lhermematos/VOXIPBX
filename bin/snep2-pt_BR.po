@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: Snep v-2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-29 08:32-0200\n"
-"PO-Revision-Date: 2014-01-29 08:35-0300\n"
-"Last-Translator: Flavio H Somensi <flavio@opens.com.br>\n"
+"PO-Revision-Date: 2014-07-13 22:20-0300\n"
+"Last-Translator: Guilherme <guilherme@boxfacil.com.br>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.6\n"
 "X-Poedit-Bookmarks: -1,493,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
 #: ../modules/default/actions/DiscarTronco.php:79
@@ -277,8 +277,8 @@ msgid "9"
 msgstr "9"
 
 #: ../inspectors/AGI.php:110
-msgid "AGI ToFalando Environment"
-msgstr "Ambiente AGI ToFalando"
+msgid "AGI BoxFacil Environment"
+msgstr "Ambiente AGI BoxFacil"
 
 #: /Users/fsomensi/Projects/snep-2/snep/modules/default/forms/cost_center.xml
 msgid "AND"
@@ -1677,8 +1677,8 @@ msgid "Errors of system"
 msgstr "Tipo de Erro"
 
 #: ../modules/default/views/scripts/systemstatus/index.phtml:78
-msgid "Errors were detected in the configuration of ToFalando, click "
-msgstr "Erros foram detectados na configuração do ToFalando, clique "
+msgid "Errors were detected in the configuration of BoxFacil, click "
+msgstr "Erros foram detectados na configuração do BoxFacil, clique "
 
 #: /Users/fsomensi/Projects/snep-2/snep/modules/default/forms/extensionsMulti.xml
 #: /Users/fsomensi/Projects/snep-2/snep/modules/default/forms/extensionsMultiRemove.xml
@@ -1820,8 +1820,8 @@ msgid "Failed to authenticate"
 msgstr "Falha na autenticação"
 
 #: ../modules/default/views/scripts/installer/error.phtml:1
-msgid "Failed to install ToFalando"
-msgstr "Falha ao instalar o ToFalando"
+msgid "Failed to install BoxFacil"
+msgstr "Falha ao instalar o BoxFacil"
 
 #: ../lib/Snep/InterfaceConf.php:47 ../lib/Snep/InterfaceConf.php:50
 #, php-format
@@ -1979,8 +1979,8 @@ msgid "Go to Context"
 msgstr "Desviar para Contexto"
 
 #: ../modules/default/views/scripts/installer/installed.phtml:22
-msgid "Go to ToFalando"
-msgstr "Ir para o ToFalando"
+msgid "Go to BoxFacil"
+msgstr "Ir para o BoxFacil"
 
 #: ../modules/default/actions/GoContext.php:53
 msgid "Go to a Context"
@@ -3229,28 +3229,28 @@ msgid "SLA"
 msgstr "SLQ"
 
 #: ../lib/Snep/Alerts.php:103 ../lib/Snep/Alerts.php:113
-msgid "ToFalando - The queue"
-msgstr "ToFalando - A fila"
+msgid "BoxFacil - The queue"
+msgstr "BoxFacil - A fila"
 
 #: ../modules/default/controllers/InstallerController.php:53
-msgid "ToFalando Installer"
-msgstr "Instalador ToFalando"
+msgid "BoxFacil Installer"
+msgstr "Instalador BoxFacil"
 
 #: ../modules/default/views/scripts/systemstatus/index.phtml:72
-msgid "ToFalando Version"
-msgstr "ToFalando Versão"
+msgid "BoxFacil Version"
+msgstr "BoxFacil Versão"
 
 #: ../modules/default/views/scripts/installer/installed.phtml:6
 msgid ""
-"ToFalando was successfully installed in your system, click on the button below to "
-"go to the login page."
+"BoxFacil was successfully installed in your system, click on the button "
+"below to go to the login page."
 msgstr ""
-"O ToFalando foi instalado em seu sistema com sucesso, click no botão abaixo para "
-"ir para a página de login."
+"O BoxFacil foi instalado em seu sistema com sucesso, click no botão abaixo "
+"para ir para a página de login."
 
 #: ../modules/default/views/scripts/installer/installed.phtml:3
-msgid "ToFalando was successfully installed."
-msgstr "O ToFalando foi instalado com sucesso."
+msgid "BoxFacil was successfully installed."
+msgstr "O BoxFacil foi instalado com sucesso."
 
 #: ../modules/default/controllers/RankingReportController.php:464
 msgid "SOURCE"
@@ -3649,7 +3649,7 @@ msgid "Support"
 msgstr "Suporte"
 
 #: ../modules/default/views/layouts/login.phtml:32
-msgid "Support ToFalando"
+msgid "Support BoxFacil"
 msgstr "Visite o Snep Livre"
 
 #: ../modules/default/views/scripts/systemstatus/index.phtml:388
@@ -4227,8 +4227,8 @@ msgid "Week Days"
 msgstr "Dias da Semana"
 
 #: ../modules/default/views/scripts/installer/index.phtml:8
-msgid "Welcome to ToFalando!"
-msgstr "Bem-vindo ao ToFalando!"
+msgid "Welcome to BoxFacil!"
+msgstr "Bem-vindo ao BoxFacil!"
 
 #: ../modules/default/controllers/SystemstatusController.php:40
 #, php-format
@@ -4286,14 +4286,14 @@ msgstr "Você não tem troncos registrados em seu sistema"
 #: ../modules/default/views/scripts/installer/diagnostic.phtml:4
 msgid ""
 "You must correct possible errors highlighted in red on this step of "
-"installation. It's important that all errors get corrected for ToFalando to work "
-"properly. Advanced users may skip this part of the install if they wish , "
-"this diagnostic can be runned from inside the system on the menu "
+"installation. It's important that all errors get corrected for BoxFacil to "
+"work properly. Advanced users may skip this part of the install if they "
+"wish , this diagnostic can be runned from inside the system on the menu "
 "<strong>Configure</strong> > <strong>System Status</strong>."
 msgstr ""
 "Você deve corrigir possiveis erros destacados em vermelho neste passo da "
-"instalação. É importante que todos os erros sejam corrigidos para que o ToFalando "
-"funcione corretamente. Usuários avançados podem pular essa parte da "
+"instalação. É importante que todos os erros sejam corrigidos para que o "
+"BoxFacil funcione corretamente. Usuários avançados podem pular essa parte da "
 "instalação se desejarem, esse diagnóstico pode ser acessado de dentro do "
 "sistema pelo menu <strong>Configurações</strong> > <strong>Diagnóstico </"
 "strong>."
@@ -4303,8 +4303,8 @@ msgid "You want to remove this section?"
 msgstr "Você tem certeza que deseja remover este item?"
 
 #: ../modules/default/views/scripts/installer/index.phtml:11
-msgid "You will be redirected to the ToFalando Installer"
-msgstr "Você será redirecionado ao instalador do ToFalando"
+msgid "You will be redirected to the BoxFacil Installer"
+msgstr "Você será redirecionado ao instalador do BoxFacil"
 
 #: ../modules/default/controllers/ContactsController.php:371
 #: /Users/fsomensi/Projects/snep-2/snep/modules/default/forms/contacts.xml
@@ -5538,7 +5538,7 @@ msgstr "cep"
 #~ msgstr "Numero serial do Sistema"
 
 #~ msgid "System Version"
-#~ msgstr "ToFalando Versão"
+#~ msgstr "BoxFacil Versão"
 
 #~ msgid "System manufacturer"
 #~ msgstr "Fabricante do Sistema"
