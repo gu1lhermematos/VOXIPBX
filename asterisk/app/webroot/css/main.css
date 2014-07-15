@@ -1,0 +1,208 @@
+/* element reset */
+div, ul, li, ol, div, p, span, h1, h2, h3, h4, h5, article{
+	border:0;
+	padding:0;
+	margin:0;
+	outline:0;
+}
+input{
+	color:#333;
+}
+
+body, html{
+	width:100%;
+	background:#3c3e46;	
+}
+
+h1, h2, h3, h4, h5{
+	color:#FFF;
+}
+/* HEADER */
+
+#header{
+	height:80px;
+	line-height:60px;
+	margin-bottom:20px;
+background: #5377b5; /* Old browsers */
+background: -moz-linear-gradient(top,  #5377b5 4%, #3c3e46 89%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(4%,#5377b5), color-stop(89%,#3c3e46)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #5377b5 4%,#3c3e46 89%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #5377b5 4%,#3c3e46 89%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #5377b5 4%,#3c3e46 89%); /* IE10+ */
+background: linear-gradient(to bottom,  #5377b5 4%,#3c3e46 89%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5377b5', endColorstr='#3c3e46',GradientType=0 ); /* IE6-9 */
+
+}
+
+#header div ul{
+	width:100%;
+}
+
+#header div ul li{
+	list-style:none;
+	display:inline-block;
+	margin-right:15px;
+}
+
+#header div ul li:last-child{
+	margin-right:0 !important;
+}
+
+
+/* LOGIN FORM */
+
+#user_authLoginForm{
+	text-align:center;
+}
+#user_authLoginForm table{
+	width:40%;
+	margin:0 auto;
+}
+
+#user_authLoginForm input[type=text], #user_authLoginForm input[type=password]{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	margin:0 auto;
+	outline:0;
+	border:0;
+	padding:5px;
+}
+
+#user_authLoginForm input[type=text]{
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom:1px solid #3c3e46;
+}
+#user_authLoginForm input[type=password]{
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+
+#generate_custom_graphFirstDate, #generate_custom_graphSecondDate{
+	cursor:pointer;
+}
+/* GEN GRAPH */
+
+#generate_custom_graphGraphsForm .dropdown-menu li button{
+	width:100%;
+}
+
+/* GRAPHS */ 
+
+#firstGraph{
+	width:100%;
+	height:400px;
+	margin-bottom:30px;
+}
+
+#secondGraph{
+	width:100%;
+	height:400px;
+	float:left;
+}
+
+
+/* CALL HISTORY */ 
+
+#tableHistory thead tr th span{
+	color:#FFF;
+	font-weight:500;
+	font-size:16px;
+}
+
+#tableHistory tbody tr td span{
+	color:#FFF;
+	font-size:16px;
+}
+
+.paginatorContainer{
+	color:#FFF;
+}
+
+.paginatorContainer div{
+	width:32px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	background:#FFF;
+	float:left;
+}
+
+.paginatorContainer div:first-child{
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.paginatorContainer div:last-child{
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.paginatorContainer div.prev, .paginatorContainer div.next{
+	color:#000;
+}
+
+.paginatorContainer div a{
+	color:#000;
+	font-size:16px;
+}
+.paginatorContainer div.current{
+	color:#FFF;
+	font-size:16px;
+	background:#09C;
+}
+
+.paginatorContainer div:hover{
+	color:#FFF;
+	font-size:16px;
+	background:#09C;
+}
+
+.paginatorContainer div:hover a{
+	color:#FFF;
+}
+
+
+/* USER LIST */
+#tableUsers thead tr th{
+	color:#FFF;
+}
+
+#tableUsers tbody tr td{
+	color:#FFF;
+}
+
+/* GENERAL CLASSES */
+
+.innerWidth940{
+	width:940px;
+	margin:0 auto;
+}
+
+.fullWidth{
+	width:100%;
+}
+
+.clear{
+	clear:both;
+}
+
+

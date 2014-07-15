@@ -29,6 +29,7 @@ ln -s ipbx snep2
 chmod -R 755 *
 cd /etc/apache2/sites-enabled/
 cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
+cp /var/www/ipbx/install/portabilidade.apache2 002-portabilidade
 cd /etc/apache2/sites-available/
 cp /var/www/ipbx/install/tofalando.apache1 default
 cd /var/log
