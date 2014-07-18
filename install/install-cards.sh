@@ -72,11 +72,7 @@ while [ $ExitFinish -eq 0 ]; do
 				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/install-tofalando.sh
 				bash install-tofalando.sh
 				cd /var/www/ipbx/install/
-<<<<<<< HEAD
-				mysql -uroot -ptofalando2014 snep25 < tofalando.sql	
-=======
 				mysql -uroot -ptofalando2014 snep25 < tofalando.sql
->>>>>>> master
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
