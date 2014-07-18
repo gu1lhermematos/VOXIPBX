@@ -52,7 +52,7 @@ while [ $ExitFinish -eq 0 ]; do
 			func_install_asterisk
 			bash install-tofalando.sh
 			cd /var/www/snep/install/
-			mysql -uroot -ptofalando2014 snep25 < tofalando.sql
+#			mysql -uroot -ptofalando2014 snep25 < tofalando.sql
 			cd /usr/src/
 			bash install-asterisk.sh
 		;;

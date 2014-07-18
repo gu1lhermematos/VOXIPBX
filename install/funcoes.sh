@@ -149,7 +149,6 @@ func_install_dahdi ()  {
                         	tar xvfz dahdi-linux-complete-2.9.1+2.9.1.tar.gz
                         	ln -s dahdi-linux-complete-2.9.1+2.9.1/ dahdi
 				cd dahdi
-				
 				cd /usr/src/dahdi/
 				make all
 				make install
@@ -172,7 +171,6 @@ func_config_placas ()  {
 
 #				cd /var/www/ipbx/install/placas				
 #				mysql -uroot -ptofalando2014 snep25 < placaFXO.sql
-
 				/etc/init.d/dahdi restart && /etc/init.d/asterisk restart
 				ExitFinish=1
  }
