@@ -73,9 +73,15 @@ while [ $ExitFinish -eq 0 ]; do
 				bash install-tofalando.sh
 #				cd /var/www/ipbx/install/placas/
 #				mysql -uroot -ptofalando2014 snep25 < placa_FXO.sql
+<<<<<<< HEAD
 #				func_config_placas
 #				cd /usr/src/
 #				bash install-cards.sh
+=======
+				func_config_placas
+				cd /usr/src/
+				bash install-cards.sh
+>>>>>>> devel
 				ExitFinish=1
 		;;
 

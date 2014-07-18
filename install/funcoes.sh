@@ -170,8 +170,8 @@ func_config_placas ()  {
 				
 				# Atualizar BASE
 
-				cd /var/www/ipbx/install/placas				
-				mysql -uroot -ptofalando2014 snep25 < placaFXO.sql
+#				cd /var/www/ipbx/install/placas				
+#				mysql -uroot -ptofalando2014 snep25 < placaFXO.sql
 
 				/etc/init.d/dahdi restart && /etc/init.d/asterisk restart
 				ExitFinish=1
