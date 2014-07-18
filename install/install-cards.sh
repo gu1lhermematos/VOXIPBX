@@ -71,20 +71,10 @@ while [ $ExitFinish -eq 0 ]; do
 				func_install_g729
 				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/install-tofalando.sh
 				bash install-tofalando.sh
-#				cd /var/www/ipbx/install/placas/
-#				mysql -uroot -ptofalando2014 snep25 < placa_FXO.sql
-<<<<<<< HEAD
-<<<<<<< HEAD
-#				func_config_placas
-#				cd /usr/src/
-#				bash install-cards.sh
-=======
-=======
->>>>>>> devel
-				func_config_placas
+				cd /var/www/ipbx/install/
+				mysql -uroot -ptofalando2014 snep25 < tofalando.sql
 				cd /usr/src/
 				bash install-cards.sh
->>>>>>> devel
 				ExitFinish=1
 		;;
 
