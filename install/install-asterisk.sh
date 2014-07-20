@@ -1,11 +1,8 @@
 #!/bin/bash
-
-# Copyright (C) 2011-2014 ToFalando
+# Copyright (C) 2011-2014 BoxFacil
 #
 # Script incialmente desenvolvido por
-# Emerson Luiz ( eluizbr@tofalando.com.br )
-#Atualizado por 
-# Guilherme Matos ( guilherme@boxfacil.com.br )
+# Emerson Luiz ( gu1lhermematos@BoxFacil.com.br )
 
 
 source funcoes.sh
@@ -21,8 +18,9 @@ source funcoes.sh
     echo "  4)  Instalar G729 FREE"
     echo "  5)  Instalar Mesa Operadora"
     echo "  6)  Instalar DONGLE USB"
+    echo "  7)  Instalar Tarifador"
     echo "  0)  Sair"
-    echo -n "(0-6) : "
+    echo -n "(0-7) : "
     read OPTION < /dev/tty
 
 ExitFinish=0
@@ -52,7 +50,7 @@ while [ $ExitFinish -eq 0 ]; do
 			func_install_asterisk
 			bash install-tofalando.sh
 			cd /var/www/snep/install/
-#			mysql -uroot -ptofalando2014 snep25 < tofalando.sql
+			mysql -uroot -ptofalando2014 snep25 < tofalando.sql
 			cd /usr/src/
 			bash install-asterisk.sh
 		;;
@@ -115,11 +113,19 @@ while [ $ExitFinish -eq 0 ]; do
 			bash install-asterisk.sh
 		;;
 
+		7)
+		
+			#Install A2B
+			clear
+			func_install_A2B
+			bash install-asterisk.sh
+		;;
+
 
 		0)
         		clear
 			cd /usr/src/
-			rm -rf asterisk* dahdi* lib* install* fop*  funcoes* linux-3* openr2* chan_*
+			rm -rf asterisk* dahdi* lib* install* fop*  funcoes* linux-3* openr2* chan_* a2b*
 			# Apaga Instalacao
 			cd /var/www/ipbx/
 			rm -rf install

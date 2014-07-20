@@ -1,24 +1,24 @@
 #!/bin/bash
 
-# Copyright (C) 2011-2014 ToFalando
+# Copyright (C) 2011-2014 BoxFacil
 #
 # Script incialmente desenvolvido por
-# Emerson Luiz ( eluizbr@tofalando.com.br )
+# Emerson Luiz ( gu1lhermematos@BoxFacil.com.br )
 
 # Configurar o Branch
-BRANCH='devel'
+BRANCH='master'
 
 func_variaveis () {
 
 echo "`ip addr show eth0 | cut -c16-32 | egrep \"[0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}[:][0-9a-z]{2}$\"`" | tr -d ' : ' >/tmp/mac.txt
 MAC=$(cat /tmp/mac.txt)
 ALEATORIO=$MAC
-BOXFACIL="BoxFacil-$ALEATORIO"
-BOXFACIL2="$ALEATORIO"
-echo " $BOXFACIL"
-echo "$BOXFACIL2"
-export BOXFACIL=$BOXFACIL
-export BOXFACIL2=$BOXFACIL2	
+BoxFacil="BoxFacil-$ALEATORIO"
+BoxFacil2="$ALEATORIO"
+echo " $BoxFacil"
+echo "$BoxFacil2"
+export BoxFacil=$BoxFacil
+export BoxFacil2=$BoxFacil2	
 	
 }
 
@@ -54,11 +54,11 @@ func_vpn () {
 		func_variaveis
 
 
-			ssh root@vpn.boxfacil.com.br '/usr/src/gera-key.sh '$BOXFACIL''
-			scp root@vpn.boxfacil.com.br:/etc/openvpn/easy-rsa/keys/$BOXFACIL* .
+			ssh root@vpn.BoxFacil.com.br '/usr/src/gera-key.sh '$BoxFacil''
+			scp root@vpn.BoxFacil.com.br:/etc/openvpn/easy-rsa/keys/$BoxFacil* .
 
-			sed -i s/"cert ipbx.crt"/"cert "$BOXFACIL".crt"/g /etc/openvpn/client.conf
-			sed -i s/"key ipbx.key"/"key "$BOXFACIL".key"/g /etc/openvpn/client.conf
+			sed -i s/"cert ipbx.crt"/"cert "$BoxFacil".crt"/g /etc/openvpn/client.conf
+			sed -i s/"key ipbx.key"/"key "$BoxFacil".key"/g /etc/openvpn/client.conf
 
 			mv BoxFacil* /etc/openvpn/
 			/etc/init.d/openvpn restart
@@ -70,11 +70,11 @@ func_host () {
 	
 		func_variaveis	
 
-			echo "$BOXFACIL" > /etc/hostname
+			echo "$BoxFacil" > /etc/hostname
 
 			echo "127.0.0.1	localhost" > /etc/hosts
 			IP_LOCAL=$(/sbin/ifconfig | sed -n '2 p' | awk '{print $3}')
-			echo "${IP_LOCAL}	$BOXFACIL.boxfacil.com.br	$BOXFACIL" >> /etc/hosts
+			echo "${IP_LOCAL}	$BoxFacil.BoxFacil.com.br	$BoxFacil" >> /etc/hosts
 
 			echo "
 
@@ -149,6 +149,7 @@ func_install_dahdi ()  {
                         	tar xvfz dahdi-linux-complete-2.9.1+2.9.1.tar.gz
                         	ln -s dahdi-linux-complete-2.9.1+2.9.1/ dahdi
 				cd dahdi
+				
 				cd /usr/src/dahdi/
 				make all
 				make install
@@ -169,8 +170,9 @@ func_config_placas ()  {
 				
 				# Atualizar BASE
 
-#				cd /var/www/ipbx/install/placas				
-#				mysql -uroot -ptofalando2014 snep25 < placaFXO.sql
+				cd /var/www/ipbx/install/placas				
+				mysql -uroot -ptofalando2014 snep25 < placaFXO.sql
+
 				/etc/init.d/dahdi restart && /etc/init.d/asterisk restart
 				ExitFinish=1
  }
@@ -181,9 +183,9 @@ func_install_asterisk () {
 				clear
 				rm -rf asterisk*
                 	        cd /usr/src/
-                	        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.29.0.tar.gz
-                        	tar zxvf asterisk-1.8.29.0.tar.gz
-                        	ln -s asterisk-1.8.29.0 asterisk
+                	        wget -c http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/asterisk-1.8.28.2.tar.gz
+                        	tar zxvf asterisk-1.8.28.2.tar.gz
+                        	ln -s asterisk-1.8.28.2 asterisk
                         	cd asterisk
                         	make distclean
                         	./configure
@@ -360,7 +362,7 @@ func_install_portabilidade  () {
 				cd /var/www/ipbx/install/
 				rm -rf extensions.conf
 				mysql -u root -ptofalando2014 -e 'create database portabilidade'
-				mysql -u root -ptofalando2014 portabilidade < sistema_portabilidade.sql
+				mysql -u root -ptofalando2014 portabilidade < cache.sql
 				cat cache_extensions.conf > /etc/asterisk/extensions.conf
 				/etc/init.d/apache2 restart
 				/etc/init.d/asterisk restart
@@ -382,5 +384,70 @@ func_install_dongle  () {
 				ExitFinish=1
 				
 				
+	
+}
+
+
+
+func_install_A2B  () { 
+
+				cd /usr/src/
+				#Instalando dependencias
+				apt-get update
+				apt-get upgrade
+				apt-get install libapache2-mod-php5 php5 php5-common
+				apt-get install php5-cli php5-mysql mysql-server apache2 php5-gd  php5-mcrypt
+				apt-get install build-essential wget libssl-dev libncurses5-dev libnewt-dev  libxml2-dev linux-headers-$(uname -r) libsqlite3-dev uuid-dev
+				
+				#Instalando o A2Billing
+				mkdir /usr/src/billing
+				cd /usr/src/billing
+				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/a2billing.tgz
+				tar zxvf a2billing.tgz
+				chmod -R 777 /usr/src/billing
+				mv a2billing-master/* .
+				ln -s /usr/src/billing/a2billing.conf /etc/a2billing.conf
+				ln -s /usr/src/billing/AGI/lib/ /var/lib/asterisk/agi-bin/lib
+				ln -s /usr/src/billing/AGI/a2billing.php /var/lib/asterisk/agi-bin/a2billing.php
+				chmod 755 /var/lib/asterisk/agi-bin/a2billing.php
+				chmod -R 755 /var/lib/asterisk/agi-bin/lib
+				cd /usr/src/billing/addons/sounds
+				bash install_a2b_sounds.sh
+				chmod -R 755 /usr/src/billing/addons/sounds
+				cd /var/www/ipbx/
+				mkdir billing
+				ln -s /usr/src/billing/admin/ /var/www/ipbx/billing/admin
+				ln -s /usr/src/billing/customer/ /var/www/ipbx/billing/cliente
+				ln -s /usr/src/billing/agent/  /var/www/ipbx/billing/agente
+				mkdir -p /var/run/a2billing
+				mkdir /var/log/a2billing/
+				touch /var/log/a2billing/a2billing-daemon-callback.log
+				touch /var/log/a2billing/a2billing-daemon-callback.log
+				touch /var/log/a2billing/cront_a2b_alarm.log
+				touch /var/log/a2billing/cront_a2b_autorefill.log
+				touch /var/log/a2billing/cront_a2b_batch_process.log
+				touch /var/log/a2billing/cront_a2b_bill_diduse.log
+				touch /var/log/a2billing/cront_a2b_subscription_fee.log
+				touch /var/log/a2billing/cront_a2b_currency_update.log
+				touch /var/log/a2billing/cront_a2b_invoice.log
+				touch /var/log/a2billing/a2billing_paypal.log
+				touch /var/log/a2billing/a2billing_epayment.log
+				touch /var/log/a2billing/api_ecommerce_request.log
+				touch /var/log/a2billing/api_callback_request.log
+				touch /var/log/a2billing/a2billing_agi.log
+				cd /usr/src/
+				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/a2billing.conf
+				mv a2billing.conf /usr/src/billing/
+				
+				# Instalando base A2B
+				cd /var/www/ipbx/install
+				echo "create database billing" | mysql -u root -ptofalando2014
+				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/billing.sql
+				mysql -u root -ptofalando2014 billing < billing.sql
+				rm -rf billing.conf
+				# FIM Instalando base A2B
+				
+				cd /usr/src
+				ExitFinish=1
 	
 }

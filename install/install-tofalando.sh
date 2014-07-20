@@ -29,7 +29,6 @@ ln -s ipbx snep2
 chmod -R 755 *
 cd /etc/apache2/sites-enabled/
 cp /var/www/ipbx/install/tofalando.apache2 001-tofalando
-cp /var/www/ipbx/install/portabilidade.apache2 002-portabilidade
 cd /etc/apache2/sites-available/
 cp /var/www/ipbx/install/tofalando.apache1 default
 cd /var/log
@@ -93,9 +92,9 @@ sed -i s/"useragent=Asterisk PBX - OpenS Tecnologia"/"useragent=BoxFacil PABX"/g
 
 	func_variaveis
 	
-#sed -i s/"SNEP_VERSION?"/""$TOFALANDO2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
-#sed -i s/SNEP_VERSION/$BOXFACIL2/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
-#sed -i s/$BOXFACIL2/"'$BOXFACIL2'"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+#sed -i s/"SNEP_VERSION?"/""$BoxFacil2"?"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+sed -i s/SNEP_VERSION/$BoxFacil2/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
+sed -i s/$BoxFacil2/"'$BoxFacil2'"/g /var/www/ipbx/modules/default/views/scripts/systemstatus/index.phtml
 
 # FIM Alterações em Arquivos
 

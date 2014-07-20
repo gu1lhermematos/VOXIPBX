@@ -87,7 +87,7 @@ sed -i s/"register_argc_argv = Off"/register_argc_argv=On/g /etc/php5/apache2/ph
 rm -rf /var/www/index.html
 cd /var/www/ipbx/install
 cp index.php /var/www/
-echo "tofalando" > /etc/hostname
+echo "BoxFacil" > /etc/hostname
 
 /etc/init.d/mysql restart
 /etc/init.d/apache2 restart

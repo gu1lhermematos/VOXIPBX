@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Copyright (C) 2011-2014 ToFalando
+# Copyright (C) 2011-2014 BoxFacil
 #
 # Script incialmente desenvolvido por
-# Emerson Luiz ( eluizbr@tofalando.com.br )
+# Emerson Luiz ( gu1lhermematos@BoxFacil.com.br )
 
 source funcoes.sh
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Copyright (C) 2011-2014 ToFalando
+# Copyright (C) 2011-2014 BoxFacil
 #
 # Script incialmente desenvolvido por
-# Emerson Luiz ( eluizbr@tofalando.com.br )
+# Emerson Luiz ( gu1lhermematos@BoxFacil.com.br )
 
 source funcoes.sh
     clear
-    echo " > Instalar PLACAS ToFalando"
+    echo " > Instalar PLACAS BoxFacil"
     echo "====================================="
     echo "  1)  Instalar PLaca E1 - R2"
     echo "  2)  Instalar Placa E1 - ISDN "
@@ -71,8 +71,9 @@ while [ $ExitFinish -eq 0 ]; do
 				func_install_g729
 				wget --no-check-certificate https://raw.githubusercontent.com/gu1lhermematos/VOXIPBX/$BRANCH/install/install-tofalando.sh
 				bash install-tofalando.sh
-				cd /var/www/ipbx/install/
-				mysql -uroot -ptofalando2014 snep25 < tofalando.sql
+				cd /var/www/ipbx/install/placas/
+				mysql -uroot -ptofalando2014 snep25 < placa_FXO.sql
+				func_config_placas
 				cd /usr/src/
 				bash install-cards.sh
 				ExitFinish=1
